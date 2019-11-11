@@ -7,6 +7,7 @@ import App from './app/app.vue';
 import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)
 
+import '@progress/kendo-theme-default/dist/all.css'
 import './main.scss';
 import router from './app/app-routes';
 import store from './app/app-state';
