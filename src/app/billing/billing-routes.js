@@ -4,7 +4,7 @@ import AppUserList from './user-list/user-list.vue';
 
 const userRoutes = [
   {
-    path: '/users',
+    path: '/billing',
     component: AppUsers,
     children: [
       {
