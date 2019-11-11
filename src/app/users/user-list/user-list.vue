@@ -1,37 +1,38 @@
 <template>
   <div class="user-list">
-    <error-boundary>
-      <app-user-item/>
-    </error-boundary>
+    <kendo-datasource ref="datasource1"
+                        :transport-read-url="'http://localhost:8080/mock-data/users.json'"
+                        :batch='true'
+                        :page-size='20'>
+    </kendo-datasource>
+
+    <kendo-grid :height="600"
+                :data-source-ref="'datasource1'"
+                :pageable='true'
+                :editable="'inline'"
+                :filterable="true">
+        <kendo-grid-column :field="'name'"
+                           :title="'User Name'"
+                           :filterable-cell-operator="'contains'"
+                           :filterable-multi="true"
+                           :filterable-search="true"
+                           :width="120"></kendo-grid-column>
+        <kendo-grid-column :field="'age'"
+                           :title="'User Age'"
+                           :filterable-cell-operator="'contains'"
+                           :filterable-multi="true"
+                           :filterable-search="true"
+                           :width="120"></kendo-grid-column>
+        <kendo-grid-column :field="'profession'"
+                           :title="'Profession'"
+                           :filterable-cell-operator="'contains'"
+                           :filterable-multi="true"
+                           :filterable-search="true"
+                           :width="120"></kendo-grid-column>
+    </kendo-grid>
   </div>
 </template>
 
-<script>
-import { actionsTypes } from "../shared/state";
-import { ErrorBoundary } from "../../shared/components";
+<script src="./user-list.js"></script>
 
-import AppUserItem from "../user-item/user-item.vue";
-
-export default {
-  name: "app-user-list",
-  components: {
-    ErrorBoundary,
-    AppUserItem
-  },
-
-  created() {
-    this.$store.dispatch(actionsTypes.FETCH_USER_DATA);
-  },
-
-  // errorCaptured(err, vm, info) {
-  //   // err: error trace
-  //   // vm: component in which error occured
-  //   // info: Vue specific error information such as lifecycle hooks, events etc.
-  //   // TODO: Perform any custom logic or log to server
-  //   // return false to stop the propagation of errors further to parent or global error handler
-  // }
-};
-</script>
-
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped>@import '../theme/users.scss'</style>
