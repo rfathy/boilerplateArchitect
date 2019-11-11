@@ -12,15 +12,9 @@
   "dependencies": {
     "@progress/kendo-datasource-vue-wrapper": "^2019.3.1023",
     "@progress/kendo-grid-vue-wrapper": "^2019.3.1023",
-<<<<<<< HEAD
     "@progress/kendo-theme-bootstrap": "^4.4.0",
     "@progress/kendo-ui": "^2019.3.1106",
     "axios": "^0.18.1",
-=======
-    "@progress/kendo-theme-default": "^4.6.0",
-    "@progress/kendo-ui": "^2019.3.1106",
-    "axios": "^0.18.0",
->>>>>>> 819dc8f1375dc4f0b0e4607b026047fc7397c0fd
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.4",
     "core-js": "^2.6.5",
