@@ -23,8 +23,8 @@
                            :filterable-multi="true"
                            :filterable-search="true"
                            :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'profession'"
-                           :title="'Profession'"
+        <kendo-grid-column :field="'company'"
+                           :title="'Company'"
                            :filterable-cell-operator="'contains'"
                            :filterable-multi="true"
                            :filterable-search="true"
