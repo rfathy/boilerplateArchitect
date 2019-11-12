@@ -1,6 +1,7 @@
 import AppUsers from './users.vue';
 
 import AppUserList from './user-list/user-list.vue';
+import AppUserItem from './user-item/user-item.vue';
 
 const userRoutes = [
   {
@@ -11,6 +12,11 @@ const userRoutes = [
         path: 'user-list',
         name: 'user-list',
         component: AppUserList
+      },
+      {
+        path: 'user-item',
+        name: 'user-item',
+        component: AppUserItem
       },
       {
         path: '',

@@ -1,3 +1,4 @@
+import { ErrorBoundary } from "../../shared/components";
 import kendo from '@progress/kendo-ui';
 
 export default {
@@ -43,5 +44,8 @@ export default {
 
             return kendo.template(template);
         }
+    },
+    components: {
+        ErrorBoundary
     }
 }

@@ -17,11 +17,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "app-user-item"
-};
-</script>
+<script src="./user-item.js"></script>
 
 <style lang="scss" scoped>
+@import '../theme/users.scss';
 </style>

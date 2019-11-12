@@ -1,6 +1,8 @@
 <template>
   <div>
     <app-header/>
+    <router-link to="/users/user-list">User List</router-link>  | 
+    <router-link to="/users/user-item">User Item</router-link>
     <router-view/>
   </div>
 </template>
