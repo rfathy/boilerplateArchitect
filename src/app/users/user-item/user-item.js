@@ -1,51 +1,38 @@
-import { ErrorBoundary } from "../../shared/components";
-import kendo from '@progress/kendo-ui';
+import Vue from 'vue';
+
+import { TabStrip, LayoutInstaller } from '@progress/kendo-layout-vue-wrapper'
+Vue.use(LayoutInstaller)
+
+import TemplateGrid from './template-grid/template-grid.vue'
+import NestedGrid from './nested-grid/nested-grid.vue'
 
 export default {
     name: "user-item",
     data() {
         return {
-            rowTemplate: this.generateRowTemplate(),
-            altRowTemplate: this.generateAltRowTemplate()
+            tabs: [
+                {
+                    id: 1,
+                    name: "Template Grid",
+                    component: TemplateGrid
+                },
+                {
+                    id: 2,
+                    name: "Nested Grid",
+                    component: NestedGrid
+                } 
+            ],
+            selected: "Template Grid"
         }
     },
     methods: {
-        generateRowTemplate: function() {
-            var template =
-                '<tr data-uid="#: uid #">' +
-                    '<td class="details">' +
-                        '<span class="name">#: FirstName# #: LastName# </span>' +
-                        '<span class="title">Title: #: Title #</span>' +
-                    '</td>' +
-                    '<td class="country">' +
-                        '#: Country #' +
-                    '</td>' +
-                    '<td class="employeeID">' +
-                        '#: EmployeeID #' +
-                    '</td>' +
-                '</tr>'
-
-            return kendo.template(template);
-        },
-        generateAltRowTemplate: function() {
-            var template =
-                '<tr class="k-alt" data-uid="#: uid #">' +
-                    '<td class="details">' +
-                        '<span class="name">#: FirstName# #: LastName# </span>' +
-                        '<span class="title">Title: #: Title #</span>' +
-                    '</td>' +
-                    '<td class="country">' +
-                        '#: Country #' +
-                    '</td>' +
-                    '<td class="employeeID">' +
-                        '#: EmployeeID #' +
-                    '</td>' +
-                '</tr>'
-
-            return kendo.template(template);
-        }
+        onSelect: function() {
+            // console.log("Selected: " + $(e.item).find("> .k-link").text());
+        }     
     },
     components: {
-        ErrorBoundary
+        TabStrip,
+        TemplateGrid,
+        NestedGrid
     }
 }
