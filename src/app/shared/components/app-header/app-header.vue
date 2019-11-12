@@ -1,6 +1,8 @@
 <template>
   <div class="app-header">
     <h2 class="header-title">App Header</h2>
+    <router-link :to="'/'">User List </router-link> | 
+    <router-link :to="'/users/form-valid'"> Form Validate</router-link>
   </div>
 </template>
 
