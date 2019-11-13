@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { ErrorBoundary } from "../../../shared/components";
 import kendo from '@progress/kendo-ui';
 
-import { DropDownTree, DropDownTreeInstaller } from '@progress/kendo-dropdowntree-vue-wrapper'
+import { DropDownTree, HierarchicalDataSource, DropDownTreeInstaller } from '@progress/kendo-dropdowntree-vue-wrapper'
 Vue.use(DropDownTreeInstaller)
 
 export default {
@@ -16,7 +16,7 @@ export default {
                     text: 'Decor'
                 }]
             }),
-            rowTemplate: ''
+            rowTemplate: '',
         }
     },
     methods: {
@@ -47,7 +47,8 @@ export default {
     },
     components: {
         ErrorBoundary,
-        DropDownTree
+        DropDownTree,
+        HierarchicalDataSource
     },
     created() {
         if (!this.rowTemplate) {

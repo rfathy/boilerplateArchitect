@@ -5,15 +5,14 @@
             <li v-for="tab in tabs" :key="tab.id">{{ tab.name }}</li>
         </ul>
         <div>
-            <div>
-                <template-grid />
-                <!-- <component :is="selected"></component> -->
-            </div>
+          <template-grid />
+          <!-- <component :is="selected"></component> -->
         </div>
         <div>
-            <div>
-                <nested-grid />
-            </div>
+          <nested-grid />
+        </div>
+        <div>
+          <editable-grid />
         </div>
     </kendo-tabstrip>
   </div>
