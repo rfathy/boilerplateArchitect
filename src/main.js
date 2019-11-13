@@ -4,18 +4,23 @@ import './plugins';
 
 import App from './app/app.vue';
 
+//bootstrap
 import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)
 
+//kendo
 import '@progress/kendo-ui';
-
 import { Grid, GridInstaller } from '@progress/kendo-grid-vue-wrapper';
 Vue.use(GridInstaller);
-
 import { DataSource, DataSourceInstaller } from '@progress/kendo-datasource-vue-wrapper';
 Vue.use(DataSourceInstaller)
 
+//styles & layout
 import './main.scss';
+import Default from './app/shared/layouts/default.vue'
+Vue.component('default-layout', Default)
+
+//routes
 import router from './app/app-routes';
 import store from './app/app-state';
 

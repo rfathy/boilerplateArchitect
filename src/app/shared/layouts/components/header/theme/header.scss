@@ -1,0 +1,30 @@
+.main-header {
+    .horizontal-navbar{
+        margin-top: 70px;
+    }
+    .fixed-top{
+        background-color: #fff !important;
+        box-shadow: 0 0px 6px 3px #dcdcdc;
+    }
+    .custom-logo {
+        width: 182px;
+    }
+    .user-img{
+        width: 35px;
+        max-height: 35px;
+        border-radius: 50%;
+    }
+    .horizontal-navbar {
+        background-color: #0257A8;
+        border-radius: 6px;
+        position: relative;
+        .megamenu {
+            position: static;
+        }        
+        .megamenu .dropdown-menu {
+            background: none;
+            border: none;
+            width: 100%;
+        }
+    }
+}

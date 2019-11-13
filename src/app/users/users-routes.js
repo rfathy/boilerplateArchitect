@@ -8,20 +8,25 @@ const userRoutes = [
   {
     path: '/users',
     component: AppUsers,
+    // meta: {layout: 'no-bars', title: 'Login'},
+    meta: {title: 'Users'},
     children: [
       {
       path: 'form-valid',
       name: 'form-valid',
+      meta: {title: 'Form Validation'},
       component: AppFormValid
       },
       {
         path: 'user-list',
         name: 'user-list',
+        meta: {title: 'Users List'},
         component: AppUserList
       },
       {
         path: 'user-item',
         name: 'user-item',
+        meta: {title: 'User Item'},
         component: AppUserItem
       },
       {
