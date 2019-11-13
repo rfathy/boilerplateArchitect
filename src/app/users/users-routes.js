@@ -1,6 +1,7 @@
 import AppUsers from './users.vue';
 
 import AppUserList from './user-list/user-list.vue';
+import AppUserItem from './user-item/user-item.vue';
 import AppFormValid from './user-list/form-valid.vue';
 
 const userRoutes = [
@@ -19,8 +20,13 @@ const userRoutes = [
         component: AppUserList
       },
       {
+        path: 'user-item',
+        name: 'user-item',
+        component: AppUserItem
+      },
+      {
         path: '',
-        redirect: { name: 'user-list' }
+        redirect: { name: 'form-valid' }
       }
     ]
   },      

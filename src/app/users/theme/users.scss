@@ -2,9 +2,16 @@ input, label{
     display: block
 }
 label{
-    margin-top:10px;
-    font-weight: bold;
-    margin-bottom: 0;
+    text-transform: capitalize
+}
+.mt10{
+    margin-top:10px
+}
+.mb10{
+    margin-bottom:10px
+}
+.form-group{
+    display: block;
 }
 span.err{
     color: red

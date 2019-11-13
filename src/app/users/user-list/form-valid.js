@@ -1,5 +1,7 @@
 import { ValidationProvider, extend, ValidationObserver } from 'vee-validate';
 import { required, email, min, max } from 'vee-validate/dist/rules';
+import { onlyAr, onlyEn, onlyNumeric, allowDecimal } from '@/app/shared/directives/InputHelpers.js';
+
 
 extend('required', {
     ...required,
@@ -53,5 +55,11 @@ export default {
         max:'',
         compared:'',
         confirm:''
-    })
+    }),
+    directives: {
+        onlyEn,
+        onlyAr,
+        onlyNumeric,
+        allowDecimal
+    },
   };
