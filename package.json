@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@progress/kendo-datasource-vue-wrapper": "^2019.3.1023",
+    "@progress/kendo-dropdowntree-vue-wrapper": "^2019.3.1023",
     "@progress/kendo-grid-vue-wrapper": "^2019.3.1023",
+    "@progress/kendo-layout-vue-wrapper": "^2019.3.1023",
     "@progress/kendo-theme-bootstrap": "^4.4.0",
     "@progress/kendo-ui": "^2019.3.1106",
     "axios": "^0.18.1",
@@ -44,7 +46,8 @@
       "eslint:recommended"
     ],
     "rules": {
-      "no-console": "off"
+      "no-console": "off",
+      "no-debugger": "off"
     },
     "parserOptions": {
       "parser": "babel-eslint"

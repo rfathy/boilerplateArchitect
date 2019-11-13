@@ -1,19 +1,20 @@
 <template>
   <div class="grid-template">
-    <kendo-datasource ref="datasource1"
-                      :type="'odata'"
-                      :transport-read-url="'https://demos.telerik.com/kendo-ui/service/Northwind.svc/Employees'">
-    </kendo-datasource>
-
-    <kendo-grid ref="grid"
-                :height="550"
-                :data-source-ref="'datasource1'"
-                :row-template="rowTemplate"
-                :alt-row-template="altRowTemplate">
-        <kendo-grid-column title="Details" :width="110"></kendo-grid-column>
-        <kendo-grid-column title="Country" :width="110"></kendo-grid-column>
-        <kendo-grid-column title="ID" :width="110"></kendo-grid-column>
-    </kendo-grid>
+    <kendo-tabstrip @select="onSelect">
+        <ul>
+            <li v-for="tab in tabs" :key="tab.id">{{ tab.name }}</li>
+        </ul>
+        <div>
+          <template-grid />
+          <!-- <component :is="selected"></component> -->
+        </div>
+        <div>
+          <nested-grid />
+        </div>
+        <div>
+          <editable-grid />
+        </div>
+    </kendo-tabstrip>
   </div>
 </template>
 
