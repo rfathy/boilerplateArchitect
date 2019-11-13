@@ -94,9 +94,9 @@ export default {
                     autoBind: false,
                     dataTextField: "CategoryName",
                     dataValueField: "CategoryID",
-                    checkboxes: "true",
-                    checkAll: "true",
-                    autoAlose: "false",
+                    checkboxes: true,
+                    checkAll: true,
+                    autoClose: false,
                     dataSource: {
                         type: "odata",
                         transport: {
