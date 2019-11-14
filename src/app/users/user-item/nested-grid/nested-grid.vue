@@ -16,7 +16,7 @@
                 v-on:databound="dataBound">
           <kendo-grid-column field="FirstName" title="First Name" :width="110"></kendo-grid-column>
           <kendo-grid-column field="LastName" title="Last Name" :width="110"></kendo-grid-column>
-          <kendo-grid-column :width="150" :template="popupTemplate"></kendo-grid-column>
+          <kendo-grid-column :width="150" :template="openPopupTemplate"></kendo-grid-column>
           <kendo-grid-column field="City" :width="260"></kendo-grid-column>
           <kendo-grid-column field="Title"></kendo-grid-column>
           <kendo-grid-column :command="['edit', 'destroy']"
