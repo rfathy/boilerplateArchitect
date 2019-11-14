@@ -1,7 +1,7 @@
 import { ValidationProvider, extend, ValidationObserver } from 'vee-validate';
 import { required, email, min, max } from 'vee-validate/dist/rules';
 import { onlyAr, onlyEn, onlyNumeric, allowDecimal } from '@/app/shared/directives/InputHelpers.js';
-
+import { AppLoader } from "@/app/shared/components";
 
 extend('required', {
     ...required,
@@ -33,13 +33,15 @@ export default {
     name: "app-form-valid",
     components: {
         ValidationProvider,
-        ValidationObserver
+        ValidationObserver,
+        AppLoader
     },
     methods:{
         async submit () {
             const isValid = await this.$refs.observer.validate()
             if (isValid) {
                 alert('Data is valid');
+                this.isLoading=true;
                 return
             } else {
               alert('Data is not valid');
@@ -54,7 +56,8 @@ export default {
         min:'',
         max:'',
         compared:'',
-        confirm:''
+        confirm:'',
+        isLoading:false
     }),
     directives: {
         onlyEn,
