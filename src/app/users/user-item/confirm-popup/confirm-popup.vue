@@ -1,6 +1,8 @@
 <template>
     <div class="popup">
-        <b-button v-b-modal.modal-scrollable @click="$bvModal.show('modal-scoped')">Details></b-button>
+        <b-button v-b-modal.modal-scrollable 
+                  @click="$bvModal.show('modal-scoped')"
+                  class="btn-open-popup">Details></b-button>
 
         <b-modal id="modal-scoped" scrollable>
             <template v-slot:modal-header="{ close }">

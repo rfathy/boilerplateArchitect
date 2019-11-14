@@ -16,3 +16,10 @@
 body{
   background:#c9c9c9;
 }
+
+// Disable button in grid that opens popup in case of add/edit row
+.k-grid-edit-row {
+  .btn-open-popup {
+    pointer-events: none;
+  }
+}

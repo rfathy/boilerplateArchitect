@@ -86,8 +86,8 @@ export default {
             }
         }
     },
-    methods: {
-        categoryDropDownEditor: function(container, options) {
+    methods: { 
+        categoryDropDownEditor: function(container, options) { 
             $('<select required name="' + options.field + '"/>')
                 .appendTo(container)
                 .kendoDropDownTree({
@@ -103,7 +103,8 @@ export default {
                         transport: {
                             read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Categories"
                         }
-                    }
+                    },
+                    value: options.field
                 });
         }
     }

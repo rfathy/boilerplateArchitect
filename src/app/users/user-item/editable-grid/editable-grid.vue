@@ -1,5 +1,6 @@
 <template>
-  <div class="grid-template">
+    <!-- k-rtl class can be added to the following div in case of Ar -->
+  <div class="grid-template"> 
     <kendo-grid :data-source="localDataSource"
                 :editable="'inline'"
                 :toolbar="['create']">
@@ -8,10 +9,11 @@
                            :title="'Unit Price'"
                            :width="120"
                            :format="'{0:c}'"></kendo-grid-column>
-        <kendo-grid-column :field="'Category'"
+        <kendo-grid-column :field="'Category.CategoryName'"
                            :title="'Category'"
-                           :editor="categoryDropDownEditor"
-                           :template="'#=Category.CategoryName#'"></kendo-grid-column>
+                           :editor="categoryDropDownEditor"></kendo-grid-column> 
+                           <!-- :field="'Category'"
+                                :template="'#=Category.CategoryName#'" -->
         <kendo-grid-column :field="'Discontinued'" :width="120"></kendo-grid-column>
         <kendo-grid-column :command="['edit', 'destroy']"
                            :title="'&nbsp;'"

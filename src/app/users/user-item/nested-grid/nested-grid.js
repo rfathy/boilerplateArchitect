@@ -88,7 +88,8 @@ export default {
                         transport: {
                             read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Categories"
                         }
-                    }
+                    },
+                    value: options.field
             });
         },
         openPopupTemplate: function(e) {
