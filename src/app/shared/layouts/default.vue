@@ -2,8 +2,8 @@
   <div>
         <header class="main-header">
             <ProfileBar />
+            <NavBar />
             <div class="container-fluid mb-2">
-              <NavBar />
             </div>
         </header>
         <div id="right-panel" class="right-panel">
@@ -38,4 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  #right-panel{
+    margin-top: 110px;
+  }
 </style>

@@ -14,17 +14,56 @@
         max-height: 35px;
         border-radius: 50%;
     }
-    .horizontal-navbar {
-        background-color: #0257A8;
-        border-radius: 6px;
-        position: relative;
-        .megamenu {
-            position: static;
-        }        
-        .megamenu .dropdown-menu {
-            background: none;
-            border: none;
+    .breadcrumbs{
+        top: 70px;
+        width: 98%;
+        z-index: 100;
+        a:hover {
+            text-decoration: none;
+            padding-bottom: 10px;
+            border-bottom: 5px solid;
+          }
+          
+          a.products:hover {
+            border-bottom: 0;
+          }
+          
+          .displayMega a:hover {
+            text-decoration: none;
+            padding-bottom: 0;
+            border-bottom: 0;
+          }
+          
+          ul li {
+            padding: 0;
+            margin-bottom: 0;
+          }
+          
+          .displayMega {
+              background: #eee;
+              border-top: 5px solid #007bff;
+              display: block;
+              margin: 10px 0 0;
+              opacity: 1;
+              position: absolute;
+              left: 0;
+              width: 100%;
+              z-index: 999999;
+          }
+          .displaynavEl{
+            background: #eee;
+            border-top: 5px solid #007bff;
+            display: block;
+            margin: 10px 0 0;
+            opacity: 1;
+            position: absolute;
+            left: 0;
             width: 100%;
-        }
+            z-index: 999999;
+          }
+          
+          ul.level-2 {
+            background: #eee;
+          }
     }
 }
