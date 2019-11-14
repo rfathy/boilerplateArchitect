@@ -88,12 +88,13 @@ export default {
     },
     methods: {
         categoryDropDownEditor: function(container, options) {
-            $('<input required name="' + options.field + '"/>')
+            $('<select required name="' + options.field + '"/>')
                 .appendTo(container)
                 .kendoDropDownTree({
                     autoBind: false,
                     dataTextField: "CategoryName",
                     dataValueField: "CategoryID",
+                    valuePrimitive: true,
                     checkboxes: true,
                     checkAll: true,
                     autoClose: false,

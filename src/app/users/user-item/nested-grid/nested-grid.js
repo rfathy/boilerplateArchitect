@@ -1,4 +1,9 @@
 import $ from 'jquery';
+import Vue from 'vue';
+
+import popup from '../popup/popup.vue';
+
+const popupTemplate = Vue.component(popup.name, popup);
 
 export default {
     name: "nested-grid",
@@ -23,7 +28,10 @@ export default {
                   field: 'EmployeeID',
                   operator: 'eq',
                   value: e.data.EmployeeID
-                }
+                },
+                // schemaModelId: "'ContractID'",
+                // schema-model-fields: "schemaModelFields",
+                batch: 'true'
               },
               toolbar: ['create'],
               editable: 'inline',
@@ -61,13 +69,14 @@ export default {
           dataBound: function (ev) {
             ev.sender.expandRow(ev.sender.tbody.find('tr.k-master-row').first())
           },
-          categoryDropDownEditor: function(container, options) {
-            $('<input required name="' + options.field + '"/>')
+          categoryDropDownEditor: function(container, options) { 
+            $('<select required name="' + options.field + '" />')
                 .appendTo(container)
                 .kendoDropDownTree({
                     autoBind: false,
                     dataTextField: "CategoryName",
                     dataValueField: "CategoryID",
+                    valuePrimitive: true,
                     checkboxes: true,
                     checkAll: true,
                     autoClose: false,
@@ -80,11 +89,11 @@ export default {
                     }
             });
         },
-        colBtnTemp: function() {
-            return `<button class="btn btn-primary" @click="${this.openPopup()}"> Sara>> </button>`
-        },
-        openPopup: function() {
-            alert('hi')
+        popupTemplate: function(e) {
+            return {
+              template: popupTemplate,
+              templateArgs: e
+            };
         }
     }
 }
