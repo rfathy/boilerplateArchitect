@@ -6,3 +6,13 @@
   margin: 0;
   padding: 0;
 }
+
+// max height of kendo multi select to show 2 rows of its options
+.k-multiselect-wrap {
+    max-height: 77px;
+    overflow: auto;
+}
+
+body{
+  background:#c9c9c9;
+}
