@@ -6,7 +6,7 @@
             <div class="container-fluid mb-2">
             </div>
         </header>
-        <div id="right-panel" class="right-panel">
+        <div id="right-panel" class="right-panel rounded p-2">
             <div v-bind:pagetitle="pagetitle"></div>
             <div class="content">
             <slot />          
@@ -39,6 +39,9 @@ export default {
 
 <style lang="scss" scoped>
   #right-panel{
-    margin-top: 110px;
+    margin: 113px auto 0 auto;
+    background: #d5d5d5;
+    box-shadow: 0 4px 3px 2px #adadad;
+    width: 99.5%;
   }
 </style>

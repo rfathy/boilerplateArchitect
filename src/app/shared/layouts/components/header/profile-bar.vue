@@ -4,20 +4,22 @@
       <img class="custom-logo" src="@/assets/img/logo.png" alt="logo" draggable="false">
     </a>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-        <form class="form-inline navbar-nav mr-auto col-5">
-        <button class="border-bottom border-left border-right border-top btn mr-1 rounded-left" type="button">
-            <img src="@/assets/svg/register-new.svg" alt="Register New Patient">
-        </button>
-        <button class="btn btn-outline-success" type="button">
-            <img src="@/assets/svg/search.svg" alt="Search">
-        </button>
-        <input class="form-control" type="search" placeholder="Search for patient (Name, Code, Phone Number)" aria-label="Search">
+        <form class="form-inline navbar-nav mr-auto col-5 search-patient">
+          <button class="bg-grey-lt btn cust-btn pl-2 pr-2 pt-1 rounded-lg" type="button">
+              <img src="@/assets/svg/register-new.svg" alt="Register New Patient">
+          </button>
+          <button class="bg-grey-lt btn cust-btn mr-1 pl-2 pr-2 pt-1 rounded-lg" type="button">
+              <img src="@/assets/svg/search.svg" alt="Search">
+          </button>
+          <input class="bg-grey-lt form-control w-75 cust-input rounded-lg c-blue" type="search" placeholder="Search for patient (Name, Code, Phone Number)" aria-label="Search">
       </form>
       <div>
         <img class="user-img" src="@/assets/img/user.png" alt="user image" draggable="false">
-        <strong>Moataz Mohamed</strong>
-        <span>Physician</span>
-        <b-dropdown id="dropdown-right" right text="" variant="primary" class="m-2">
+        <span class="align-middle d-inline-block ml-1 c-blue user-id">
+          <strong class="d-flex">Moataz Mohamed</strong>
+          <span class="d-flex opaque-5">Physician</span>
+        </span>
+        <b-dropdown id="dropdown-right" right text="" variant="link" class="m-2">
           <b-dropdown-item href="javascript:;">Profile</b-dropdown-item>
           <b-dropdown-item href="javascript:;">Logout</b-dropdown-item>
         </b-dropdown>
