@@ -3,7 +3,7 @@
         <header class="main-header">
             <ProfileBar />
             <NavBar />
-            <div class="container-fluid mb-2">
+            <div class="container-fluid main-container-fluid mb-2">
             </div>
         </header>
         <div id="right-panel" class="right-panel rounded p-2">
@@ -43,5 +43,6 @@ export default {
     background: #d5d5d5;
     box-shadow: 0 4px 3px 2px #adadad;
     width: 99.5%;
+    flex: 1;
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="user-list">
     <kendo-datasource ref="datasource1"
-                        :transport-read-url="'http://localhost:8080/mock-data/users.json'"
+                        :transport-read-url="'../../../mock-data/users.json'"
                         :batch='true'
                         :page-size='15'>
     </kendo-datasource>
@@ -34,7 +34,7 @@
 
 
     <kendo-datasource ref="datasource2"
-                        :transport-read-url="'http://localhost:8080/mock-data/users1.json'"
+                        :transport-read-url="'../../../mock-data/users.json'"
                         :batch='true'
                         :page-size='15'>
     </kendo-datasource>

@@ -89,7 +89,7 @@
                 position: absolute;
                 left: 0;
                 width: 100%;
-                top: 75px;
+                top: 111px;
                 z-index: 999999;
                 .rout-holder{
                     background: #0357a8;
@@ -138,5 +138,20 @@
             }
 
         }
+        .horizontal-navbar-menu {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            background-color: #0257A8;
+            z-index: 1;
+            left: 0;
+            top: 48px;
+            li {
+                img {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }        
     }
 }

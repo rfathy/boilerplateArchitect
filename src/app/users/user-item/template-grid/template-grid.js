@@ -21,8 +21,6 @@ export default {
     },
     methods: {
         generateRowTemplate: function() {
-            console.log(this.SelectedTypes);
-            
             var template =
                 '<tr data-uid="#: uid #">' +
                     '<td class="details">' +
