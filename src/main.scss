@@ -22,7 +22,7 @@ html, body, .main-container-fluid{
 body{
   background:#c9c9c9;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size:14px;
+  font-size:14px !important;
   .clear{
     clear: both
   }
@@ -62,4 +62,24 @@ body{
   .btn-open-popup {
     pointer-events: none;
   }
+}
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+button#patient-classification__BV_toggle_{
+  color: inherit;
+  line-height: 11px;
+  text-transform: inherit;
+  font-size: inherit;
 }
