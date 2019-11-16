@@ -120,8 +120,7 @@ export default {
         }
     },
     methods: { 
-        categoryDropDownEditor: function(container, options) {
-            
+        categoryDropDownEditor: function(container, options) { 
             $('<select name="' + options.field + '" />')
                 .appendTo(container)
                 .kendoDropDownTree({
@@ -140,7 +139,7 @@ export default {
                         }
                     },
                     // value: options.model.Category.CategoryID,
-                    change: function(e) { debugger
+                    change: function(e) {
                         let names = e.sender._tags.map(item => item.CategoryName).join(', ')
                         options.model[options.field] = names
                     }
@@ -148,7 +147,7 @@ export default {
         },
         clearFilter: function () { 
             // e.data.commandName
-
+    
             // var gridWidget = this.$refs.gridReg.kendoWidget();
             // var tr = $(e.target).closest('tr');
             // var data = gridWidget.dataItem(tr);

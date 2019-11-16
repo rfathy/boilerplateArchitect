@@ -5,7 +5,7 @@
                   :filter="'td a, tr:not(.k-grid-edit-row) td:not(.k-command-cell)'" 
                   :position="'top'"
                   :content="getTooltipTilte">
-      <kendo-grid :data-source="localDataSource"
+        <kendo-grid :data-source="localDataSource"
                 :editable="'inline'"
                 :pageable='true'
                 :sortable="true"
@@ -32,11 +32,9 @@
                            :editor="customBoolEditor"></kendo-grid-column>
         <kendo-grid-column :command="customGridCommand"
                            :title="'&nbsp;'"
-                           :command-command-item-icon-class-edit="'k-icon k-i-plus'"
                            :width="220"></kendo-grid-column>
-      </kendo-grid> 
+      </kendo-grid>
     </kendo-tooltip>
-    
   </div>
 </template>
 
