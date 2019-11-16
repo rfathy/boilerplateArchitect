@@ -9,7 +9,7 @@
                            :title="'Unit Price'"
                            :width="120"
                            :format="'{0:c}'"></kendo-grid-column>
-        <kendo-grid-column :field="'Category.CategoryName'"
+        <kendo-grid-column :field="'Category.CategoryID'"
                            :title="'Category'"
                            :editor="categoryDropDownEditor"></kendo-grid-column> 
                            <!-- :field="'Category'"

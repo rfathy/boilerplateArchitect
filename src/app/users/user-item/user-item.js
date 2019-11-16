@@ -16,17 +16,20 @@ export default {
                 {
                     id: 1,
                     name: "Template Grid",
-                    component: TemplateGrid
+                    component: TemplateGrid,
+                    class: "k-state-active"
                 },
                 {
                     id: 2,
                     name: "Nested Grid",
-                    component: NestedGrid
+                    component: NestedGrid,
+                    class: ""
                 },
                 {
                     id: 3,
                     name: "Editable Grid",
-                    component: EditableGrid
+                    component: EditableGrid,
+                    class: ""
                 }
             ],
             selected: TemplateGrid

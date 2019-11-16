@@ -1,5 +1,6 @@
 <template>
     <div class="form-valid">
+        <Loader v-if="isLoading" />
         <h3 class="mt10">Validations</h3>
         <ValidationObserver ref="observer" v-slot="{ invalid }"  @submit.prevent="submit()" class="row">
             <div class="col col-md-4 mt10">

@@ -2,7 +2,7 @@
   <div class="grid-template">
     <kendo-tabstrip @select="onSelect">
         <ul>
-            <li v-for="tab in tabs" :key="tab.id">{{ tab.name }}</li>
+            <li :class="tab.class" v-for="tab in tabs" :key="tab.id">{{ tab.name }}</li>
         </ul>
         <div>
           <template-grid />

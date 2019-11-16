@@ -4,7 +4,7 @@
             <img class="ml-2 mt-2" src="@/assets/svg/dots.svg" alt="">
         </a>
         <transition name="slide-fade">
-            <div transition="expand" class="container-fluid mega-menu rounded-lg mt-2 shadow-sm" v-if="navEl" :class="{ displaynavEl : navEl }">
+            <div class="container-fluid mega-menu rounded-lg mt-2 shadow-sm" v-show="navEl" :class="{ displaynavEl : navEl }">
                 <ul id="site-navigation" class="list-inline mb-0 p-0 text-center">
                     <li class="list-inline-item pt-2 pb-2 pl-3 pr-3">
                         <a class="d-inline-block" href="javascript:;">
@@ -35,10 +35,16 @@
             </div>
         </transition>
         <div class="bread-links d-inline-block text-capitalize mr-auto">
-            <ul class="opaque-5 m-0 d-inline-block">
-                <li class="d-inline-block"><router-link :to="'/'"><img class="ml-1 mr-lg-n1 mt-1" src="@/assets/svg/home.svg" alt=""></router-link></li>
+            <ul class="m-0 d-inline-block">
+                <li class="opaque-5 d-inline-block"><router-link :to="'/'"><img class="ml-1 mr-lg-n1 mt-1" src="@/assets/svg/home.svg" alt=""></router-link></li>
+                <li class="opaque-5 d-inline-block" v-for="route in $route.matched" :key="route.name">
+                    <router-link :to="{name: route.name}">
+                    {{ route.meta.title }}
+                    </router-link>
+                </li>
             </ul>
-            <span class="d-inline-block">current page</span>
+            
+            <span class="d-inline-block"></span>
         </div>
         <b-dropdown id="patient-classification" right text="out Patient" variant="link" class="text-capitalize text-white border border-light rounded-lg">
           <b-dropdown-item href="javascript:;">inpatient</b-dropdown-item>
