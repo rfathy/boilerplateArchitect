@@ -1,7 +1,7 @@
 <template>
-    <div class="breadcrumbs fixed-top m-auto rounded-lg">
+    <div class="breadcrumbs fixed-top m-auto rounded-lg row">
         <a href="javascript:;" class="pr-2 start-nav" @click="navEl = !navEl">
-            <img class="ml-2 mt-1" src="@/assets/svg/dots.svg" alt="">
+            <img class="ml-2 mt-2" src="@/assets/svg/dots.svg" alt="">
         </a>
         <transition name="slide-fade">
             <div class="container-fluid mega-menu rounded-lg mt-2 shadow-sm" v-show="navEl" :class="{ displaynavEl : navEl }">
