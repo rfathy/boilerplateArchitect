@@ -135,6 +135,13 @@
                     margin-right: 5px;
                     margin-left: 5px;
                 }
+                li:last-child{
+                    color: #fff;
+                    opacity: 1 !important;
+                    &:after{
+                        content:''
+                    }
+                }
             }
 
         }

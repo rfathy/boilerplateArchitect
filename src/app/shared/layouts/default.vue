@@ -12,8 +12,6 @@
             <slot />          
             </div>
         </div>
-    
-    
   </div>
 </template>
 
@@ -22,18 +20,10 @@ import ProfileBar from '@/app/shared/layouts/components/header/profile-bar.vue';
 import NavBar from '@/app/shared/layouts/components/header/nav-bar.vue';
 
 export default {
-  watch: {
-    '$route' (to) {
-      this.pagetitle = to.meta.title;
-    }
-  },
   components: {
     ProfileBar,
     NavBar
-  },
-  data: () => ({
-    pagetitle: '',
-  }),
+  }
 };
 </script>
 
