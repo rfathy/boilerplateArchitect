@@ -1,10 +1,42 @@
 import $ from 'jquery';
+import kendo from '@progress/kendo-ui';
 
 export default {
     name: "editable-grid",
     data() {
         return {
+            customGridCommand: [
+                { 
+                    name: 'edit', 
+                    text: { edit: "edit", cancel: "Cancel", update: "Update" },
+                    iconClass: {
+                        edit: "k-icon k-i-edit",
+                        update: "k-icon k-i-check",
+                        cancel: "k-icon k-i-close"
+                    },
+                    className: 'icon-only',
+                    click: (e) => {
+                        e.preventDefault()
+                        this.clearFilter(e)
+                    }
+                    // template: '<a class="k-button k-button-icontext k-grid-add"><span class="k-icon k-i-plus"></span>New Row</a>'
+                }, 
+                {
+                    name: 'destroy',
+                    text: 'Delete',
+                    title: 'Delete',
+                    iconClass: 'k-icon k-i-close',
+                    className: 'icon-only'
+                }
+            ],
             localDataSource: {
+                // transport: {
+                //     parameterMap: function(options, operation) {
+                //         if (operation !== "read" && options.models) {
+                //             return {models: kendo.stringify(options.models)};
+                //         }
+                //     }
+                // },
                 schema: {
                     model: {
                         id: "ProductID",
@@ -17,6 +49,7 @@ export default {
                         }
                     }
                 },
+                pageSize: 20,
                 data: [{
                     "ProductID": 1,
                     "ProductName": "Chai",
@@ -87,8 +120,9 @@ export default {
         }
     },
     methods: { 
-        categoryDropDownEditor: function(container, options) { 
-            $('<select required name="' + options.field + '"/>')
+        categoryDropDownEditor: function(container, options) {
+            
+            $('<select name="' + options.field + '" />')
                 .appendTo(container)
                 .kendoDropDownTree({
                     autoBind: false,
@@ -98,14 +132,53 @@ export default {
                     checkboxes: true,
                     checkAll: true,
                     autoClose: false,
+                    filter: 'startswith',
                     dataSource: {
                         type: "odata",
                         transport: {
                             read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Categories"
                         }
                     },
-                    value: options.field
+                    // value: options.model.Category.CategoryID,
+                    change: function(e) {
+                        let names = e.sender._tags.map(item => item.CategoryName).join(', ')
+                        options.model[options.field] = names
+                    }
                 });
+        },
+        clearFilter: function () { 
+            // e.data.commandName
+
+            // var gridWidget = this.$refs.gridReg.kendoWidget();
+            // var tr = $(e.target).closest('tr');
+            // var data = gridWidget.dataItem(tr);
+            // console.log(data);
+        },
+        customBoolEditor(container) {
+            var guid = kendo.guid();
+            $('<input class="k-checkbox" id="' + guid + '" type="checkbox" name="Discontinued" data-type="boolean" data-bind="checked:Discontinued">').appendTo(container);
+            $('<label class="k-checkbox-label" for="' + guid + '">&#8203;</label>').appendTo(container);
+        },
+        editAction: function(e) {
+            e.preventDefault()
+            // In case create/edit 
+            // let selectedProductId = e.model.ProductID           
+        },
+        removeAction: function(e) { 
+            e.preventDefault()
+            // e.model
+            // e.row
+            // e.sender
+        },
+        saveAction: function(e) {
+            e.preventDefault()
+            // e.model
+            // e.container
+            // e.sender
+            // e.values
+        },
+        getTooltipTilte: function(e) {
+            return e.target.text() 
         }
     }
 }

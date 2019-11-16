@@ -3,7 +3,7 @@
         <kendo-datasource ref="datasource1"
                       :batch='true'
                       :page-size='20'
-                      :transport-read-url="'http://localhost:8080/mock-data/users.json'">
+                      :transport-read-url="'../../../../mock-data/users.json'">
         </kendo-datasource>
 
         <kendo-grid ref="grid"

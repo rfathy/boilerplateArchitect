@@ -10,10 +10,15 @@ Vue.use(BootstrapVue)
 
 //kendo
 import '@progress/kendo-ui';
+
 import { Grid, GridInstaller } from '@progress/kendo-grid-vue-wrapper';
 Vue.use(GridInstaller);
+
 import { DataSource, DataSourceInstaller } from '@progress/kendo-datasource-vue-wrapper';
 Vue.use(DataSourceInstaller)
+
+import { Tooltip, KendoPopupsInstaller } from '@progress/kendo-popups-vue-wrapper'
+Vue.use(KendoPopupsInstaller)
 
 //styles & layout
 import './main.scss';
@@ -31,7 +36,8 @@ new Vue({
   store,
   components: {
     Grid,
-    DataSource
+    DataSource,
+    Tooltip
   },
   render: h => h(App)
 }).$mount('#app');

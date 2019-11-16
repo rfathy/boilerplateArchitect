@@ -7,6 +7,7 @@
     }
     .fixed-top{
         background-color: #fff !important;
+        box-shadow: 0 0px 6px 3px #dcdcdc;
     }
     .custom-logo {
         width: 182px;
@@ -48,11 +49,9 @@
         height:35px;
         a.start-nav{
             display: inline-block;
-            height: 35px;
+            height: 30px;
             border-right: 1px solid #7fa8d1;
-            img{
-                vertical-align: text-top;
-            }
+            vertical-align: middle;
         }
         a:hover {
             text-decoration: none;
@@ -77,27 +76,11 @@
             }      
             ul li {
                 padding: 0;
-                margin: 0 1px 0 0;
+                margin-bottom: 0;
                 a{
                     img{
                         height:65px;
                     }
-                }
-                &:hover{
-                    background: #e5f3f7;
-                }
-                &.active-link{
-                    border-bottom: 3px solid #0357a8
-                }
-                &.active-link:after{
-                    content: "";
-                    border-top: 0.5em solid #0357a8;
-                    border-right: 0.5em solid transparent;
-                    border-bottom: 0;
-                    border-left: 0.5em solid transparent;
-                    position: absolute;
-                    bottom: -7px;
-                    margin-left: -5px;
                 }
             }
             .displayMega {
@@ -117,21 +100,6 @@
                     &:last-child{
                         border-top-right-radius: 0.3rem ;
                         border-bottom-right-radius: 0.3rem ;
-                    }                    
-                    h6{
-                        border-left: 3px solid #11e4ea;
-                        color: #bfd5e9;
-                    }
-                    ul{
-                        li{
-                            a:hover{
-                                background: transparent !important;
-                                color: #11e4ea !important
-                            }
-                            &:hover{
-                                background: transparent !important;
-                            }
-                        }
                     }
                 }
             }
@@ -184,12 +152,6 @@
                     height: 100px;
                 }
             }
-        }   
-        #patient-classification{
-            height: 31px;
-            margin: 2px 2px 2px 0;
-            
-        }    
+        }        
     }
 }
- 

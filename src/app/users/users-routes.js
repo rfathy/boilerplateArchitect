@@ -8,6 +8,7 @@ const userRoutes = [
   {
     path: '/users',
     component: AppUsers,
+    // meta: {layout: 'no-bars', title: 'Login'},
     meta: {title: 'Users'},
     children: [
       {

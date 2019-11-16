@@ -1,5 +1,5 @@
 <template>
-  <nav class="profile-bar pb-1 pt-1 navbar navbar-expand-md navbar-light fixed-top bg-light shadow-sm">
+  <nav class="profile-bar pb-1 pt-1 navbar navbar-expand-md navbar-light fixed-top bg-light">
     <a class="navbar-brand" href="#">
       <img class="custom-logo" src="@/assets/img/logo.png" alt="logo" draggable="false">
     </a>
