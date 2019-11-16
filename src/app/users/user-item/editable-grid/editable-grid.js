@@ -140,7 +140,7 @@ export default {
                         }
                     },
                     // value: options.model.Category.CategoryID,
-                    change: function(e) {
+                    change: function(e) { debugger
                         let names = e.sender._tags.map(item => item.CategoryName).join(', ')
                         options.model[options.field] = names
                     }
