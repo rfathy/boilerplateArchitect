@@ -58,7 +58,7 @@ export default {
                 field: 'ShipName',
                 title: 'Ship Name',
                 width: '350px',
-                editor: this.categoryDropDownEditor
+                // editor: this.categoryDropDownEditor
               },
               {
                 command: ['edit', 'destroy'],
@@ -71,27 +71,27 @@ export default {
           dataBound: function (ev) {
             ev.sender.expandRow(ev.sender.tbody.find('tr.k-master-row').first())
           },
-          categoryDropDownEditor: function(container, options) { 
-            $('<select required name="' + options.field + '" />')
-                .appendTo(container)
-                .kendoDropDownTree({
-                    autoBind: false,
-                    dataTextField: "CategoryName",
-                    dataValueField: "CategoryID",
-                    valuePrimitive: true,
-                    checkboxes: true,
-                    checkAll: true,
-                    autoClose: false,
-                    clearButton: true,
-                    dataSource: {
-                        type: "odata",
-                        transport: {
-                            read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Categories"
-                        }
-                    },
-                    value: options.field
-            });
-        },
+        //   categoryDropDownEditor: function(container, options) { 
+        //     $('<select required name="' + options.field + '" />')
+        //         .appendTo(container)
+        //         .kendoDropDownTree({
+        //             autoBind: false,
+        //             dataTextField: "CategoryName",
+        //             dataValueField: "CategoryID",
+        //             valuePrimitive: true,
+        //             checkboxes: true,
+        //             checkAll: true,
+        //             autoClose: false,
+        //             clearButton: true,
+        //             dataSource: {
+        //                 type: "odata",
+        //                 transport: {
+        //                     read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Categories"
+        //                 }
+        //             },
+        //             value: options.field
+        //     });
+        // },
         openPopupTemplate: function(e) {
             return {
                 template: ConfirmPopup,
