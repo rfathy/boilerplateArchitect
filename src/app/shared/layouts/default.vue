@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="toggleMenu">
         <header class="main-header">
             <ProfileBar />
             <NavBar />
@@ -18,11 +18,18 @@
 import ProfileBar from '@/app/shared/layouts/components/header/profile-bar.vue';
 import NavBar from '@/app/shared/layouts/components/header/nav-bar.vue';
 
+
 export default {
+  name: 'default',
+  data() {
+    return {
+    navEl: false
+    }
+  },
   components: {
     ProfileBar,
     NavBar
-  }
+  },
 };
 </script>
 
