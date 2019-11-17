@@ -41,8 +41,7 @@ export default {
         async submit () {        
         const isValid = await this.$refs.observer.validate();
             if (isValid) {
-                
-                alert('Data is valid'); 
+                alert('Data is valid');
                 return
             } else {
             alert('Data is not valid');
@@ -59,7 +58,8 @@ export default {
         min:'',
         max:'',
         compared:'',
-        confirm:''
+        confirm:'',
+        isLoading:false
     }),
     directives: {
         onlyEn,

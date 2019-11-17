@@ -1,5 +1,5 @@
 <template>
-  <div @click="toggleMenu">
+  <div>
         <header class="main-header">
             <ProfileBar />
             <NavBar />
