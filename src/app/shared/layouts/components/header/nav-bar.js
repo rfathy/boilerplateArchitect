@@ -1,21 +1,27 @@
+import json from '../../../../../mock-data/navigation.json'
 export default {
-    name: "nav-bar",
-    data() {
-      return {
-        isVisible: false
-      }
-    },
+  name: "nav-bar",
+  component :{
+      props: [ 
+          'mega', 
+          'isActivelink',
+          'level3', 
+          'products',
+          'navEl'
+      ],
+      template: ''
+  },
+  data: () => ({
+      mega: false,
+      navEl: false,
+      isActivelink: false,
+      level3: '',
+      modules: json
+    }), 
     methods: {
-      toggleMenu() {
-        this.isVisible = !this.isVisible;
-      },
-      toggleItem () {
-        let menuItemContainer = document.querySelector('.manu-item-container');
-        if (menuItemContainer.classList.contains('hide')) {
-          menuItemContainer.classList.remove('hide');
-        } else {
-          menuItemContainer.classList.add('hide');
-        }
+      // Reset all variables upon leaving mega menu area
+      levelReset: function() {
+        this.level3 = ''
       }
     }
-};
+  };

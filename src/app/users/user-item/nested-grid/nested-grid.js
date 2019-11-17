@@ -1,15 +1,17 @@
 import $ from 'jquery';
-import Vue from 'vue';
+import { EventBus } from '@/app/shared/services/event-bus.js';
+// import Vue from 'vue';
 
-import popup from '../popup/popup.vue';
+import ConfirmPopup from '../confirm-popup/confirm-popup.vue';
 
-const popupTemplate = Vue.component(popup.name, popup);
+// const popupTemplate = Vue.component(popup.name, popup);
 
 export default {
     name: "nested-grid",
     data() {
         return {
-            
+            dataText: `Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.`
         }
     },
     methods: {
@@ -86,14 +88,26 @@ export default {
                         transport: {
                             read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Categories"
                         }
-                    }
+                    },
+                    value: options.field
             });
         },
-        popupTemplate: function(e) {
+        openPopupTemplate: function(e) {
             return {
-              template: popupTemplate,
-              templateArgs: e
+                template: ConfirmPopup,
+                templateArgs : Object.assign({}, e, {
+                    parentComponent: this.$refs.datasource1,
+                    dataText: this.dataText,
+                    confirmBtnText: 'Ok',
+                    cancelBtnText: 'Close',
+                    headerTitle: 'Popup Title'
+                })
             };
         }
+    },
+    mounted() {
+        EventBus.$on('confirmed-action', (e) => {
+            console.log(e);
+        });
     }
 }

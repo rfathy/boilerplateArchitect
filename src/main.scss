@@ -12,7 +12,86 @@
     max-height: 77px;
     overflow: auto;
 }
+// kendo command button without text
+.k-command-cell {
+  .k-button-icontext {
+    font-size: 0;
+    margin: 0 0.4rem;
 
+    .k-icon { 
+      margin: 0;
+    } 
+  }
+}
+
+html, body, .main-container-fluid{
+  height: 100%;
+}
+.container-fluid{
+  display: flex;
+    flex-direction: column;
+}
 body{
   background:#c9c9c9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:14px !important;
+  .clear{
+    clear: both
+  }
+  /*colors*/
+  .c-blue{
+    color: #0357a8;
+  }
+  .bg-grey-lt{
+    background: #e8f0f7;
+  }
+  /*butons*/
+  .cust-btn{
+    border: none;
+    outline: none;
+    &:hover,
+    &:focus{
+      outline: none;
+    }
+  }
+  /*inputs*/
+  .cust-input{
+    border: none;
+    outline: none;
+    height: 34px;
+  }
+  /*opacity*/
+  .opaque-5{
+    opacity: 0.5;
+  }
+  .opaque-3{
+    opacity: 0.3;
+  }
+}
+
+// Disable button in grid that opens popup in case of add/edit row
+.k-grid-edit-row {
+  .btn-open-popup {
+    pointer-events: none;
+  }
+}
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+button#patient-classification__BV_toggle_{
+  color: inherit;
+  line-height: 11px;
+  text-transform: inherit;
+  font-size: inherit;
 }

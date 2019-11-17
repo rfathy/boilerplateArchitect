@@ -7,7 +7,6 @@
     }
     .fixed-top{
         background-color: #fff !important;
-        box-shadow: 0 0px 6px 3px #dcdcdc;
     }
     .custom-logo {
         width: 182px;
@@ -17,17 +16,166 @@
         max-height: 35px;
         border-radius: 50%;
     }
-    .horizontal-navbar {
-        background-color: #0257A8;
-        border-radius: 6px;
-        position: relative;
-        .megamenu {
-            position: static;
+    .user-id{
+        line-height: 15px;
+    }
+    .search-patient{
+        button:first-child{
+            border-bottom-right-radius: 0 !important;
+            border-top-right-radius: 0 !important;
+            border-bottom: 1px solid transparent;
+        }
+        button:nth-child(2){
+            border-bottom-left-radius: 0 !important;
+            border-top-left-radius: 0 !important;
+            border-bottom: 1px solid transparent;
+            margin-left: 2px;
+        }
+        input{            
+            border-bottom: 1px solid transparent;
+            &::placeholder{
+                opacity: 0.5;
+                color:#0357a8
+            }
+        }
+    }
+    .breadcrumbs{
+        top: 70px;
+        width: 98%;
+        z-index: 100;
+        background: #0357a8 !important;
+        color: #fff !important;
+        height:35px;
+        a.start-nav{
+            display: inline-block;
+            height: 35px;
+            border-right: 1px solid #7fa8d1;
+            img{
+                vertical-align: text-top;
+            }
+        }
+        a:hover {
+            text-decoration: none;
+        }  
+        .mega-menu{
+            .displayMega a:hover {
+                text-decoration: none;
+                padding-bottom: 0;
+                border-bottom: 0;
+            }    
+            .list-inline-item{
+                a,
+                a:link,
+                a:active,
+                a:visited,
+                a:hover{
+                    span{
+                        color: #0357a8;
+                        font-weight: bold
+                    }
+                }
+            }      
+            ul li {
+                padding: 0;
+                margin: 0 1px 0 0;
+                a{
+                    img{
+                        height:65px;
+                    }
+                }
+                &:hover{
+                    background: #e5f3f7;
+                }
+                &.active-link{
+                    border-bottom: 3px solid #0357a8
+                }
+                &.active-link:after{
+                    content: "";
+                    border-top: 0.5em solid #0357a8;
+                    border-right: 0.5em solid transparent;
+                    border-bottom: 0;
+                    border-left: 0.5em solid transparent;
+                    position: absolute;
+                    bottom: -7px;
+                    margin-left: -5px;
+                }
+            }
+            .displayMega {
+                display: block;
+                opacity: 1;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                top: 111px;
+                z-index: 999999;
+                .rout-holder{
+                    background: #0357a8;
+                    &:first-child{
+                        border-top-left-radius: 0.3rem ;
+                        border-bottom-left-radius: 0.3rem ;
+                    }
+                    &:last-child{
+                        border-top-right-radius: 0.3rem ;
+                        border-bottom-right-radius: 0.3rem ;
+                    }                    
+                    h6{
+                        border-left: 3px solid #11e4ea;
+                        color: #bfd5e9;
+                    }
+                    ul{
+                        li{
+                            a:hover{
+                                background: transparent !important;
+                                color: #11e4ea !important
+                            }
+                            &:hover{
+                                background: transparent !important;
+                            }
+                        }
+                    }
+                }
+            }
+            
         }        
-        .megamenu .dropdown-menu {
-            background: none;
-            border: none;
+        
+        .displaynavEl{
+            margin-top: 30px;
+            background: #ecfbff;
+            display: block;
+            margin: 10px 0 0;
+            opacity: 1;
+            position: absolute;
+            left: 0;
             width: 100%;
+            z-index: 999999;
+            top: 35px;
+        }          
+        ul.level-2 {
+            color: #fff;
+        }
+        .bread-links{
+            a,
+            a:link,
+            a:active,
+            a:visited,
+            a:hover{
+                color:#fff;
+            }
+            ul{
+                li:after {
+                    content:'\003e';
+                    margin-right: 5px;
+                    margin-left: 5px;
+                }
+                li:last-child{
+                    color: #fff;
+                    opacity: 1 !important;
+                    &:after{
+                        content:''
+                    }
+                }
+            }
+
         }
         .horizontal-navbar-menu {
             position: absolute;
@@ -43,6 +191,12 @@
                     height: 100px;
                 }
             }
-        }        
+        }   
+        #patient-classification{
+            height: 31px;
+            margin: 2px 2px 2px 0;
+            
+        }    
     }
 }
+ 

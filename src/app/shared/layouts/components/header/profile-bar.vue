@@ -1,23 +1,23 @@
 <template>
-  <nav class="profile-bar pb-1 pt-1 navbar navbar-expand-md navbar-light fixed-top bg-light">
+  <nav class="profile-bar pb-1 pt-1 navbar navbar-expand-md navbar-light fixed-top bg-light shadow-sm">
     <a class="navbar-brand" href="#">
       <img class="custom-logo" src="@/assets/img/logo.png" alt="logo" draggable="false">
     </a>
     <div class="collapse navbar-collapse" id="navbarCollapse">
-        <form class="form-inline navbar-nav mr-auto col-5">
-        <button class="border-bottom border-left border-right border-top btn mr-1 rounded-left" type="button">
-            <img src="@/assets/svg/register-new.svg" alt="Register New Patient">
-        </button>
-        <button class="btn border-bottom border-left border-right border-top rounded-right" type="button">
-            <img src="@/assets/svg/search.svg" alt="Search">
-        </button>
-        <input class="form-control w-75" type="search" placeholder="Search for patient (Name, Code, Phone Number)" aria-label="Search">
+        <form class="form-inline navbar-nav mr-auto col-5 search-patient">
+          <button class="bg-grey-lt btn cust-btn pl-2 pr-2 pt-1 rounded-lg" type="button">
+              <img src="@/assets/svg/register-new.svg" alt="Register New Patient">
+          </button>
+          <button class="bg-grey-lt btn cust-btn mr-1 pl-2 pr-2 pt-1 rounded-lg" type="button">
+              <img src="@/assets/svg/search.svg" alt="Search">
+          </button>
+          <input class="bg-grey-lt form-control w-75 cust-input rounded-lg c-blue" type="search" placeholder="Search for patient (Name, Code, Phone Number)" aria-label="Search">
       </form>
       <div>
         <img class="user-img" src="@/assets/img/user.png" alt="user image" draggable="false">
-        <span class="align-bottom d-inline-block ml-1">
+        <span class="align-middle d-inline-block ml-1 c-blue user-id">
           <strong class="d-flex">Moataz Mohamed</strong>
-          <span class="d-flex">Physician</span>
+          <span class="d-flex opaque-5">Physician</span>
         </span>
         <b-dropdown id="dropdown-right" right text="" variant="link" class="m-2">
           <b-dropdown-item href="javascript:;">Profile</b-dropdown-item>
