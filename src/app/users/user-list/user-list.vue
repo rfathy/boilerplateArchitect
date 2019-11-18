@@ -1,8 +1,7 @@
 <template>
   <div class="user-list">
     <kendo-datasource ref="datasource1"
-                        :transport-read-url="'../../../mock-data/users.json'"
-                        :batch='true'
+                        :transport-read-url="'../../../mock-data/product.json'"
                         :page-size='15'>
     </kendo-datasource>
 
@@ -10,30 +9,44 @@
                 :data-source-ref="'datasource1'"
                 :pageable='true'
                 :editable="'inline'"
-                :filterable="true"
-                :server-paging="true">
-        <kendo-grid-column :field="'name'"
-                           :title="'User Name'"
-                           :filterable-cell-operator="'contains'"
-                           :filterable-multi="true"
-                           :filterable-search="true"
+                :filterable-mode="'row'">
+        <kendo-grid-column :field="'code'"
+                           :title="'Code'"
+                           :filterable-cell-show-operators="false"
                            :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'age'"
-                           :title="'User Age'"
-                           :filterable-cell-operator="'contains'"
-                           :filterable-multi="true"
-                           :filterable-search="true"
+        <kendo-grid-column :field="'en_name'"
+                           :title="'En Name'"
+                           :filterable-cell-show-operators="false"
                            :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'company'"
-                           :title="'Company'"
-                           :filterable-cell-operator="'contains'"
-                           :filterable-multi="true"
-                           :filterable-search="true"
+        <kendo-grid-column :field="'ar_name'"
+                           :title="'Ar Name'"
+                           :filterable-cell-show-operators="false"
+                           :width="120"></kendo-grid-column>
+        <kendo-grid-column :field="'classification'"
+                           :title="'Product Classification'"
+                           :filterable-cell-show-operators="false"
+                           :width="120"></kendo-grid-column> 
+        <kendo-grid-column :field="'description'"
+                           :title="'Description'"
+                           :filterable-cell-show-operators="false"
+                           :width="120"
+                           ></kendo-grid-column> 
+        <kendo-grid-column :field="'parent_category'"
+                           :title="'Parent Category'"
+                           :filterable-cell-show-operators="false"
+                           :width="120"></kendo-grid-column>
+        <kendo-grid-column :field="'status'"
+                           :title="'Status'"
+                           :filterable-cell-show-operators="false"
+                           :editor="customBoolEditor"
+                           :width="80"></kendo-grid-column>
+        <kendo-grid-column :command="['edit', 'destroy']"
+                           :title="'&nbsp;'"
                            :width="120"></kendo-grid-column>
     </kendo-grid>
 
 
-    <kendo-datasource ref="datasource2"
+    <!-- <kendo-datasource ref="datasource2"
                         :transport-read-url="'../../../mock-data/users.json'"
                         :batch='true'
                         :page-size='15'>
@@ -42,8 +55,7 @@
     <kendo-grid :height="600"
                 :data-source-ref="'datasource2'"
                 :pageable='true'
-                :editable="'inline'"
-                :filterable="true">
+                :editable="'inline'">
         <kendo-grid-column :field="'name'"
                            :title="'User Name'"
                            :filterable-cell-operator="'contains'"
@@ -62,7 +74,7 @@
                            :filterable-multi="true"
                            :filterable-search="true"
                            :width="120"></kendo-grid-column>
-    </kendo-grid>
+    </kendo-grid> -->
   </div>
 </template>
 
