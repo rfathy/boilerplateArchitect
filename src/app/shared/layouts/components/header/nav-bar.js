@@ -23,6 +23,17 @@ export default {
       // Reset all variables upon leaving mega menu area
       levelReset: function() {
         this.level3 = ''
+      },
+      collapsenavbar: function(e){        
+        if (e.target.classList.contains('rout-holder') || e.target.classList.contains('links-parent')){
+          e.preventDefault;
+        }
+        else{
+          console.log("sdf");
+          this.navEl = false;
+          this.mega = false;
+          this.isActivelink =false
+        }
       }
     }
   };

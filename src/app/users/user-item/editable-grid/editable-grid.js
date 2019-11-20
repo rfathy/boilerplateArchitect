@@ -139,9 +139,9 @@ export default {
                         }
                     },
                     // value: options.model.Category.CategoryID,
-                    change: function() {
-                        // let names = e.sender._tags.map(item => item.CategoryName).join(', ')
-                        // options.model.Category.CategoryName = names
+                    change: function(e) {
+                        let names = e.sender._tags.map(item => item.CategoryName).join(', ')
+                        options.model.Category.CategoryName = names
                     }
                 });
         },

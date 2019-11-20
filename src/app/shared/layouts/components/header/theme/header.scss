@@ -7,19 +7,30 @@
     }
     .fixed-top{
         background-color: #fff !important;
+        height: 44px;
     }
     .custom-logo {
-        width: 182px;
+        width: 151px;
+        margin-left: 7px;
+        margin-top: -10px;
     }
     .user-img{
-        width: 35px;
-        max-height: 35px;
+        width: 38px;
+        max-height: 38px;
         border-radius: 50%;
     }
     .user-id{
-        line-height: 15px;
+        line-height: 4px;
+        font-size: 10.5px;
+        letter-spacing: -0.5px;
+        font-weight: normal;
     }
     .search-patient{
+        margin-left: 5px;
+        .bg-grey-lt{
+            padding: 2px 3px 2px 5px !important;
+            line-height: 20px;
+        }
         button:first-child{
             border-bottom-right-radius: 0 !important;
             border-top-right-radius: 0 !important;
@@ -33,25 +44,69 @@
         }
         input{            
             border-bottom: 1px solid transparent;
+            max-height: 27px;
+            width: 82%;
+            font-size: 10px;
             &::placeholder{
                 opacity: 0.5;
                 color:#0357a8
             }
         }
     }
+    #profile-dropdown-right{
+        /deep/ .dropdown-toggle{
+            padding: 0;
+            margin: -20px 0 0 0;
+        }
+        /deep/ .dropdown-toggle::after{
+            content: "\2304";
+            border-top: none;
+            border-right: none;
+            border-bottom: 0;
+            border-left: none;
+            font-size: smaller;
+            font-weight: 700;
+            color: #0357a8;
+        }
+        /deep/ .dropdown-menu{
+            font-size: 12px;
+            margin-top: 20px;
+        }
+    }
+    .overlay{
+        position: fixed;
+        background: #000;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        z-index: 1000;
+        top: 44px;
+        left: 0;
+        opacity: 0.5;
+    }
+    .hide-scroll{
+        width: 100%;
+        height: 94px;
+        background: #c9c9c9;
+        position: fixed;
+        left: 0;
+        z-index: 9;
+        opacity: 0.5;
+    }
     .breadcrumbs{
-        top: 70px;
-        width: 98%;
+        top: 54px;
+        width: 97.5%;
         z-index: 1000;
         background: #0357a8 !important;
         color: #fff !important;
-        height:35px;
+        height: 32px;
         a.start-nav{
             display: inline-block;
-            height: 35px;
+            height: 32px;
             border-right: 1px solid #7fa8d1;
             img{
                 vertical-align: text-top;
+                margin: 7px 0 0 7px;
             }
         }
         a:hover {
@@ -79,6 +134,7 @@
                 padding: 0;
                 margin: 0 1px 0 0;
                 a{
+                    display: block;
                     img{
                         height:65px;
                     }
@@ -154,6 +210,7 @@
             color: #fff;
         }
         .bread-links{
+            height: 32px;
             a,
             a:link,
             a:active,
@@ -162,6 +219,11 @@
                 color:#fff;
             }
             ul{
+                height: 32px;
+                font-size: 10px;
+                li{
+                    margin-top: -1px;
+                }
                 li:after {
                     content:'\003e';
                     margin-right: 5px;
@@ -193,9 +255,28 @@
             }
         }   
         #patient-classification{
-            height: 31px;
-            margin: 2px 2px 2px 0;
-            
+            height: 25px;
+            margin: 4px 6px 2px 0;   
+            /deep/ button{
+                color: inherit;
+                line-height: 0px;
+                text-transform: inherit;
+                font-size: 10px;
+                text-decoration: none;
+                height: 20px;
+            }        
+            /deep/ .dropdown-toggle::after {
+                content: "\2304";
+                border-top: none;
+                border-right: none;
+                border-bottom: 0;
+                border-left: none;
+                margin-top: -1px;
+            }
+            /deep/ .dropdown-menu{
+                font-size: 12px;
+                margin-top: 5px;
+            }
         }    
     }
 }

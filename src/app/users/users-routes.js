@@ -1,8 +1,8 @@
 import AppUsers from './users.vue';
 
-import AppUserList from './user-list/user-list.vue';
-import AppUserItem from './user-item/user-item.vue';
-import AppFormValid from './user-list/form-valid.vue';
+import UserList from './user-list/user-list.vue';
+import UserItem from './user-item/user-item.vue';
+import FormValid from './user-list/form-valid.vue';
 
 const userRoutes = [
   {
@@ -14,19 +14,19 @@ const userRoutes = [
       path: 'form-valid',
       name: 'form-valid',
       meta: {title: 'Form Validation'},
-      component: AppFormValid
+      component: FormValid
       },
       {
         path: 'user-list',
         name: 'user-list',
         meta: {title: 'Users List'},
-        component: AppUserList
+        component: UserList
       },
       {
         path: 'user-item',
         name: 'user-item',
         meta: {title: 'User Item'},
-        component: AppUserItem
+        component: UserItem
       },
       {
         path: '',

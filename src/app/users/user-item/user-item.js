@@ -8,6 +8,8 @@ import TemplateGrid from './template-grid/template-grid.vue'
 import NestedGrid from './nested-grid/nested-grid.vue'
 import EditableGrid from './editable-grid/editable-grid.vue'
 
+import FormValid from '../user-list/form-valid.vue'
+
 export default {
     name: "user-item",
     data() {
@@ -44,6 +46,7 @@ export default {
         TabStrip,
         TemplateGrid,
         NestedGrid,
-        EditableGrid
+        EditableGrid,
+        FormValid
     }
 }

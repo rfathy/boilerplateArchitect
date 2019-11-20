@@ -16,7 +16,7 @@ Vue.use(DataSourceInstaller);
 Vue.use(DataSource)
 
 export default {
-  name: "app-user-list",
+  name: "user-list",
   components: {
     ErrorBoundary,
     AppUserItem,
@@ -28,6 +28,8 @@ export default {
   },
   data(){
     return {
+      checked: true,
+      name: 'ssss',
       datasource1 :{
         schema: {
           model: {
