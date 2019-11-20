@@ -16,7 +16,13 @@ Vue.use(DataSourceInstaller);
 Vue.use(DataSource)
 
 export default {
-  name: "app-user-list",
+  name: "user-list",
+  data() {
+    return {
+      checked: true,
+      name: 'ssss'
+    }
+  },
   components: {
     ErrorBoundary,
     AppUserItem,
@@ -31,7 +37,7 @@ export default {
       // var guid = kendo.guid();
       // $('<input class="k-checkbox" id="' + guid + '" type="checkbox" name="Discontinued" data-type="boolean" data-bind="checked:Discontinued">').appendTo(container);
       // $('<label class="k-checkbox-label" for="' + guid + '">&#8203;</label>').appendTo(container);
-      $(`<kendo-switch name="status"></kendo-switch>`).appendTo(container);
+      $('<kendo-switch :checked="checked"></kendo-switch>').appendTo(container);
     }
   }
 };
