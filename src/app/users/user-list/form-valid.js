@@ -58,8 +58,7 @@ export default {
         min:'',
         max:'',
         compared:'',
-        confirm:'',
-        isLoading:false
+        confirm:''
     }),
     directives: {
         onlyEn,

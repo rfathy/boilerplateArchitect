@@ -139,11 +139,9 @@ export default {
                         }
                     },
                     // value: options.model.Category.CategoryID,
-                    change: function(e) {
-                        // debugger
-                        var value = this.value();
-                        let names = e.sender._tags.map(item => item.CategoryName).join(', ')
-                        options.model[options.field] = names
+                    change: function() {
+                        // let names = e.sender._tags.map(item => item.CategoryName).join(', ')
+                        // options.model.Category.CategoryName = names
                     }
                 });
         },
@@ -160,14 +158,14 @@ export default {
             $('<input class="k-checkbox" id="' + guid + '" type="checkbox" name="Discontinued" data-type="boolean" data-bind="checked:Discontinued">').appendTo(container);
             $('<label class="k-checkbox-label" for="' + guid + '">&#8203;</label>').appendTo(container);
         },
-        editAction: function(e) {
-            let names = e.sender.columns.map(item => item.CategoryName).join(', ')
-            // options.model[options.field] = names;
-            e.preventDefault()
-            debugger
-            // In case create/edit 
-            // let selectedProductId = e.model.ProductID           
-        },
+        // editAction: function(e) {
+        //     let names = e.sender.columns.map(item => item.CategoryName).join(', ')
+        //     // options.model[options.field] = names;
+        //     e.preventDefault()
+        //     debugger
+        //     // In case create/edit 
+        //     // let selectedProductId = e.model.ProductID           
+        // },
         removeAction: function(e) { 
             e.preventDefault()
             // e.model

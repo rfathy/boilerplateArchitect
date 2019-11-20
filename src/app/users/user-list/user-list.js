@@ -1,3 +1,6 @@
+import $ from 'jquery';
+// import kendo from '@progress/kendo-ui';
+
 import Vue from 'vue';
 import { actionsTypes } from "../shared/state";
 import { ErrorBoundary } from "../../shared/components";
@@ -20,16 +23,38 @@ export default {
     Grid,
     DataSource
   },
-
   created() {
     this.$store.dispatch(actionsTypes.FETCH_USER_DATA);
   },
-
-  // errorCaptured(err, vm, info) {
-  //   // err: error trace
-  //   // vm: component in which error occured
-  //   // info: Vue specific error information such as lifecycle hooks, events etc.
-  //   // TODO: Perform any custom logic or log to server
-  //   // return false to stop the propagation of errors further to parent or global error handler
-  // }
+  data(){
+    return {
+      datasource1 :{
+        schema: {
+          model: {
+              id: "ProductID",
+              fields: {
+                  id: { editable: false, nullable: true },
+                  en_name: { validation: { required: true } },
+                  code: { type: 'number', validation: { required: true, min: 1 } },
+                  ar_name: { validation: { required: true } },
+                  classification: {type: 'string'},
+                  description:{type: 'string'},
+                  parent_category:{type: 'string'},
+                  status: { type: 'boolean', defaultValue: false }
+              }
+          }
+      }
+      }
+    }
+  },
+  methods: {
+    customBoolEditor(container, options) {
+      $('<input type="checkbox" name="' + options.field + '"/>')
+            .appendTo(container)
+            .kendoMobileSwitch({
+            onLabel: "YES",
+            offLabel: "NO"
+          });
+    }
+  }
 };

@@ -20,6 +20,9 @@ Vue.use(DataSourceInstaller)
 import { Tooltip, KendoPopupsInstaller } from '@progress/kendo-popups-vue-wrapper'
 Vue.use(KendoPopupsInstaller)
 
+import { InputsInstaller } from '@progress/kendo-inputs-vue-wrapper'
+Vue.use(InputsInstaller)
+
 //styles & layout
 import './main.scss';
 import Default from './app/shared/layouts/default.vue'
@@ -37,7 +40,8 @@ new Vue({
   components: {
     Grid,
     DataSource,
-    Tooltip
+    Tooltip,
+    // Switch
   },
   render: h => h(App)
 }).$mount('#app');

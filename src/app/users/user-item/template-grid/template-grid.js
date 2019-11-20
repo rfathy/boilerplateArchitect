@@ -27,14 +27,7 @@ export default {
                         '<span class="name">#: name# #: age# </span>' +
                         '<span class="title">Title: #: age #</span>' +
                     '</td>' +
-                    '<td class="country">' +
-                        `<kendo-dropdowntree :data-source="${this.SelectedTypes}"
-                                :checkboxes="true"
-                                :check-all="true"
-                                :auto-close="false"
-                                :placeholder="'Select ...'">
-                    </kendo-dropdowntree>` +
-                    '</td>' +
+                    '<td class="country">#: company#</td>' +
                     '<td class="employeeID">' +
                         '#: company #' +
                     '</td>' +
