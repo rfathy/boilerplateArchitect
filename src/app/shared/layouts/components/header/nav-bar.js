@@ -1,4 +1,5 @@
 import json from '../../../../../mock-data/navigation.json'
+
 export default {
   name: "nav-bar",
   component :{

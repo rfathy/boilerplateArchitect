@@ -1,16 +1,16 @@
 <template>
   <div>
-        <header class="main-header">
-            <ProfileBar />
-            <NavBar />
-            <div class="container-fluid main-container-fluid mb-2">
-            </div>
-        </header>
-        <div id="right-panel" class="right-panel rounded pt-2 pb-2 pr-4 pl-4 shadow-sm">
-            <div class="content">
-            <slot />          
-            </div>
+    <header class="main-header">
+        <ProfileBar />
+        <NavBar />
+        <div class="container-fluid main-container-fluid mb-2">
         </div>
+    </header>
+    <div id="right-panel" class="right-panel rounded pt-2 pb-2 pr-4 pl-4 shadow-sm">
+        <div class="content">
+        <slot />          
+        </div>
+    </div>
   </div>
 </template>
 
@@ -18,11 +18,18 @@
 import ProfileBar from '@/app/shared/layouts/components/header/profile-bar.vue';
 import NavBar from '@/app/shared/layouts/components/header/nav-bar.vue';
 
+
 export default {
+  name: 'default',
+  data() {
+    return {
+    navEl: false
+    }
+  },
   components: {
     ProfileBar,
     NavBar
-  }
+  },
 };
 </script>
 
