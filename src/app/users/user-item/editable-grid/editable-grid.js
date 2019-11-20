@@ -140,6 +140,8 @@ export default {
                     },
                     // value: options.model.Category.CategoryID,
                     change: function(e) {
+                        // debugger
+                        var value = this.value();
                         let names = e.sender._tags.map(item => item.CategoryName).join(', ')
                         options.model[options.field] = names
                     }
@@ -159,7 +161,10 @@ export default {
             $('<label class="k-checkbox-label" for="' + guid + '">&#8203;</label>').appendTo(container);
         },
         editAction: function(e) {
+            let names = e.sender.columns.map(item => item.CategoryName).join(', ')
+            // options.model[options.field] = names;
             e.preventDefault()
+            debugger
             // In case create/edit 
             // let selectedProductId = e.model.ProductID           
         },
