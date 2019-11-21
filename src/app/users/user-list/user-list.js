@@ -42,11 +42,17 @@ export default {
     this.$store.dispatch(actionsTypes.FETCH_USER_DATA);
   },
   methods: {
-    customBoolEditor(container) {
+    customBoolEditor(container, options) {
       // var guid = kendo.guid();
       // $('<input class="k-checkbox" id="' + guid + '" type="checkbox" name="Discontinued" data-type="boolean" data-bind="checked:Discontinued">').appendTo(container);
       // $('<label class="k-checkbox-label" for="' + guid + '">&#8203;</label>').appendTo(container);
-      $('<kendo-switch :checked="checked"></kendo-switch>').appendTo(container);
+      // $('<kendo-switch :checked="checked"></kendo-switch>').appendTo(container);
+      $('<input type="checkbox" name="' + options.field + '"/>')
+            .appendTo(container)
+            .kendoMobileSwitch({
+            onLabel: "YES",
+            offLabel: "NO"
+      });
     },
     editGrid(e) { debugger
       console.log(e.model.isNew());
