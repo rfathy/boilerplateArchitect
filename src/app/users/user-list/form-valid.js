@@ -4,6 +4,10 @@ import { onlyAr, onlyEn, onlyNumeric, allowDecimal } from '@/app/shared/directiv
 import Loader from '@/app/shared/layouts/components/loader/loader';
 
 
+//Module localization 
+import localeEn from '../locales/en'
+import localeAr from '../locales/ar'
+
 extend('required', {
     ...required,
     message: 'This field is required'
@@ -37,28 +41,28 @@ export default {
         ValidationObserver,
         Loader
     },
-    methods:{
-        async submit () {        
+    methods: {
+        async submit() {
             const isValid = await this.$refs.observer.validate();
             if (isValid) {
                 alert('Data is valid');
                 return
             } else {
-            alert('Data is not valid');
-            return
-            }          
-        
+                alert('Data is not valid');
+                return
+            }
+
         }
     },
     data: () => ({
         isLoading: false,
         value: '',
         email: '',
-        password:'',
-        min:'',
-        max:'',
-        compared:'',
-        confirm:''
+        password: '',
+        min: '',
+        max: '',
+        compared: '',
+        confirm: ''
     }),
     directives: {
         onlyEn,
@@ -66,4 +70,14 @@ export default {
         onlyNumeric,
         allowDecimal
     },
-  };
+    i18n: {
+        messages: {
+            en: {
+                ...localeEn
+            },
+            ar: {
+                ...localeAr
+            }
+        },
+    }
+};

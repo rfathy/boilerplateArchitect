@@ -5,7 +5,8 @@
         <ValidationObserver ref="observer" v-slot="{ invalid }"  @submit.prevent="submit()" class="row">
             <div class="col col-md-4 mt10">
                 <validation-provider  class="form-group mb10" rules="required" v-slot="{ errors }">
-                    <label>required</label>
+
+                    <label>{{ $t('Users.Required') }}</label>
                     <input v-model="value" name="myinput" type="text" class="form-control" />
                     <span class="err">{{ errors[0] }}</span>
                 </validation-provider>
