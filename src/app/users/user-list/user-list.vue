@@ -1,46 +1,60 @@
 <template>
   <div class="user-list">
-    <kendo-datasource ref="datasource1"
+    <!-- <kendo-datasource ref="datasource1"
                         :transport-read-url="'../../../mock-data/product.json'"
-                        :schema-model-fields="schemaModelFields"
-                        :page-size='15'>
-    </kendo-datasource>
+                        :batch='true'
+                        :page-size='10'> 
+    </kendo-datasource> -->
+
+    <!-- :schema-model-id="'ProductID'"
+                        :schema-model-fields="schemaModelFields" 
+                        :edit="editGrid" 
+                        :editable="preventEditColumn"-->
 
     <kendo-grid :height="600"
-                :data-source-ref="'datasource1'"
+                :data-source="productsDataSource"
                 :pageable='true'
+                :sortable="true"
+                :no-records="true"
+                :navigatable='true'
                 :editable="'inline'"
                 :toolbar="['create']"
-                :edit="editGrid"
+                
                 :filterable-mode="'row'">
-        <kendo-grid-column :field="'code'"
+        <kendo-grid-column :field="'Code'"
                            :title="'Code'"
-                           :editable="preventEditColumn"
+                           
                            :filterable-cell-show-operators="false"
+                           :filterable-cell-operator="'contains'"
                            :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'en_name'"
+        <kendo-grid-column :field="'EnName'"
                            :title="'En Name'"
                            :filterable-cell-show-operators="false"
+                           :filterable-cell-operator="'contains'"
                            :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'ar_name'"
+        <kendo-grid-column :field="'AnName'"
                            :title="'Ar Name'"
                            :filterable-cell-show-operators="false"
+                           :filterable-cell-operator="'contains'"
                            :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'classification'"
+        <kendo-grid-column :field="'ProductClassification'"
                            :title="'Product Classification'"
                            :filterable-cell-show-operators="false"
+                           :filterable-cell-operator="'contains'"
                            :filterable-multi="true"
                            :width="120"></kendo-grid-column> 
-        <kendo-grid-column :field="'description'"
+        <kendo-grid-column :field="'Description'"
                            :title="'Description'"
                            :filterable-cell-show-operators="false"
+                           :filterable-cell-operator="'contains'"
                            :width="120"
                            ></kendo-grid-column> 
-        <kendo-grid-column :field="'parent_category'"
+        <kendo-grid-column :field="'ParentCategory'"
                            :title="'Parent Category'"
                            :filterable-cell-show-operators="false"
+                           :filterable-cell-operator="'contains'"
                            :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'status'"
+        <kendo-grid-column :field="'Status'"
                            :title="'Status'"
                            :filterable-cell-show-operators="false"
                            :editor="customBoolEditor"

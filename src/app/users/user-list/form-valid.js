@@ -39,7 +39,7 @@ export default {
     },
     methods:{
         async submit () {        
-        const isValid = await this.$refs.observer.validate();
+            const isValid = await this.$refs.observer.validate();
             if (isValid) {
                 alert('Data is valid');
                 return
