@@ -22,7 +22,7 @@ Vue.use(DataSourceInstaller)
 import { Tooltip, KendoPopupsInstaller } from '@progress/kendo-popups-vue-wrapper'
 Vue.use(KendoPopupsInstaller)
 
-import { Switch as VuekendoSwitch, InputsInstaller } from '@progress/kendo-inputs-vue-wrapper'
+import { InputsInstaller } from '@progress/kendo-inputs-vue-wrapper'
 Vue.use(InputsInstaller)
 
 //styles & layout
@@ -47,7 +47,7 @@ new Vue({
     Grid,
     DataSource,
     Tooltip,
-    VuekendoSwitch
+    // Switch
   },
 
   i18n,

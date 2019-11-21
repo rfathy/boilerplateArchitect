@@ -2,7 +2,8 @@
   <div class="user-list">
     <kendo-datasource ref="datasource1"
                         :transport-read-url="'../../../mock-data/product.json'"
-                        :page-size='15'>
+                        :page-size='15'
+                        >
     </kendo-datasource>
 
     <kendo-grid :height="600"

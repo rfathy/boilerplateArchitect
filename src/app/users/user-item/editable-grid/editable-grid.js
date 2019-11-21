@@ -25,7 +25,7 @@ export default {
                     name: 'destroy',
                     text: 'Delete',
                     title: 'Delete',
-                    iconClass: 'k-icon k-i-close',
+                    iconClass: 'k-icon k-i-trash',
                     className: 'icon-only'
                 }
             ],
@@ -49,8 +49,74 @@ export default {
                         }
                     }
                 },
-                pageSize: 20,
+                pageSize: 10,
                 data: [{
+                    "ProductID": 1,
+                    "ProductName": "Chai",
+                    "UnitPrice": 18,
+                    "UnitsInStock": 39,
+                    "Discontinued": false,
+                    "Category": {
+                        CategoryID: 1,
+                        CategoryName: "Beverages"
+                    }
+                },
+                {
+                    "ProductID": 1,
+                    "ProductName": "Chai",
+                    "UnitPrice": 18,
+                    "UnitsInStock": 39,
+                    "Discontinued": false,
+                    "Category": {
+                        CategoryID: 1,
+                        CategoryName: "Beverages"
+                    }
+                },
+                {
+                    "ProductID": 1,
+                    "ProductName": "Chai",
+                    "UnitPrice": 18,
+                    "UnitsInStock": 39,
+                    "Discontinued": false,
+                    "Category": {
+                        CategoryID: 1,
+                        CategoryName: "Beverages"
+                    }
+                },
+                {
+                    "ProductID": 1,
+                    "ProductName": "Chai",
+                    "UnitPrice": 18,
+                    "UnitsInStock": 39,
+                    "Discontinued": false,
+                    "Category": {
+                        CategoryID: 1,
+                        CategoryName: "Beverages"
+                    }
+                },
+                {
+                    "ProductID": 1,
+                    "ProductName": "Chai",
+                    "UnitPrice": 18,
+                    "UnitsInStock": 39,
+                    "Discontinued": false,
+                    "Category": {
+                        CategoryID: 1,
+                        CategoryName: "Beverages"
+                    }
+                },
+                {
+                    "ProductID": 1,
+                    "ProductName": "Chai",
+                    "UnitPrice": 18,
+                    "UnitsInStock": 39,
+                    "Discontinued": false,
+                    "Category": {
+                        CategoryID: 1,
+                        CategoryName: "Beverages"
+                    }
+                },
+                {
                     "ProductID": 1,
                     "ProductName": "Chai",
                     "UnitPrice": 18,
@@ -158,11 +224,14 @@ export default {
             $('<input class="k-checkbox" id="' + guid + '" type="checkbox" name="Discontinued" data-type="boolean" data-bind="checked:Discontinued">').appendTo(container);
             $('<label class="k-checkbox-label" for="' + guid + '">&#8203;</label>').appendTo(container);
         },
-        editAction: function(e) {
-            e.preventDefault()
-            // In case create/edit 
-            // let selectedProductId = e.model.ProductID           
-        },
+        // editAction: function(e) {
+        //     let names = e.sender.columns.map(item => item.CategoryName).join(', ')
+        //     // options.model[options.field] = names;
+        //     e.preventDefault()
+        //     debugger
+        //     // In case create/edit 
+        //     // let selectedProductId = e.model.ProductID           
+        // },
         removeAction: function(e) { 
             e.preventDefault()
             // e.model

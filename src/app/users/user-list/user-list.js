@@ -17,12 +17,6 @@ Vue.use(DataSource)
 
 export default {
   name: "user-list",
-  data() {
-    return {
-      checked: true,
-      name: 'ssss'
-    }
-  },
   components: {
     ErrorBoundary,
     AppUserItem,
@@ -32,12 +26,37 @@ export default {
   created() {
     this.$store.dispatch(actionsTypes.FETCH_USER_DATA);
   },
+  data(){
+    return {
+      checked: true,
+      name: 'ssss',
+      datasource1 :{
+        schema: {
+          model: {
+              id: "ProductID",
+              fields: {
+                  id: { editable: false, nullable: true },
+                  en_name: { validation: { required: true } },
+                  code: { type: 'number', validation: { required: true, min: 1 } },
+                  ar_name: { validation: { required: true } },
+                  classification: {type: 'string'},
+                  description:{type: 'string'},
+                  parent_category:{type: 'string'},
+                  status: { type: 'boolean', defaultValue: false }
+              }
+          }
+      }
+      }
+    }
+  },
   methods: {
-    customBoolEditor(container) {
-      // var guid = kendo.guid();
-      // $('<input class="k-checkbox" id="' + guid + '" type="checkbox" name="Discontinued" data-type="boolean" data-bind="checked:Discontinued">').appendTo(container);
-      // $('<label class="k-checkbox-label" for="' + guid + '">&#8203;</label>').appendTo(container);
-      $('<kendo-switch :checked="checked"></kendo-switch>').appendTo(container);
+    customBoolEditor(container, options) {
+      $('<input type="checkbox" name="' + options.field + '"/>')
+            .appendTo(container)
+            .kendoMobileSwitch({
+            onLabel: "YES",
+            offLabel: "NO"
+          });
     }
   }
 };
