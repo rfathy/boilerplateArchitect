@@ -2,6 +2,7 @@
   <div class="user-list">
     <kendo-datasource ref="datasource1"
                         :transport-read-url="'../../../mock-data/product.json'"
+                        :schema-model-fields="schemaModelFields"
                         :page-size='15'>
     </kendo-datasource>
 
@@ -9,9 +10,12 @@
                 :data-source-ref="'datasource1'"
                 :pageable='true'
                 :editable="'inline'"
+                :toolbar="['create']"
+                :edit="editGrid"
                 :filterable-mode="'row'">
         <kendo-grid-column :field="'code'"
                            :title="'Code'"
+                           :editable="preventEditColumn"
                            :filterable-cell-show-operators="false"
                            :width="120"></kendo-grid-column>
         <kendo-grid-column :field="'en_name'"
@@ -25,6 +29,7 @@
         <kendo-grid-column :field="'classification'"
                            :title="'Product Classification'"
                            :filterable-cell-show-operators="false"
+                           :filterable-multi="true"
                            :width="120"></kendo-grid-column> 
         <kendo-grid-column :field="'description'"
                            :title="'Description'"

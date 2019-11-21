@@ -20,7 +20,16 @@ export default {
   data() {
     return {
       checked: true,
-      name: 'ssss'
+      schemaModelFields: {
+        id: { editable: false, nullable: true },
+        code: { editable: false, nullable: true },
+        en_name: { validation: { required: {message: "Must not be empty!"} } },
+        ar_name: {  validation: { required: true, min: 1 } },
+        classification: {  },
+        description: {  },
+        parent_category: { validation: { required: true } },
+        // status: { type: 'boolean', defaultValue: false }             
+      },     
     }
   },
   components: {
@@ -38,6 +47,18 @@ export default {
       // $('<input class="k-checkbox" id="' + guid + '" type="checkbox" name="Discontinued" data-type="boolean" data-bind="checked:Discontinued">').appendTo(container);
       // $('<label class="k-checkbox-label" for="' + guid + '">&#8203;</label>').appendTo(container);
       $('<kendo-switch :checked="checked"></kendo-switch>').appendTo(container);
+    },
+    editGrid(e) { debugger
+      console.log(e.model.isNew());
+      
+    },
+    preventEditColumn(e) { 
+      console.log(e);
+      // if (e.hasOwnProperty('code') && e.code) {
+      //   return false;
+      // } else {
+      //   return true
+      // }
     }
   }
 };
