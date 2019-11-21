@@ -8,11 +8,9 @@
 
     <!-- :schema-model-id="'ProductID'"
                         :schema-model-fields="schemaModelFields" 
-                        :edit="editGrid" 
-                        :editable="preventEditColumn"-->
+                        :edit="editGrid"  -->
 
-    <kendo-grid :height="600"
-                :data-source="productsDataSource"
+    <kendo-grid :data-source="productsDataSource"
                 :pageable='true'
                 :sortable="true"
                 :no-records="true"
@@ -23,7 +21,7 @@
                 :filterable-mode="'row'">
         <kendo-grid-column :field="'Code'"
                            :title="'Code'"
-                           
+                           :editable="preventEditColumn"
                            :filterable-cell-show-operators="false"
                            :filterable-cell-operator="'contains'"
                            :width="120"></kendo-grid-column>
