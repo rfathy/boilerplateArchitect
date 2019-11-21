@@ -14,6 +14,12 @@
           <input class="bg-grey-lt form-control w-75 cust-input rounded-lg c-blue" type="search" placeholder="Search for patient (Name, Code, Phone Number)" aria-label="Search">
       </form>
       <div>
+        <b-dropdown id="dropdown-right" right :text="selectedLang" variant="link" class="m-2">
+          <b-dropdown-item href="javascript:;"
+            v-for="lang in languages"
+            :key="lang.title"
+            @click="changeLocale(lang.language)">{{lang.title}}</b-dropdown-item>
+        </b-dropdown>
         <img class="user-img" src="@/assets/img/user.png" alt="user image" draggable="false">
         <span class="align-middle d-inline-block ml-1 c-blue user-id">
           <strong class="d-flex">Moataz Mohamed</strong>

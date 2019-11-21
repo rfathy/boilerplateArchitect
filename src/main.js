@@ -1,3 +1,5 @@
+//localStorage.setItem('selectedLang', process.env.VUE_APP_I18N_LOCALE || 'en')
+
 import Vue from 'vue';
 
 import './plugins';
@@ -32,16 +34,22 @@ Vue.component('default-layout', Default)
 import router from './app/app-routes';
 import store from './app/app-state';
 
+//localization
+import i18n from './i18n'
+
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
+
   components: {
     Grid,
     DataSource,
     Tooltip,
     VuekendoSwitch
   },
+
+  i18n,
   render: h => h(App)
 }).$mount('#app');
