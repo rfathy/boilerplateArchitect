@@ -1,6 +1,8 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 @import 'node_modules/@progress/kendo-theme-bootstrap/scss/all';
+@import 'src/theme/variables.scss';
+@import 'src/theme/grid.scss';
 
 * {
   margin: 0;
@@ -69,12 +71,6 @@ body{
   }
 }
 
-// Disable button in grid that opens popup in case of add/edit row
-.km-grid-edit-row {
-  .btn-open-popup {
-    pointer-events: none;
-  }
-}
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
 .slide-fade-enter-active {

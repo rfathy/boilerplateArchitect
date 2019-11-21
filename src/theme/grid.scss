@@ -1,0 +1,31 @@
+.k-grid{
+    border:0;
+.k-header{
+    background-color: transparent;
+    border:0;
+    .k-grid-add{
+        background-color: $blue;
+        color:$white;
+        border:0;
+    }
+}
+// kendo command button without text
+.k-command-cell {
+    .k-button-icontext {
+      font-size: 0;
+      margin: 0 0.4rem;
+  
+      .k-icon { 
+        margin: 0;
+      } 
+    }
+  }
+
+  // Disable button in grid that opens popup in case of add/edit row
+.k-grid-edit-row {
+    .btn-open-popup {
+      pointer-events: none;
+    }
+  }
+
+}
