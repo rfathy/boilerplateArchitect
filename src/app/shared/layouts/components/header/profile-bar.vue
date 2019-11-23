@@ -11,7 +11,7 @@
           <button class="bg-grey-lt btn cust-btn mr-1 p-0 rounded-lg" type="button">
               <img src="@/assets/svg/search.svg" alt="Search">
           </button>
-          <input class="bg-grey-lt form-control w-75 cust-input rounded-lg c-blue" type="search" placeholder="Search for patient (Name, Code, Phone Number)" aria-label="Search">
+          <input class="bg-grey-lt form-control w-75 cust-input rounded-lg c-blue" type="search" :placeholder="$t('Common.SearchPatient')" aria-label="Search">
       </form>
       <div>
         <b-dropdown id="dropdown-right" right :text="selectedLang" variant="link" class="m-2">
