@@ -10,17 +10,17 @@
 }
 
 // max height of kendo multi select to show 2 rows of its options
-.km-multiselect-wrap {
+.k-multiselect-wrap {
     max-height: 77px;
     overflow: auto;
 }
 // kendo command button without text
-.km-command-cell {
-  .km-button-icontext {
+.k-command-cell {
+  .k-button-icontext {
     font-size: 0;
     margin: 0 0.4rem;
 
-    .km-icon { 
+    .k-icon { 
       margin: 0;
     } 
   }
@@ -36,7 +36,7 @@ html, body, .main-container-fluid{
 body{
   background:#c9c9c9;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size:14px !important;
+  font-size:12px !important;
   .clear{
     clear: both
   }

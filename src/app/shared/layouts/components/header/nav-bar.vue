@@ -8,18 +8,18 @@
             </a>
             <transition name="slide-fade">
                 <div class="container-fluid mega-menu rounded-lg mt-2 shadow-sm" v-show="navEl" :class="{ displaynavEl : navEl }">
-                    <ul id="site-navigation" class="list-inline mb-0 p-0 text-center">
-                        <li class="list-inline-item pt-2 pb-2 pl-3 pr-3">
+                    <ul id="site-navigation" class="list-inline mb-0 p-0">
+                        <li class="list-inline-item pt-2 pb-2 text-center pl-3 pr-3">
                             <a class="d-inline-block" href="javascript:;">
-                                <img src="@/assets/nav/nav1.svg" alt=""> <span class="d-block c-blue font-weight-bold">Page name</span>
+                                <img src="@/assets/nav/nav1.svg" alt=""> <span class="d-block c-blue">Page name</span>
                             </a>
                         </li>
-                        <li class="list-inline-item pt-2 pb-2 pl-3 pr-3"><a class="d-inline-block" href="javascript:;"><img src="@/assets/nav/nav2.svg" alt=""><span class="d-block c-blue font-weight-bold">Page name</span></a></li>
-                        <li class="list-inline-item pt-2 pb-2 pl-3 pr-3" :class="{'active-link': isActivelink}">
-                            <a href="javascript:;" class="d-inline-block" @click="mega = !mega;isActivelink = !isActivelink"><img src="@/assets/nav/nav3.svg" alt=""></a><span class="d-block c-blue font-weight-bold">Vue Testing</span>                    
+                        <li class="list-inline-item pt-2 pb-2 pl-3 text-center pr-3"><a class="d-inline-block" href="javascript:;"><img src="@/assets/nav/nav2.svg" alt=""><span class="d-block c-blue">Page name</span></a></li>
+                        <li class="list-inline-item pt-2 pb-2 pl-3 text-center pr-3" :class="{'active-link': isActivelink}">
+                            <a href="javascript:;" class="d-inline-block" @click="mega = !mega;isActivelink = !isActivelink"><img src="@/assets/nav/nav3.svg" alt=""></a><span class="d-block c-blue">Vue Testing</span>                    
                             <transition name="slide-fade">
                             <div class="container-fluid mega-menu rounded-lg" @click="collapsenavbar" v-if="mega" :class="{ displayMega : mega }">
-                                <div class="row justify-content-md-center mega-menu-holder" style="flex-wrap: nowrap">
+                                <div class="row position-fixed mega-menu-holder" style="flex-wrap: nowrap">
                                     <div class="col-md-2 rout-holder text-capitalize text-left pt-3 pl-4 pb-2" 
                                         v-for="m in modules" :key="m.id">
                                         <h6 class="font-weight-normal pl-1 ml-lg-n2 links-parent">{{m.name}}</h6>
@@ -33,7 +33,7 @@
                             </div>      
                             </transition>
                         </li>
-                        <li class="list-inline-item pt-2 pb-2 pl-3 pr-3"><a href="javascript:;" class="d-inline-block"><img src="@/assets/nav/nav4.svg" alt=""><span class="d-block c-blue font-weight-bold">Page name</span></a></li>
+                        <li class="list-inline-item pt-2 pb-2 pl-3 pr-3"><a href="javascript:;" class="d-inline-block"><img src="@/assets/nav/nav4.svg" alt=""><span class="d-block c-blue">Page name</span></a></li>
                     </ul>
                 </div>
             </transition>
