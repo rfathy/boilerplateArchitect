@@ -34,6 +34,12 @@ export default {
           this.mega = false;
           this.isActivelink =false
         }
+      },
+      collapseothers($event) {
+        const elem = this.$refs.collapseothers;
+        if(elem.classList.contains("expanded-mega")){          
+          elem.click()
+        }
       }
     }
   };
