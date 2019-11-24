@@ -24,7 +24,7 @@
     "core-js": "^2.6.5",
     "vee-validate": "^3.0.11",
     "vue": "^2.6.10",
-    "vue-i18n": "^8.0.0",
+    "vue-i18n": "^8.15.0",
     "vue-router": "^3.0.3",
     "vue-shortkey": "^3.1.7",
     "vuex": "^3.0.1"

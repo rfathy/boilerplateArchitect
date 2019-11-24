@@ -1,5 +1,7 @@
 import { ValidationProvider, extend, ValidationObserver } from 'vee-validate';
 import { required, email, min, max } from 'vee-validate/dist/rules';
+import { setInteractionMode } from 'vee-validate';
+setInteractionMode('passive');
 import { onlyAr, onlyEn, onlyNumeric, allowDecimal } from '@/app/shared/directives/InputHelpers.js';
 import Loader from '@/app/shared/layouts/components/loader/loader';
 
