@@ -8,8 +8,7 @@
                 :editable="'inline'"
                 :toolbar="['create']"
                 :filterable-extra="false"
-                :filterable-mode="'row'"
-                @filter="onFilter">
+                :filterable-mode="'row'">
             <kendo-grid-column :field="'Code'"
                             :title="'Code'"
                             :editable="preventEditColumn"

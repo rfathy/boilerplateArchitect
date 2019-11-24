@@ -13,13 +13,13 @@ export default {
                         id: "ProductID",
                         fields: {
                         ProductID: { editable: false, nullable: true },
-                        Code: { type: 'number', validation: { min: 1 } },
+                        Code: {  validation: { min: 1 } },
                         EnName: { validation: { required: {message: "Must not be empty!"} } },
                         AnName: {  validation: { required: true } },
                         ProductClassification: {  },
                         Description: {  },
                         ParentCategory: { validation: { required: true } },
-                        // Status: { type: 'boolean', defaultValue: false } 
+                        Status: { type: 'boolean' } 
                         }
                     }
                 },
@@ -65,16 +65,6 @@ export default {
             optionLabel: "All",
             autoWidth: true
         });
-        },
-        onFilter(e){debugger
-        if (e.field === "Status") {
-            var filter = e.filter;
-            if (filter && filter.filters && filter.filters.length > 0) {
-            var filters = filter.filters;
-            // convert the filter string value to a boolean one
-            filters[0].value = (filters[0].value === "true");
-            }
-        }
         }
     },
     components: {
