@@ -35,7 +35,7 @@ export default {
           this.isActivelink =false
         }
       },
-      collapseothers($event) {
+      collapseothers() { debugger
         const elem = this.$refs.collapseothers;
         if(elem.classList.contains("expanded-mega")){          
           elem.click()

@@ -10,7 +10,9 @@
                 <div class="container-fluid mega-menu rounded-lg mt-2 shadow-sm" v-show="navEl" :class="{ displaynavEl : navEl }">
                     <ul id="site-navigation" class="list-inline mb-0 p-0">
                         <li v-for="m in modules" :key="m.id" class="list-inline-item pt-2 pb-2 pl-3 text-center pr-3 position-relative" :class="{'active-link': m.isActivelink}">
-                            <a href="javascript:;" class="d-inline-block" ref="collapseothers" :class="{'expanded-mega': m.isActivelink}" @click="collapseothers;m.isExpand = !m.isExpand;m.isActivelink = !m.isActivelink">
+                            <a href="javascript:;" class="d-inline-block" ref="collapseothers" 
+                            :class="{'expanded-mega': m.isActivelink}" 
+                            @click="collapseothers;m.isExpand = !m.isExpand;m.isActivelink = !m.isActivelink">
                                 <img src="@/assets/nav/nav3.svg" alt="">
                             </a>
                             <span class="d-block c-blue">{{m.name}}</span>
