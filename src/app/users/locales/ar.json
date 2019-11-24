@@ -1,0 +1,18 @@
+{
+  "Users": {
+    "Required": "مطلوب",
+    "Validation": "التحقق من النموذج",
+    "Example": "مثال",
+    "Email": "Email",
+    "Min5": "الحد الادنى 5",
+    "Max5": "الحد الاقصى 5",
+    "Password": "كلمة السر",
+    "ConfirmPassword": "تاكيد كلمة السر",
+    "Save": "حفظ",
+    "Direvtives": "ديراكتيف",
+    "OnlyEn": "انجليزى فقط",
+    "OnlyAr": "عربى فقط",
+    "OnlyNum": "أرقام فقط",
+    "AllowDecimal": "السماح بالعلامة العشرية"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "Users": {
+    "Required": "Required",
+    "Validation": "Form Validation",
+    "Example": "Example",
+    "Email": "Email",
+    "Min5": "Min 5",
+    "Max5": "Max 5",
+    "Password": "Password",
+    "ConfirmPassword": "Confirm Password",
+    "Save": "Save",
+    "Direvtives": "Direvtives",
+    "OnlyEn": "Only English",
+    "OnlyAr": "Only Arabic",
+    "OnlyNum": "Only Number",
+    "AllowDecimal": "Allow Decimal"
+  }
+}

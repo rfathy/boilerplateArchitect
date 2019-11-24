@@ -1,25 +1,31 @@
 <template>
-  <nav class="profile-bar pb-1 pt-1 navbar navbar-expand-md navbar-light fixed-top bg-light shadow-sm">
+  <nav class="profile-bar pl-3 p-0 navbar navbar-expand-md navbar-light fixed-top bg-light shadow-sm">
     <a class="navbar-brand" href="#">
       <img class="custom-logo" src="@/assets/img/logo.png" alt="logo" draggable="false">
     </a>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <form class="form-inline navbar-nav mr-auto col-5 search-patient">
-          <button class="bg-grey-lt btn cust-btn pl-2 pr-2 pt-1 rounded-lg" type="button">
+          <button class="bg-grey-lt btn cust-btn p-0 rounded-lg" type="button">
               <img src="@/assets/svg/register-new.svg" alt="Register New Patient">
           </button>
-          <button class="bg-grey-lt btn cust-btn mr-1 pl-2 pr-2 pt-1 rounded-lg" type="button">
+          <button class="bg-grey-lt btn cust-btn mr-1 p-0 rounded-lg" type="button">
               <img src="@/assets/svg/search.svg" alt="Search">
           </button>
-          <input class="bg-grey-lt form-control w-75 cust-input rounded-lg c-blue" type="search" placeholder="Search for patient (Name, Code, Phone Number)" aria-label="Search">
+          <input class="bg-grey-lt form-control w-75 cust-input rounded-lg c-blue" type="search" :placeholder="$t('Common.SearchPatient')" aria-label="Search">
       </form>
       <div>
+        <b-dropdown id="dropdown-right" right :text="selectedLang" variant="link" class="m-2">
+          <b-dropdown-item href="javascript:;"
+            v-for="lang in languages"
+            :key="lang.title"
+            @click="changeLocale(lang.language)">{{lang.title}}</b-dropdown-item>
+        </b-dropdown>
         <img class="user-img" src="@/assets/img/user.png" alt="user image" draggable="false">
         <span class="align-middle d-inline-block ml-1 c-blue user-id">
-          <strong class="d-flex">Moataz Mohamed</strong>
+          <label class="d-flex">Moataz Mohamed</label>
           <span class="d-flex opaque-5">Physician</span>
         </span>
-        <b-dropdown id="dropdown-right" right text="" variant="link" class="m-2">
+        <b-dropdown id="profile-dropdown-right" right text="" variant="link" class="m-2 pr-2">
           <b-dropdown-item href="javascript:;">Profile</b-dropdown-item>
           <b-dropdown-item href="javascript:;">Logout</b-dropdown-item>
         </b-dropdown>

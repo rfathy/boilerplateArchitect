@@ -1,6 +1,6 @@
 <template>
   <div class="grid-template">
-    <kendo-datasource ref="datasource1"
+    <kendo-datasource ref="datasource5"
                         :transport-read-url="'https://demos.telerik.com/kendo-ui/service/Northwind.svc/Employees'"
                         :type="'odata'"
                         :batch='true'
@@ -8,7 +8,7 @@
     </kendo-datasource>
 
     <kendo-grid :height="600"
-                :data-source-ref="'datasource1'"
+                :data-source-ref="'datasource5'"
                 :pageable='true'
                 :editable="'inline'"
                 :toolbar="['create']"

@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "author": "Arun Redhu",
-  "homepage": "https://github.com/arunredhu/vuejs_boilerplate",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
   },
   "dependencies": {
     "@progress/kendo-datasource-vue-wrapper": "^2019.3.1023",
@@ -24,10 +24,13 @@
     "core-js": "^2.6.5",
     "vee-validate": "^3.0.11",
     "vue": "^2.6.10",
+    "vue-i18n": "^8.0.0",
     "vue-router": "^3.0.3",
+    "vue-shortkey": "^3.1.7",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@kazupon/vue-i18n-loader": "^0.3.0",
     "@vue/cli-plugin-babel": "^3.7.0",
     "@vue/cli-plugin-eslint": "^3.7.0",
     "@vue/cli-service": "^3.7.0",
@@ -36,6 +39,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
+    "vue-cli-plugin-i18n": "^0.6.0",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
@@ -63,5 +67,6 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "homepage": "https://github.com/arunredhu/vuejs_boilerplate"
 }
