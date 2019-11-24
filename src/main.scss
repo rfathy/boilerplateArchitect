@@ -15,17 +15,6 @@
     max-height: 77px;
     overflow: auto;
 }
-// kendo command button without text
-.km-command-cell {
-  .km-button-icontext {
-    font-size: 0;
-    margin: 0 0.4rem;
-
-    .km-icon { 
-      margin: 0;
-    } 
-  }
-}
 
 html, body, .main-container-fluid{
   height: 100%;
