@@ -10,6 +10,7 @@
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
   },
   "dependencies": {
+    "@laylazi/bootstrap-rtl": "^4.3.118",
     "@progress/kendo-datasource-vue-wrapper": "^2019.3.1023",
     "@progress/kendo-dropdowntree-vue-wrapper": "^2019.3.1023",
     "@progress/kendo-grid-vue-wrapper": "^2019.3.1023",
