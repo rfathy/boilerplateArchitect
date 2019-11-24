@@ -7,6 +7,7 @@ Vue.use(LayoutInstaller)
 import TemplateGrid from './template-grid/template-grid.vue'
 import NestedGrid from './nested-grid/nested-grid.vue'
 import EditableGrid from './editable-grid/editable-grid.vue'
+import ProductsGrid from './products-grid/products-grid.vue'
 
 import FormValid from '../user-list/form-valid.vue'
 
@@ -17,22 +18,29 @@ export default {
             tabs: [
                 {
                     id: 1,
-                    name: "Template Grid",
-                    component: TemplateGrid,
+                    name: "Products Grid",
+                    component: ProductsGrid,
                     class: "k-state-active"
                 },
                 {
                     id: 2,
-                    name: "Nested Grid",
-                    component: NestedGrid,
+                    name: "Editable Grid",
+                    component: EditableGrid,
                     class: ""
                 },
                 {
                     id: 3,
-                    name: "Editable Grid",
-                    component: EditableGrid,
+                    name: "Template Grid",
+                    component: TemplateGrid,
                     class: ""
-                }
+                },
+                {
+                    id: 4,
+                    name: "Nested Grid",
+                    component: NestedGrid,
+                    class: ""
+                },
+                
             ],
             selected: TemplateGrid
         }
@@ -47,6 +55,7 @@ export default {
         TemplateGrid,
         NestedGrid,
         EditableGrid,
+        ProductsGrid,
         FormValid
     }
 }

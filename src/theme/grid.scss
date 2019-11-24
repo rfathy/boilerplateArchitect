@@ -1,29 +1,54 @@
 .k-grid{
     border:0;
-    margin-top: 48px;
+    margin-top: 38px;
     box-shadow: 0px 0px 5px 1px #b3bfc370;
 .k-grid-toolbar{
     background-color: transparent;
     border:0;
     position: absolute;
-    top: -48px;
+    top: -38px;
+    padding: 0;
     .k-grid-add{
         background-color: $turquoise;
         color:$white;
         border:0;
+        font-size: 12px;
     }
 }
 .k-grid-header{
-    background-color: $linkWater;
-    text-transform: capitalize;
-    font-weight: bold;
+
+        th{
+            font-size: 14px;
+            border:0;
+            color:$tundora;
+            font-weight: 600;
+            padding: 0.5rem;
+            & > a.k-link{
+                padding: 0;
+                margin: 0;
+            }
+    }
+    tr:not(.k-filter-row){
+        background-color: $linkWater;
+        text-transform: capitalize;
+    }
+    .k-filter-row{
+        background-color:$athensGray;
+        .k-input{
+            padding: 0;
+            height: 1.5em;
+        }
+    }
 }
 .k-grid-content{
     .k-alt{
-        background-color:$athensGray
+        background-color:$athensGray;
     }
     td{
         border:0;
+        @extend .text-ellipses;
+        font-size: 12px;
+        padding: 0.5rem;
     }
 
 // kendo command button without text
