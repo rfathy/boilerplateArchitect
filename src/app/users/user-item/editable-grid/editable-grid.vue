@@ -16,6 +16,13 @@
                 @edit="editAction"
                 @remove="removeAction"
                 @savechanges="saveAction">
+                <grid-toolbar>
+                  <div >
+                      <button title="Add new" class="k-button k-primary" @click='addRecord' >
+                          Add new
+                      </button>
+                  </div>
+              </grid-toolbar>
         <kendo-grid-column :field="'ProductName'"></kendo-grid-column>
         <kendo-grid-column :field="'UnitPrice'"
                            :title="'Unit Price'"

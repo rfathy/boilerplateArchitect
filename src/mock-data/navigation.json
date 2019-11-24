@@ -1,28 +1,53 @@
-[{
-  "id": "1",
-  "name" : "Testing links",
-  "submodules" : [
-    { "id": "1", "name" : "User List", "link": "/users/user-list" },
-    { "id": "2", "name" : "Form Valation", "link": "/" },
-    { "id": "3", "name" : "User Item", "link": "/users/user-item" }
-  ]
-},{
-  "id": "2",
-  "name" : "module name 1",
-  "submodules" : [
-    { "id": "1", "name" : "submodule.1" },
-    { "id": "2", "name" : "submodule.2" }
-  ]
-},
-{
-  "id": "3",
-  "name" : "module name 2",
-  "submodules" : [
-    { "id": "1", "name" : "submodule.3" },
-    { "id": "2", "name" : "submodule.4" },
-    { "id": "3", "name" : "submodule.5" },
-    { "id": "4", "name" : "submodule.6" },
-    { "id": "5", "name" : "submodule.7" },
-    { "id": "6", "name" : "submodule.8" }
-  ]
-}]
+[
+  {
+    "id":"1",
+    "name": "main cat 1",
+    "isActivelink": false,
+    "isExpand": false,
+    "maincat":[
+      {      
+        "id": "2",
+        "name" : "Testing links",
+        "submodules" : [
+          { "id": "3", "name" : "User List", "link": "/users/user-list" },
+          { "id": "4", "name" : "Form Valation", "link": "/" },
+          { "id": "5", "name" : "User Item", "link": "/users/user-item" }
+        ]
+      }
+    ]  
+  },
+  {
+    "id":"6",
+    "name": "main cat 2",
+    "isActivelink": false,
+    "isExpand": false,
+    "maincat":[
+      {      
+        "id": "7",
+        "name" : "Testing links 2",
+        "submodules" : [
+          { "id": "8", "name" : "Case 1"},
+          { "id": "9", "name" : "Case 2"},
+          { "id": "10", "name" : "Case 3"}
+        ]
+      }
+    ]  
+  },
+  {
+    "id":"11",
+    "name": "main cat 3",
+    "isActivelink": false,
+    "isExpand": false,
+    "maincat":[
+      {      
+        "id": "12",
+        "name" : "Testing links 3",
+        "submodules" : [
+          { "id": "13", "name" : "Testing SubMod 1"},
+          { "id": "14", "name" : "Testing SubMod 2"},
+          { "id": "15", "name" : "Testing SubMod 3"}
+        ]
+      }
+    ]  
+  }
+]
