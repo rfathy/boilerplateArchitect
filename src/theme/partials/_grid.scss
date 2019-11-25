@@ -30,6 +30,9 @@
             &.k-state-focused{
                 box-shadow: none;
             }
+            &>a{
+                color:$tundora;
+            }
     }
     tr:not(.k-filter-row){
         background-color: $linkWater;
@@ -37,10 +40,7 @@
     }
     .k-filter-row{
         background-color:$athensGray;
-        .k-input{
-            padding: 0;
-            height: 1.5em;
-        }
+        
     }
 }
 .k-grid-content{
@@ -103,5 +103,24 @@ color: $black;
     }
 
     }
-
+    .k-dropdown{
+        .k-dropdown-wrap{
+            background-color:$white;
+            color: $rollingStone;
+            border-color: $alto;
+            font-size: 12px;
+            & > .k-input , & > .k-select{
+                padding: 0.35rem 0.5rem;
+                height: calc( 0.35rem + 1.5em);
+            }
+        }
+    }
+    .k-autocomplete{
+        .k-input{
+            font-size: 12px;
+            padding: 0.35rem 0.5rem;
+            height: calc( 0.35rem + 1.5em);
+            border-color: $alto;
+        }
+    }
 }
