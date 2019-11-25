@@ -6,10 +6,11 @@
         <div class="container-fluid main-container-fluid mb-2">
         </div>
     </header>
-    <div id="right-panel" class="right-panel rounded-lg pt-2 pb-2 pr-4">
+    <div id="right-panel" class="right-panel rounded-lg">
         <div class="content">
         <slot />          
         </div>
+        <div class="clear"></div>
     </div>
   </div>
 </template>
@@ -35,7 +36,7 @@ export default {
 
 <style lang="scss" scoped>
   #right-panel{
-    margin: 95px auto 0 auto;
+    margin: 127px auto 0 auto;
     width: 100%;
     flex: 1;
   }

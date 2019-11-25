@@ -3,6 +3,7 @@ import AppUsers from './users.vue';
 import UserList from './user-list/user-list.vue';
 import UserItem from './user-item/user-item.vue';
 import FormValid from './user-list/form-valid.vue';
+import Grids from './user-list/grids.vue';
 
 const userRoutes = [
   {
@@ -27,6 +28,12 @@ const userRoutes = [
         name: 'user-item',
         meta: {title: 'User Item'},
         component: UserItem
+      },
+      {
+        path: 'grids',
+        name: 'grids',
+        meta: {title: 'grids'},
+        component: Grids
       },
       {
         path: '',
