@@ -30,7 +30,8 @@
                                         <h6 class="font-weight-normal pl-1 ml-lg-n2 links-parent">{{n.name}}</h6>
                                         <ul class="level-2">
                                             <li class="list-inline-item col mb-1"
-                                                v-for="s in n.submodules" :key="s.id">
+                                                v-for="s in n.submodules" :key="s.id"
+                                                @click="navEl = !navEl">
                                                 <router-link :to="{ path: s.link }" class="text-white">{{s.name}}</router-link></li> 
                                         </ul>
                                     </div>
