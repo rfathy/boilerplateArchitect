@@ -233,3 +233,8 @@ body{
 .km-switch[aria-readonly="true"] {
   pointer-events: none;
 }
+
+/* increase modal z-index to overlap menu z-index*/
+#modal-scoped___BV_modal_outer_{
+  z-index :10000 !important;
+}
