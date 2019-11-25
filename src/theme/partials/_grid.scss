@@ -47,6 +47,8 @@
         color:$tundora;
         font-weight: 600;
         padding: 0.5rem;
+        text-align: center;
+
         & > a.k-link{
             padding: 0;
             margin: 0;
@@ -68,6 +70,8 @@
     }
 }
 .k-grid-content{
+    overflow: visible;
+
     .k-alt{
         background-color:$athensGray;
     }
@@ -76,6 +80,8 @@
         @extend .text-ellipses;
         font-size: 12px;
         padding: 0.5rem;
+        text-align: center;
+
         &.k-state-focused{
             box-shadow: none;
         }
@@ -89,7 +95,7 @@
         background: transparent;
         border: 0;
         &.k-grid-edit,&.k-grid-update{
-            color:$danube;
+            color: $shamrock;
         }
         &.k-grid-cancel,&.k-grid-delete{
             color:$seaPink;
@@ -103,8 +109,39 @@
     }
   }
 
-  // Disable button in grid that opens popup in case of add/edit row
 .k-grid-edit-row {
+    td {
+        position: relative;
+        overflow: visible;
+        padding-top: 0.25rem;
+
+        &.k-command-cell {
+            display: flex;
+            justify-content: center;
+            flex-direction: row-reverse;
+        }
+
+        .k-widget.k-tooltip.k-tooltip-validation {
+            top: -33px;
+            right: -16px;
+            padding: 0.25rem 0.5rem;
+            background-color: #0c3c6b;
+
+            .k-icon.k-i-warning {
+                position: absolute;
+                right: 16px;
+                bottom: -34px;
+                color: red;
+                font-size: 1.8rem;
+            }
+
+            .k-callout-n {
+                top: 29px;
+                transform: rotate(180deg);
+            }
+        }
+    }
+    // Disable button in grid that opens popup in case of add/edit row
     .btn-open-popup {
       pointer-events: none;
     }

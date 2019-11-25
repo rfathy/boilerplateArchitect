@@ -24,7 +24,7 @@ export default {
     methods: {
         parameterMap: function(options, operation) {
             if (operation !== 'read' && options.models) {
-                return { models: kendo.stringify(options.models) }
+                // return { models: kendo.stringify(options.models) }
             }
         }
     },

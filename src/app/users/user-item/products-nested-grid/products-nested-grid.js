@@ -15,11 +15,11 @@ export default {
                         fields: {
                         ProductID: { editable: false, nullable: true },
                         Code: { type: 'number', validation: { min: 1 } },
-                        EnName: { validation: { required: {message: "Required!"} } },
-                        AnName: {  validation: { required: true } },
+                        EnName: { validation: { required: {message: "Required"} } },
+                        AnName: {  validation: { required: {message: "Required"} } },
                         ProductClassification: {  },
                         Description: {  },
-                        ParentCategory: { validation: { required: true } },
+                        ParentCategory: { validation: { required: {message: "Required"} } },
                         Status: { type: 'boolean' } 
                         }
                     }
@@ -82,8 +82,8 @@ export default {
                         fields: {
                             // UOMID: { editable: false, nullable: true },
                             UOMCode: { type: 'number', validation: { min: 1 } },
-                            UOMEnName: { validation: { required: {message: "Required!"} } },
-                            UOMAnName: {  validation: { required: true } },
+                            UOMEnName: { validation: { required: {message: "Required"} } },
+                            UOMAnName: {  validation: { required: {message: "Required"} } },
                             UOMDescription: { type: 'string' },
                             UOMStatus: { type: 'boolean' } 
                         }
@@ -142,8 +142,8 @@ export default {
                         text: { edit: "Edit", cancel: "Cancel", update: "Update" },
                         iconClass: {
                             edit: "fas fa-edit",
-                            update: "k-icon k-i-check",
-                            cancel: "k-icon k-i-close"
+                            update: "fas fa-check-circle",
+                            cancel: "far fa-times-circle"
                         }
                     },
                     {
@@ -159,7 +159,7 @@ export default {
             })
         },
         dataBound: function (ev) {
-        ev.sender.expandRow(ev.sender.tbody.find('tr.k-master-row').first())
+            ev.sender.expandRow(ev.sender.tbody.find('tr.k-master-row').first())
         },
     }
 }
