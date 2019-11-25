@@ -24,7 +24,8 @@ import { InputsInstaller } from '@progress/kendo-inputs-vue-wrapper'
 Vue.use(InputsInstaller)
 
 //styles & layout
-import './main.scss';
+// import '';
+localStorage.getItem('selectedLang') == 'en' ? import('./main.scss') : import('./main-rtl.scss');
 import Default from './app/shared/layouts/default.vue'
 Vue.component('default-layout', Default)
 

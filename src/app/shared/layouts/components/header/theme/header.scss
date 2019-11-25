@@ -113,6 +113,8 @@
             text-decoration: none;
         }  
         .mega-menu{
+            background: #0357a8;
+            min-width: 225px;
             .displayMega a:hover {
                 text-decoration: none;
                 padding-bottom: 0;
@@ -126,24 +128,32 @@
                 a:hover{
                     span{
                         color: #0357a8;
-                        font-weight: bold
                     }
                 }
             }      
             ul li {
                 padding: 0;
                 margin: 0 1px 0 0;
+                span{
+                    font-size: 10px;
+                }
                 a{
                     display: block;
                     img{
-                        height:65px;
+                        height:45px;
                     }
                 }
                 &:hover{
                     background: #e5f3f7;
+                    span{
+                        font-weight: bold
+                    }
                 }
                 &.active-link{
-                    border-bottom: 3px solid #0357a8
+                    border-bottom: 3px solid #0357a8;
+                    span{
+                        font-weight: bold
+                    }
                 }
                 &.active-link:after{
                     content: "";
@@ -156,13 +166,19 @@
                     margin-left: -5px;
                 }
             }
+            ul#site-navigation{
+                height: 78px;
+                li.list-inline-item.text-center{
+                    min-width: 100px;
+                }
+            }
             .displayMega {
                 display: block;
                 opacity: 1;
                 position: absolute;
                 left: 0;
                 width: 100%;
-                top: 111px;
+                top: 85px;
                 z-index: 999999;
                 .rout-holder{
                     background: #0357a8;
@@ -177,6 +193,7 @@
                     h6{
                         border-left: 3px solid #11e4ea;
                         color: #bfd5e9;
+                        font-size: 12px;
                     }
                     ul{
                         li{
@@ -204,7 +221,7 @@
             left: 0;
             width: 100%;
             z-index: 999999;
-            top: 35px;
+            top: 33px;
         }          
         ul.level-2 {
             color: #fff;
@@ -238,22 +255,7 @@
                 }
             }
 
-        }
-        .horizontal-navbar-menu {
-            position: absolute;
-            width: 100%;
-            height: 100px;
-            background-color: #0257A8;
-            z-index: 1;
-            left: 0;
-            top: 48px;
-            li {
-                img {
-                    width: 100px;
-                    height: 100px;
-                }
-            }
-        }   
+        }  
         #patient-classification{
             height: 25px;
             margin: 4px 6px 2px 0;   

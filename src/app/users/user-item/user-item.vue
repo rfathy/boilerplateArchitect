@@ -17,6 +17,9 @@
         <div>
           <nested-grid />
         </div>
+        <div>
+          <products-nested-grid />
+        </div>
     </kendo-tabstrip>
   </div>
 </template>
