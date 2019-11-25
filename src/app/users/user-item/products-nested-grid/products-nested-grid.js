@@ -1,4 +1,4 @@
-import json from '../../../../../public/mock-data/product.json'
+import json from '../../../../../public/mock-data/products1.json'
 import nestedJson from '../../../../../public/mock-data/nested-products.json'
 import $ from 'jquery';
 
@@ -75,10 +75,10 @@ export default {
         detailInit: function (e) {
             $('<div />').appendTo(e.detailCell).kendoGrid({
               dataSource: {
-                data: nestedJson,
+                data: json,
                 schema: {
                     model: {
-                        id: "UOMID",
+                        id: "UOM.UOMID",
                         fields: {
                             UOMID: { editable: false, nullable: true },
                             UOMCode: { type: 'number', validation: { min: 1 } },
@@ -104,28 +104,28 @@ export default {
               pageable: true,
               noRecords: true,
               columns: [{
-                field: 'UOMCode',
+                field: 'UOM.UOMCode',
                 title: 'UOM Code',
                 // editable: this.preventEditColumn,
                 width: '110px'
               },
               {
-                field: 'UOMEnName',
+                field: 'UOM.UOMEnName',
                 title: 'UOM En Name',
                 width: '170px'
               },
               {
-                field: 'UOMAnName',
+                field: 'UOM.UOMAnName',
                 title: 'UOM Ar Name',
                 width: '170px'
               },
               {
-                field: 'UOMDescription',
+                field: 'UOM.UOMDescription',
                 title: 'Description',
                 width: '350px'
               },
               {
-                field: 'UOMStatus',
+                field: 'UOM.UOMStatus',
                 title: 'Status',
                 editor: this.customBoolEditor,
                 width: '150px'
