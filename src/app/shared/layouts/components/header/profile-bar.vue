@@ -1,20 +1,20 @@
 <template>
-  <nav class="profile-bar pl-3 p-0 navbar navbar-expand-md navbar-light fixed-top bg-light shadow-sm">
+  <nav class="profile-bar p-0 navbar navbar-expand-md navbar-light fixed-top bg-light shadow-sm">
     <a class="navbar-brand" href="#">
       <img class="custom-logo" src="@/assets/img/logo.png" alt="logo" draggable="false">
     </a>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <form class="form-inline navbar-nav mr-auto col-5 search-patient">
-          <button class="bg-grey-lt btn cust-btn p-0 rounded-lg" type="button">
-              <img src="@/assets/svg/register-new.svg" alt="Register New Patient">
-          </button>
+          <input class="bg-grey-lt form-control w-75 cust-input rounded-lg c-blue" 
+                 type="search" 
+                 :placeholder="$t('Common.SearchPatient')" 
+                 aria-label="Search">                 
           <button class="bg-grey-lt btn cust-btn mr-1 p-0 rounded-lg" type="button">
               <img src="@/assets/svg/search.svg" alt="Search">
           </button>
-          <input class="bg-grey-lt form-control w-75 cust-input rounded-lg c-blue" type="search" :placeholder="$t('Common.SearchPatient')" aria-label="Search">
       </form>
       <div>
-        <b-dropdown id="dropdown-right" right :text="selectedLang" variant="link" class="m-2">
+        <b-dropdown id="language-dropdown-right" right :text="selectedLang" variant="link" class="mr-2">
           <b-dropdown-item href="javascript:;"
             v-for="lang in languages"
             :key="lang.title"
@@ -25,7 +25,7 @@
           <label class="d-flex">Moataz Mohamed</label>
           <span class="d-flex opaque-5">Physician</span>
         </span>
-        <b-dropdown id="profile-dropdown-right" right text="" variant="link" class="m-2 pr-2">
+        <b-dropdown id="profile-dropdown-right" right text="" variant="link" class="mr-2 mt-xl-n3 mt-1">
           <b-dropdown-item href="javascript:;">Profile</b-dropdown-item>
           <b-dropdown-item href="javascript:;">Logout</b-dropdown-item>
         </b-dropdown>
