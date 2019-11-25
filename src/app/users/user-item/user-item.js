@@ -8,6 +8,7 @@ import TemplateGrid from './template-grid/template-grid.vue'
 import NestedGrid from './nested-grid/nested-grid.vue'
 import EditableGrid from './editable-grid/editable-grid.vue'
 import ProductsGrid from './products-grid/products-grid.vue'
+import ProductsNestedGrid from './products-nested-grid/products-nested-grid.vue'
 
 import FormValid from '../user-list/form-valid.vue'
 
@@ -40,7 +41,12 @@ export default {
                     component: NestedGrid,
                     class: ""
                 },
-                
+                {
+                    id: 5,
+                    name: "Products Nested Grid",
+                    component: ProductsNestedGrid,
+                    class: ""
+                }
             ],
             selected: TemplateGrid
         }
@@ -56,6 +62,7 @@ export default {
         NestedGrid,
         EditableGrid,
         ProductsGrid,
+        ProductsNestedGrid,
         FormValid
     }
 }
