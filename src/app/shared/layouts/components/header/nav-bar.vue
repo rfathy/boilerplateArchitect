@@ -21,12 +21,11 @@
                             <a href="javascript:;" class="d-inline-block mt-2 mb-2 ml-3 mr-3" :class="{'expanded-mega': m.isActivelink}">
                                 <img src="@/assets/nav/nav3.svg" alt="">
                                 <span class="d-block c-blue">{{m.name}}</span>
-                            </a>
-                            <!--class="container-fluid mega-menu" -->
+                            </a>                           
                             <div class="container-fluid">
                                 <div class="mega-menu-holder mega-menu rounded-xl row"
                                     v-show="m.isExpand && mega" :class="{ displayMega : m.isExpand }">
-                                    <div class="col d-inline-block align-top rout-holder text-capitalize text-left pt-3 pl-4 pb-2" 
+                                    <div class="col-md-auto d-inline-block align-top rout-holder text-capitalize text-left pt-3 pl-4 pb-2" 
                                         v-for="n in m.maincat" :key="n.id">
                                         <h6 class="font-weight-normal pl-1 ml-lg-n2 links-parent">{{n.name}}</h6>
                                         <ul class="level-2">
@@ -39,7 +38,7 @@
                             </div>                                
                         </li>
                     </ul>
-                </div>
+                </div> 
             </transition>
             <div class="bread-links d-inline-block text-capitalize mr-auto">
                 <ul class="m-0 d-inline-block">
