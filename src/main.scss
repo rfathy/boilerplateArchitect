@@ -1,4 +1,5 @@
-@import 'node_modules/bootstrap/scss/bootstrap';
+
+@import './theme/bootstrap-4-rtl/scss/bootstrap.scss';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 @import 'node_modules/@progress/kendo-theme-bootstrap/scss/all';
 @import './theme/partials/direction-ltr';

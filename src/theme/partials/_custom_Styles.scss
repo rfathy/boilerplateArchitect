@@ -1,136 +1,125 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+// max height of kendo multi select to show 2 rows of its options
+.k-multiselect-wrap {
+    max-height: 77px;
+    overflow: auto;
+}
+
+html, body, .main-container-fluid{
+  height: 100%;
+}
+.container-fluid{
+  display: flex;
+    flex-direction: column;
+}
+body{
+  background:#c9c9c9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:12px !important;
+  .clear{
+    clear: both
   }
-  
-  // max height of kendo multi select to show 2 rows of its options
-  .k-multiselect-wrap {
-      max-height: 77px;
-      overflow: auto;
+  /*colors*/
+  .c-blue{
+    color: #0357a8;
   }
-  // kendo command button without text
-  .k-command-cell {
-    .k-button-icontext {
-      font-size: 0;
-      margin: 0 0.4rem;
-  
-      .k-icon { 
-        margin: 0;
-      } 
-    }
+  .bg-grey-lt{
+    background: #e8f0f7;
   }
-  
-  html, body, .main-container-fluid{
-    height: 100%;
-  }
-  .container-fluid{
-    display: flex;
-      flex-direction: column;
-  }
-  body{
-    background:#c9c9c9;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size:12px !important;
-    .clear{
-      clear: both
-    }
-    /*colors*/
-    .c-blue{
-      color: #0357a8;
-    }
-    .bg-grey-lt{
-      background: #e8f0f7;
-    }
-    /*butons*/
-    .cust-btn{
-      border: none;
+  /*butons*/
+  .cust-btn{
+    border: none;
+    outline: none;
+    &:hover,
+    &:focus{
       outline: none;
-      &:hover,
-      &:focus{
-        outline: none;
-      }
-    }
-    /*inputs*/
-    .cust-input{
-      border: none;
-      outline: none;
-      height: 34px;
-    }
-    /*opacity*/
-    .opaque-5{
-      opacity: 0.5;
-    }
-    .opaque-3{
-      opacity: 0.3;
     }
   }
-  
-  /* Enter and leave animations can use different */
-  /* durations and timing functions.              */
-  .slide-fade-enter-active {
-    transition: all .3s ease;
+  /*inputs*/
+  .cust-input{
+    border: none;
+    outline: none;
+    height: 34px;
   }
-  .slide-fade-leave-active {
-    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  /*opacity*/
+  .opaque-5{
+    opacity: 0.5;
   }
-  .slide-fade-enter, .slide-fade-leave-to
-  /* .slide-fade-leave-active below version 2.1.8 */ {
-    transform: translateY(10px);
-    opacity: 0;
+  .opaque-3{
+    opacity: 0.3;
   }
-  
-  /*switcher*/
-  .km-switch {
-    border-radius: 4.6em;
-    cursor: pointer;
-    width: 4.6em;
-    background: none;
-    border: 0;
-    outline: 0;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    overflow: hidden;
-    vertical-align: middle;
-    font-size: 10px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    text-align: $start-direction;
-  }
-  .km-switch [type="checkbox"] {
-    display: none;
-  }
-  .km-ie .km-switch {
-    display: inline-block;
-  }
-  .km-switch, .km-switch-container, .km-switch-handle {
-    box-sizing: border-box;
-  }
-  .km-switch-container {
-    border-radius: 4.6em;
-    padding: 0 0;
-    border-width: 0;
-    border-style: solid;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
-    position: relative;
-    outline: 0;
-    transition: background-color 200ms ease-out 0s;
-  }
-  .km-ie .km-switch-container {
-    display: block;
-  }
-  .km-switch-handle {
-    border-radius: 4.6em;
-    width: 2.4em;
-    height: 2.4em;
-    border-width: 0;
-    border-style: solid;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    $start-direction: 0;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+/*switcher*/
+.km-switch {
+  border-radius: 4.6em;
+  cursor: pointer;
+  width: 4.6em;
+  background: none;
+  border: 0;
+  outline: 0;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: middle;
+  font-size: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: $start-direction;
+}
+.km-switch [type="checkbox"] {
+  display: none;
+}
+.km-ie .km-switch {
+  display: inline-block;
+}
+.km-switch, .km-switch-container, .km-switch-handle {
+  box-sizing: border-box;
+}
+.km-switch-container {
+  border-radius: 4.6em;
+  padding: 0 0;
+  border-width: 0;
+  border-style: solid;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  position: relative;
+  outline: 0;
+  transition: background-color 200ms ease-out 0s;
+}
+.km-ie .km-switch-container {
+  display: block;
+}
+.km-switch-handle {
+  border-radius: 4.6em;
+  width: 2.4em;
+  height: 2.4em;
+  border-width: 0;
+  border-style: solid;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  $start-direction: 0;
     transition: $start-direction 200ms ease-out 0s;
   }
   .km-ie .km-switch-handle {
@@ -146,94 +135,99 @@
   .km-switch-off .km-switch-handle {
     $start-direction: 0;
   }
-  .km-switch-label-on, .km-switch-label-off {
-    display: none;
-    width: calc(100% + -2.4em + -5px);
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    line-height: 2.4em;
-    overflow: hidden;
-  }
-  .km-switch-label-on {
-    text-align: $start-direction;
-    $start-direction: 3px;
-  }
-  .km-switch-label-off {
-    text-align: $end-direction;
-    $end-direction: 3px;
-  }
-  .km-switch {
-    overflow: visible;
-  }
-  .km-switch-container {
-    height: 1.5em;
-  }
-  .km-switch-handle {
-    top: -0.45em;
-  }
-  .km-switch-label-on, .km-switch-label-off {
-    text-shadow: none;
-  }
-  .km-switch-on .km-switch-container {
-    color: #fff;
-    background-color: #98a2db;
-  }
-  .km-switch-on .km-switch-handle {
-    color: #fff;
-    background-color: #3f51b5;
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  }
-  .km-switch-on:focus .km-switch-container, .km-switch-on.km-state-focused .km-switch-container {
-    color: #fff;
-    background-color: #7a87d1;
-  }
-  .km-switch-on:hover .km-switch-container, .km-switch-on.km-state-hover .km-switch-container {
-    color: #fff;
-    background-color: #7a87d1;
-  }
-  .km-switch-on:hover .km-switch-handle, .km-switch-on.km-state-hover .km-switch-handle {
-    color: #fff;
-    background-color: #3f51b5;
-  }
-  .km-switch-on .km-switch-label-off {
-    color: transparent;
-  }
-  .km-switch-off .km-switch-container {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.38);
-  }
-  .km-switch-off .km-switch-handle {
-    color: #fff;
-    background-color: #fafafa;
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  }
-  .km-switch-off:focus .km-switch-container, .km-switch-off.km-state-focused .km-switch-container {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  .km-switch-off:hover .km-switch-container, .km-switch-off.km-state-hover .km-switch-container {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  .km-switch-off:hover .km-switch-handle, .km-switch-off.km-state-hover .km-switch-handle {
-    color: #fff;
-    background-color: #fafafa;
-  }
-  .km-switch-off .km-switch-label-on {
-    color: transparent;
-  }
-  .km-switch {
-    box-shadow: none;
-  }
-  .km-switch:focus .km-switch-container, .km-switch.km-state-focused .km-switch-container {
-    outline: none;
-  }
-  .km-switch.km-state-disabled {
-    cursor: default;
-  }
-  .km-switch[aria-readonly="true"] {
-    pointer-events: none;
-  }
+.km-switch-label-on, .km-switch-label-off {
+  display: none;
+  width: calc(100% + -2.4em + -5px);
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  line-height: 2.4em;
+  overflow: hidden;
+}
+.km-switch-label-on {
+  text-align: $start-direction;
+  $start-direction: 3px;
+}
+.km-switch-label-off {
+  text-align: $end-direction;
+  $end-direction: 3px;
+}
+.km-switch {
+  overflow: visible;
+}
+.km-switch-container {
+  height: 1.5em;
+}
+.km-switch-handle {
+  top: -0.45em;
+}
+.km-switch-label-on, .km-switch-label-off {
+  text-shadow: none;
+}
+.km-switch-on .km-switch-container {
+  color: #fff;
+  background-color: #98a2db;
+}
+.km-switch-on .km-switch-handle {
+  color: #fff;
+  background-color: #3f51b5;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.km-switch-on:focus .km-switch-container, .km-switch-on.km-state-focused .km-switch-container {
+  color: #fff;
+  background-color: #7a87d1;
+}
+.km-switch-on:hover .km-switch-container, .km-switch-on.km-state-hover .km-switch-container {
+  color: #fff;
+  background-color: #7a87d1;
+}
+.km-switch-on:hover .km-switch-handle, .km-switch-on.km-state-hover .km-switch-handle {
+  color: #fff;
+  background-color: #3f51b5;
+}
+.km-switch-on .km-switch-label-off {
+  color: transparent;
+}
+.km-switch-off .km-switch-container {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.38);
+}
+.km-switch-off .km-switch-handle {
+  color: #fff;
+  background-color: #fafafa;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.km-switch-off:focus .km-switch-container, .km-switch-off.km-state-focused .km-switch-container {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.km-switch-off:hover .km-switch-container, .km-switch-off.km-state-hover .km-switch-container {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.km-switch-off:hover .km-switch-handle, .km-switch-off.km-state-hover .km-switch-handle {
+  color: #fff;
+  background-color: #fafafa;
+}
+.km-switch-off .km-switch-label-on {
+  color: transparent;
+}
+.km-switch {
+  box-shadow: none;
+}
+.km-switch:focus .km-switch-container, .km-switch.km-state-focused .km-switch-container {
+  outline: none;
+}
+.km-switch.km-state-disabled {
+  cursor: default;
+}
+.km-switch[aria-readonly="true"] {
+  pointer-events: none;
+}
+
+/* increase modal z-index to overlap menu z-index*/
+#modal-scoped___BV_modal_outer_{
+  z-index :10000 !important;
+}
