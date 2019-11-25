@@ -18,7 +18,7 @@ export default {
       modules: json
     }), 
     methods: {
-      collapseothers(e) {  //collapse other mega menu when one is clicked
+      collapseothers() {  //collapse other mega menu when one is clicked
         let activeList = document.querySelectorAll('li.active-link');
         for (var i = 0; i < activeList.length; i++){ 
           if(!activeList[i].contains(event.target)) activeList[i].click()

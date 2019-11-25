@@ -1,4 +1,4 @@
-import json from '../../../../../public/mock-data/products1.json'
+import json from '../../../../../public/mock-data/product.json'
 import nestedJson from '../../../../../public/mock-data/nested-products.json'
 import $ from 'jquery';
 
@@ -75,12 +75,12 @@ export default {
         detailInit: function (e) {
             $('<div />').appendTo(e.detailCell).kendoGrid({
               dataSource: {
-                data: json,
+                data: nestedJson,
                 schema: {
                     model: {
-                        id: "UOM.UOMID",
+                        // id: "UOMID",
                         fields: {
-                            UOMID: { editable: false, nullable: true },
+                            // UOMID: { editable: false, nullable: true },
                             UOMCode: { type: 'number', validation: { min: 1 } },
                             UOMEnName: { validation: { required: {message: "Required!"} } },
                             UOMAnName: {  validation: { required: true } },
@@ -97,41 +97,61 @@ export default {
                 },
                 batch: 'true'
               },
-              toolbar: ['create'],
+              toolbar: [
+                  {
+                    name: 'create',
+                    text: 'Add UOM'
+                  }
+              ],
               editable: 'inline',
               scrollable: false,
               sortable: true,
               pageable: true,
               noRecords: true,
               columns: [{
-                field: 'UOM.UOMCode',
+                field: 'UOMCode',
                 title: 'UOM Code',
                 // editable: this.preventEditColumn,
                 width: '110px'
               },
               {
-                field: 'UOM.UOMEnName',
+                field: 'UOMEnName',
                 title: 'UOM En Name',
                 width: '170px'
               },
               {
-                field: 'UOM.UOMAnName',
+                field: 'UOMAnName',
                 title: 'UOM Ar Name',
                 width: '170px'
               },
               {
-                field: 'UOM.UOMDescription',
+                field: 'UOMDescription',
                 title: 'Description',
                 width: '350px'
               },
               {
-                field: 'UOM.UOMStatus',
+                field: 'UOMStatus',
                 title: 'Status',
                 editor: this.customBoolEditor,
                 width: '150px'
               },
               {
-                command: ['edit', 'destroy'],
+                command: [
+                    {
+                        name: 'edit',
+                        text: { edit: "Edit", cancel: "Cancel", update: "Update" },
+                        iconClass: {
+                            edit: "fas fa-edit",
+                            update: "k-icon k-i-check",
+                            cancel: "k-icon k-i-close"
+                        }
+                    },
+                    {
+                        name: 'destroy',
+                        text: 'Delete',
+                        iconClass: 'fas fa-trash-alt'
+                    }
+                ],
                 title: '&nbsp;',
                 width: '200px'
               }
