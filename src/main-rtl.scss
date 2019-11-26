@@ -1,12 +1,8 @@
-// @import './theme/bootstrap-4-rtl/scss/bootstrap-rtl.scss';
-// @import 'node_modules/bootstrap-vue/src/index.scss';
-// @import 'node_modules/@progress/kendo-theme-bootstrap/scss/all';
-// @import './theme/partials/direction-rtl';
-// @import './theme/partials/variables';
-// @import './theme/partials/utilites';
-// @import './theme/partials/grid';
-// @import './theme/partials/custom_Styles';
-
-@import './main.scss';
 @import './theme/bootstrap-4-rtl/scss/bootstrap-rtl.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+@import 'node_modules/@progress/kendo-theme-bootstrap/scss/all';
 @import './theme/partials/direction-rtl';
+@import './theme/partials/variables';
+@import './theme/partials/utilites';
+@import './theme/partials/grid';
+@import './theme/partials/custom_Styles';
