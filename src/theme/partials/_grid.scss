@@ -66,7 +66,9 @@
     }
     .k-filter-row{
         background-color:$athensGray;
-        
+        .k-button-icon[title=Clear]{
+            display: none;
+                    }
     }
 }
 .k-grid-content{
@@ -110,6 +112,7 @@
   }
 
 .k-grid-edit-row {
+    background-color:$tropicalBlue ;
     td {
         position: relative;
         overflow: visible;
@@ -122,22 +125,35 @@
         }
 
         .k-widget.k-tooltip.k-tooltip-validation {
-            top: -33px;
-            right: -16px;
+            top: -19px;
+            right: -18px;
             padding: 0.25rem 0.5rem;
-            background-color: #0c3c6b;
-
+            background-color: $Madison;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 0;
             .k-icon.k-i-warning {
                 position: absolute;
-                right: 16px;
-                bottom: -34px;
+                right: 15px;
+                bottom: -24px;
                 color: red;
-                font-size: 1.8rem;
+                font-size: 1.3rem;
             }
 
             .k-callout-n {
-                top: 29px;
+                top: 26px;
                 transform: rotate(180deg);
+                border-bottom-color: $Madison;
+
+            }
+        }
+        .k-textbox{
+            font-size: 12px;
+            padding: 0.35rem 0.5rem;
+            height: calc( 0.35rem + 1.5em);
+            border-color: $alto;
+            &.k-invalid{
+                padding-inline-end: 22px;
             }
         }
     }
@@ -176,12 +192,16 @@ color: $black;
             }
         }
     }
-    .k-autocomplete{
+    .k-autocomplete ,.k-numeric-wrap{
         .k-input{
             font-size: 12px;
             padding: 0.35rem 0.5rem;
             height: calc( 0.35rem + 1.5em);
             border-color: $alto;
+        }
+        .k-clear-value{
+            top: 0;
+            display: inline-flex;
         }
     }
 }
