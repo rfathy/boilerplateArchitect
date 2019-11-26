@@ -11,7 +11,8 @@
         "submodules" : [
           { "id": "3", "name" : "User List", "link": "/users/user-list" },
           { "id": "4", "name" : "Form Valation", "link": "/" },
-          { "id": "5", "name" : "User Item", "link": "/users/user-item" }
+          { "id": "5", "name" : "User Item", "link": "/users/user-item" },
+          { "id": "6", "name" : "Grids", "link": "/users/grids" }
         ]
       }
     ]  

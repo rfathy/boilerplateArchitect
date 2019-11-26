@@ -6,7 +6,6 @@ export default {
       props: [ 
           'mega', 
           'isActivelink',
-          'level3', 
           'products',
           'navEl'
       ],
@@ -16,29 +15,13 @@ export default {
       mega: false,
       navEl: false,
       isActivelink: false,
-      level3: '',
       modules: json
     }), 
     methods: {
-      // Reset all variables upon leaving mega menu area
-      levelReset: function() {
-        this.level3 = ''
-      },
-      collapsenavbar: function(e){        
-        if (e.target.classList.contains('rout-holder') || e.target.classList.contains('links-parent')){
-          e.preventDefault;
-        }
-        else{
-          console.log("sdf");
-          this.navEl = false;
-          this.mega = false;
-          this.isActivelink =false
-        }
-      },
-      collapseothers() { debugger
-        const elem = this.$refs.collapseothers;
-        if(elem.classList.contains("expanded-mega")){          
-          elem.click()
+      collapseothers() {  //collapse other mega menu when one is clicked
+        let activeList = document.querySelectorAll('li.active-link');
+        for (var i = 0; i < activeList.length; i++){ 
+          if(!activeList[i].contains(event.target)) activeList[i].click()
         }
       }
     }

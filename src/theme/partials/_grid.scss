@@ -2,31 +2,63 @@
     border:0;
     margin-top: 38px;
     box-shadow: 0px 0px 5px 1px #b3bfc370;
-.k-grid-toolbar{
-    background-color: transparent;
-    border:0;
-    position: absolute;
-    top: -38px;
-    padding: 0;
-    .k-grid-add{
-        background-color: $turquoise;
-        color:$white;
+    border-radius:8px;
+    margin-bottom: 20px;
+    .k-grid-toolbar{
+        background-color: transparent;
+        border:0;
+        position: absolute;
+        top: -38px;
+        padding: 0;
+    .k-button{
         border:0;
         font-size: 12px;
     }
+    .k-grid-add{
+        background-color: $turquoise;
+        color:$white;
+        .k-icon{
+            &::before{
+                border-style: solid;
+                border-width: 1px;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+.k-grouping-header{
+    border-radius:8px 8px 0 0;
+    overflow:hidden;
+}
+.k-grid-pager{
+    border-radius:0 0 8px 8px;
+    overflow:hidden;
 }
 .k-grid-header{
+    .k-header:first-child{
+        border-radius:8px 0 0 0;
+    }
+    .k-header:last-child{
+        border-radius:0 8px 0 0;
+    }
+    th{
+        font-size: 14px;
+        border:0;
+        color:$tundora;
+        font-weight: 600;
+        padding: 0.5rem;
+        text-align: center;
 
-        th{
-            font-size: 14px;
-            border:0;
+        & > a.k-link{
+            padding: 0;
+            margin: 0;
+        }
+        &.k-state-focused{
+            box-shadow: none;
+        }
+        &>a{
             color:$tundora;
-            font-weight: 600;
-            padding: 0.5rem;
-            & > a.k-link{
-                padding: 0;
-                margin: 0;
-            }
+        }
     }
     tr:not(.k-filter-row){
         background-color: $linkWater;
@@ -34,13 +66,12 @@
     }
     .k-filter-row{
         background-color:$athensGray;
-        .k-input{
-            padding: 0;
-            height: 1.5em;
-        }
+        
     }
 }
 .k-grid-content{
+    overflow: visible;
+
     .k-alt{
         background-color:$athensGray;
     }
@@ -49,6 +80,11 @@
         @extend .text-ellipses;
         font-size: 12px;
         padding: 0.5rem;
+        text-align: center;
+
+        &.k-state-focused{
+            box-shadow: none;
+        }
     }
 
 // kendo command button without text
@@ -59,7 +95,7 @@
         background: transparent;
         border: 0;
         &.k-grid-edit,&.k-grid-update{
-            color:$danube;
+            color: $shamrock;
         }
         &.k-grid-cancel,&.k-grid-delete{
             color:$seaPink;
@@ -73,8 +109,39 @@
     }
   }
 
-  // Disable button in grid that opens popup in case of add/edit row
 .k-grid-edit-row {
+    td {
+        position: relative;
+        overflow: visible;
+        padding-top: 0.25rem;
+
+        &.k-command-cell {
+            display: flex;
+            justify-content: center;
+            flex-direction: row-reverse;
+        }
+
+        .k-widget.k-tooltip.k-tooltip-validation {
+            top: -33px;
+            right: -16px;
+            padding: 0.25rem 0.5rem;
+            background-color: #0c3c6b;
+
+            .k-icon.k-i-warning {
+                position: absolute;
+                right: 16px;
+                bottom: -34px;
+                color: red;
+                font-size: 1.8rem;
+            }
+
+            .k-callout-n {
+                top: 29px;
+                transform: rotate(180deg);
+            }
+        }
+    }
+    // Disable button in grid that opens popup in case of add/edit row
     .btn-open-popup {
       pointer-events: none;
     }
@@ -97,5 +164,24 @@ color: $black;
     }
 
     }
-
+    .k-dropdown{
+        .k-dropdown-wrap{
+            background-color:$white;
+            color: $rollingStone;
+            border-color: $alto;
+            font-size: 12px;
+            & > .k-input , & > .k-select{
+                padding: 0.35rem 0.5rem;
+                height: calc( 0.35rem + 1.5em);
+            }
+        }
+    }
+    .k-autocomplete{
+        .k-input{
+            font-size: 12px;
+            padding: 0.35rem 0.5rem;
+            height: calc( 0.35rem + 1.5em);
+            border-color: $alto;
+        }
+    }
 }

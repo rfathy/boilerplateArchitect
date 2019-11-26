@@ -1,4 +1,5 @@
 import json from '../../../../../public/mock-data/product.json'
+import nestedJson from '../../../../../public/mock-data/nested-products.json'
 import $ from 'jquery';
 
 export default {
@@ -14,11 +15,11 @@ export default {
                         fields: {
                         ProductID: { editable: false, nullable: true },
                         Code: { type: 'number', validation: { min: 1 } },
-                        EnName: { validation: { required: {message: "Required!"} } },
-                        AnName: {  validation: { required: true } },
+                        EnName: { validation: { required: {message: "Required"} } },
+                        AnName: {  validation: { required: {message: "Required"} } },
                         ProductClassification: {  },
                         Description: {  },
-                        ParentCategory: { validation: { required: true } },
+                        ParentCategory: { validation: { required: {message: "Required"} } },
                         Status: { type: 'boolean' } 
                         }
                     }
@@ -74,16 +75,16 @@ export default {
         detailInit: function (e) {
             $('<div />').appendTo(e.detailCell).kendoGrid({
               dataSource: {
-                data: json,
+                data: nestedJson,
                 schema: {
                     model: {
-                        id: "UOM.UOMID",
+                        // id: "UOMID",
                         fields: {
-                            UOMID: { editable: false, nullable: true },
+                            // UOMID: { editable: false, nullable: true },
                             UOMCode: { type: 'number', validation: { min: 1 } },
-                            UOMEnName: { validation: { required: {message: "Required!"} } },
-                            UOMAnName: {  validation: { required: true } },
-                            UOMDescription: {  },
+                            UOMEnName: { validation: { required: {message: "Required"} } },
+                            UOMAnName: {  validation: { required: {message: "Required"} } },
+                            UOMDescription: { type: 'string' },
                             UOMStatus: { type: 'boolean' } 
                         }
                     }
@@ -96,41 +97,61 @@ export default {
                 },
                 batch: 'true'
               },
-              toolbar: ['create'],
+              toolbar: [
+                  {
+                    name: 'create',
+                    text: 'Add UOM'
+                  }
+              ],
               editable: 'inline',
               scrollable: false,
               sortable: true,
               pageable: true,
               noRecords: true,
               columns: [{
-                field: 'UOM.UOMCode',
+                field: 'UOMCode',
                 title: 'UOM Code',
                 // editable: this.preventEditColumn,
                 width: '110px'
               },
               {
-                field: 'UOM.UOMEnName',
+                field: 'UOMEnName',
                 title: 'UOM En Name',
                 width: '170px'
               },
               {
-                field: 'UOM.UOMAnName',
+                field: 'UOMAnName',
                 title: 'UOM Ar Name',
                 width: '170px'
               },
               {
-                field: 'UOM.UOMDescription',
+                field: 'UOMDescription',
                 title: 'Description',
                 width: '350px'
               },
               {
-                field: 'UOM.UOMStatus',
+                field: 'UOMStatus',
                 title: 'Status',
                 editor: this.customBoolEditor,
                 width: '150px'
               },
               {
-                command: ['edit', 'destroy'],
+                command: [
+                    {
+                        name: 'edit',
+                        text: { edit: "Edit", cancel: "Cancel", update: "Update" },
+                        iconClass: {
+                            edit: "fas fa-edit",
+                            update: "fas fa-check-circle",
+                            cancel: "far fa-times-circle"
+                        }
+                    },
+                    {
+                        name: 'destroy',
+                        text: 'Delete',
+                        iconClass: 'fas fa-trash-alt'
+                    }
+                ],
                 title: '&nbsp;',
                 width: '200px'
               }
@@ -138,7 +159,7 @@ export default {
             })
         },
         dataBound: function (ev) {
-        ev.sender.expandRow(ev.sender.tbody.find('tr.k-master-row').first())
+            ev.sender.expandRow(ev.sender.tbody.find('tr.k-master-row').first())
         },
     }
 }
