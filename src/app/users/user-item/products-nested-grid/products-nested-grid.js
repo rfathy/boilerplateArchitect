@@ -1,4 +1,4 @@
-import json from '../../../../../public/mock-data/product.json'
+// import json from '../../../../../public/mock-data/product.json'
 import nestedJson from '../../../../../public/mock-data/nested-products.json'
 import $ from 'jquery';
 
@@ -6,9 +6,9 @@ export default {
     name: "products-nested-grid",
     data() {
         return {
-            checked: true,    
+            checked: true,   
             productsDataSource: {
-                data: json,
+                data: this.jsonData,
                 schema: {
                     model: {
                         id: "ProductID",
@@ -26,6 +26,14 @@ export default {
                 },
                 pageSize: 5
             }
+        }
+    },
+    created() {
+        this.$store.dispatch('getProductsData')
+    },
+    computed: {
+        jsonData() { debugger
+            return this.$store.getters.getProducts
         }
     },
     methods: {
