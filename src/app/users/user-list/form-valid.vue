@@ -77,5 +77,3 @@
     </div> 
 </template>
 <script src="./form-valid.js"></script>
-
-<style lang="scss" scoped>@import '../theme/users.scss'</style>

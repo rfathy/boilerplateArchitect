@@ -1,18 +1,5 @@
-input, label{
-    display: block
-}
-label{
-    text-transform: capitalize
-}
-.mt10{
-    margin-top:10px
-}
-.mb10{
-    margin-bottom:10px
-}
-.form-group{
-    display: block;
-}
-span.err{
-    color: red
-}
+@import '../../../theme/partials/direction-ltr';
+
+@import './styles';
+
+
