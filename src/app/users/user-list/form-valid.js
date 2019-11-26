@@ -5,6 +5,8 @@ setInteractionMode('passive');
 import { onlyAr, onlyEn, onlyNumeric, allowDecimal } from '@/app/shared/directives/InputHelpers.js';
 import Loader from '@/app/shared/layouts/components/loader/loader';
 
+localStorage.getItem('selectedLang') == 'en' ? import('../theme/users.scss') : import('../theme/users-rtl.scss');
+
 
 //Module localization 
 import localeEn from '../locales/en'
