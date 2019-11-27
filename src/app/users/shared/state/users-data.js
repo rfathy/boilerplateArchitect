@@ -1,12 +1,14 @@
 import { reflectKeys } from '@/app/shared/services';
 
 import { fetchUsers } from '../services';
+import Axios from 'axios';
 
 /** Initial state */
 const initialState = {
   loading: false,
   data: null,
-  error: null
+  error: null,
+  productsData: []
 };
 
 /** Prefix for mutation types and actiontypes */
@@ -36,6 +38,11 @@ const {
  * Users data mutations
  */
 const mutations = {
+  // products data
+  getProductsData(state, response) { debugger
+    state.productsData = response.data;
+  },
+
   /** user data request */
   [USERS_DATA_REQUEST](state) {
     Object.assign(state, { loading: true, error: null });
@@ -61,6 +68,13 @@ const mutations = {
   }
 };
 
+// get products data
+const getters = {
+  getProducts: state => { debugger
+    return state.productsData
+  }
+};
+
 /** Actions types constants */
 export const actionsTypes = reflectKeys(['FETCH_USER_DATA'], namespacedPrefix);
 
@@ -68,6 +82,13 @@ export const actionsTypes = reflectKeys(['FETCH_USER_DATA'], namespacedPrefix);
  * Users data actions
  */
 const actions = {
+  // Fetch products data
+  getProductsData(state) {
+    return Axios.get('http://localhost:8080/mock-data/product.json')
+                .then(response => { debugger
+                  state.commit('getProductsData', response)
+                }).catch(error => console.log(error))
+  },
   /** fetch user data */
   async [actionsTypes.FETCH_USER_DATA](context, authCred) {
     context.commit(USERS_DATA_REQUEST);
@@ -87,5 +108,6 @@ const actions = {
 export default {
   mutations,
   actions,
-  state: initialState
+  state: initialState,
+  getters
 };

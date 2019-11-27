@@ -4,6 +4,7 @@ import UserList from './user-list/user-list.vue';
 import UserItem from './user-item/user-item.vue';
 import FormValid from './user-list/form-valid.vue';
 import Grids from './user-list/grids.vue';
+import ProductCategory from './product-category/product-category.vue'
 
 const userRoutes = [
   {
@@ -34,6 +35,12 @@ const userRoutes = [
         name: 'grids',
         meta: {title: 'grids'},
         component: Grids
+      },
+      {
+        path: 'product-category',
+        name: 'product-category',
+        meta: {title: 'Product Category'},
+        component: ProductCategory
       },
       {
         path: '',

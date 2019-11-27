@@ -1,12 +1,14 @@
 import json from '../../../../../public/mock-data/product.json'
 import nestedJson from '../../../../../public/mock-data/nested-products.json'
 import $ from 'jquery';
+// import kendo from '@progress/kendo-ui';
 
 export default {
     name: "products-nested-grid",
     data() {
         return {
-            checked: true,    
+            checked: true,   
+            centralizedData: [],
             productsDataSource: {
                 data: json,
                 schema: {
@@ -26,6 +28,20 @@ export default {
                 },
                 pageSize: 5
             }
+        }
+    },
+    created() { 
+        this.$store.dispatch('getProductsData')
+    },
+    mounted() { debugger
+        // this.centralizedData = this.$store.getters.getProducts
+    },
+    computed: {
+        jsonData: function() { debugger
+            return this.$store.getters.getProducts
+            // return new kendo.data.DataSource({
+            //     data: this.$store.getters.getProducts
+            //   })
         }
     },
     methods: {
