@@ -100,6 +100,8 @@ export default {
                 autoWidth: true
             });
         },
+        
+    
         getTooltipTilte: function(e) {
             return e.target.text() 
         }

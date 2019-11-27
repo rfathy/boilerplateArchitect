@@ -38,14 +38,14 @@
                                 :width="120"></kendo-grid-column> 
                 <kendo-grid-column :field="'Description'"
                                 :title="$t('Users.Description')"
-                                :filterable-cell-show-operators="false"
+                                :filterable-cell-show-operators="false"                        
                                 :filterable-cell-operator="'contains'"
                                 :width="120"
                                 ></kendo-grid-column> 
                 <kendo-grid-column :field="'ParentCategory'"
                                 :title="$t('Users.ParentCategory')"
                                 :filterable-cell-show-operators="false"
-                                :filterable-cell-operator="'contains'"
+                                :filterable-cell-operator="'contains'"                              
                                 :width="120"></kendo-grid-column>
                 <kendo-grid-column :field="'TaxableBonus'"
                                 :title="$t('Users.TaxableBonus')"
