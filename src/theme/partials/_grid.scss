@@ -4,6 +4,10 @@
     box-shadow: 0px 0px 5px 1px #b3bfc370;
     border-radius:8px;
     margin-bottom: 20px;
+
+    .k-grid-header-wrap {
+        border-width: 0 0 0 0 ;
+    }
     .k-grid-toolbar{
         background-color: transparent;
         border:0;
@@ -35,12 +39,11 @@
     overflow:hidden;
 }
 .k-grid-header{
+    padding-left: 0 !important;
     .k-header:first-child{
         border-radius:8px 0 0 0;
     }
-    .k-header:last-child{
-        border-radius:0 8px 0 0;
-    }
+    
     th{
         font-size: 14px;
         border:0;

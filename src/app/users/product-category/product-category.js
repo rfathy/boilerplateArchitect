@@ -89,14 +89,14 @@ export default {
             args.element.kendoDropDownList({
                 dataSource: {
                     data: [
-                    { text: "Yes", value: true },
-                    { text: "No", value: false }
+                    { text: this.$i18n.t('Common.Yes'), value: true },
+                    { text: this.$i18n.t('Common.No'), value: false }
                     ]
                 },
                 dataTextField: "text",
                 dataValueField: "value",
                 valuePrimitive: true,
-                optionLabel: "All",
+                optionLabel: this.$i18n.t('Common.All'),
                 autoWidth: true
             });
         },

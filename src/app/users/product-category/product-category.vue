@@ -21,48 +21,48 @@
                                 :filterable-cell-operator="'contains'"
                                 :width="100"></kendo-grid-column>
                 <kendo-grid-column :field="'EnName'"
-                                :title="'Category En Name'"
+                                :title="$t('Users.CategoryEnName')"
                                 :filterable-cell-show-operators="false"
                                 :filterable-cell-operator="'contains'"
                                 :width="120"></kendo-grid-column>
                 <kendo-grid-column :field="'ArName'"
-                                :title="'Category Ar Name'"
+                                :title="$t('Users.CategryArName')"
                                 :filterable-cell-show-operators="false"
                                 :filterable-cell-operator="'contains'"
                                 :width="120"></kendo-grid-column>
                 <kendo-grid-column :field="'ProductClassification'"
-                                :title="'Product Classification'"
+                                :title="$t('Users.ProductClassification')"
                                 :filterable-cell-show-operators="false"
                                 :filterable-cell-operator="'contains'"
                                 :filterable-multi="true"
                                 :width="120"></kendo-grid-column> 
                 <kendo-grid-column :field="'Description'"
-                                :title="'Description'"
+                                :title="$t('Users.Description')"
                                 :filterable-cell-show-operators="false"
                                 :filterable-cell-operator="'contains'"
                                 :width="120"
                                 ></kendo-grid-column> 
                 <kendo-grid-column :field="'ParentCategory'"
-                                :title="'Parent Category'"
+                                :title="$t('Users.ParentCategory')"
                                 :filterable-cell-show-operators="false"
                                 :filterable-cell-operator="'contains'"
                                 :width="120"></kendo-grid-column>
                 <kendo-grid-column :field="'TaxableBonus'"
-                                :title="'Taxable Bonus'"
+                                :title="$t('Users.TaxableBonus')"
                                 :filterable-cell-template="taxableBonusFilter"
                                 :filterable-cell-show-operators="false"
                                 :editor="customBoolEditor"
                                 :template="`#= TaxableBonus ? 'Yes' : 'No'#`"
                                 :width="100"></kendo-grid-column>
                 <kendo-grid-column :field="'Status'"
-                                :title="'Status'"
+                                :title="$t('Users.Status')"
                                 :filterable-cell-template="statusFilter"
                                 :filterable-cell-show-operators="false"
                                 :editor="customBoolEditor"
                                 :template="`#= Status ? 'Active' : 'Inactive'#`"
                                 :width="100"></kendo-grid-column>
                 <kendo-grid-column :command="customGridCommand"
-                                :title="'Action'"
+                                :title="$t('Users.Action')"
                                 :width="100"></kendo-grid-column>
             </kendo-grid>
         </kendo-tooltip>
