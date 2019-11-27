@@ -1,5 +1,6 @@
 import json from '../../../../public/mock-data/product-category-list.json'
 import $ from 'jquery';
+// import i18n from '@/i18n'
 
 localStorage.getItem('selectedLang') == 'en' ? import('../theme/users.scss') : import('../theme/users-rtl.scss');
 
@@ -15,7 +16,7 @@ export default {
             customGridCommand: [
                 {
                     name: 'edit',
-                    text: { edit: "Edit", cancel: "Cancel", update: "Update" },
+                    text: { edit: this.$i18n.t('Common.Edit'), cancel: this.$i18n.t('Common.Cancel'), update: this.$i18n.t('Common.Update') },
                     iconClass: {
                         edit: "fas fa-edit",
                         update: "fas fa-check-circle",
@@ -24,7 +25,7 @@ export default {
                 },
                 {
                     name: 'destroy',
-                    text: 'Delete',
+                    text:this.$i18n.t('Common.Delete'),
                     iconClass: 'fas fa-trash-alt'
                 }
             ],
@@ -55,8 +56,8 @@ export default {
             $('<input type="checkbox" name="' + options.field + '"/>')
                   .appendTo(container)
                   .kendoMobileSwitch({
-                  onLabel: "YES",
-                  offLabel: "NO"
+                  onLabel: this.$i18n.t('Common.Yes'),
+                  offLabel: this.$i18n.t('Common.No')
             });
           },
         preventEditColumn(e) { 
@@ -72,14 +73,14 @@ export default {
             args.element.kendoDropDownList({
                 dataSource: {
                     data: [
-                    { text: "Active", value: true },
-                    { text: "Inactive", value: false }
+                    { text: this.$i18n.t('Common.Active'), value: true },
+                    { text: this.$i18n.t('Common.InActive'), value: false }
                     ]
                 },
                 dataTextField: "text",
                 dataValueField: "value",
                 valuePrimitive: true,
-                optionLabel: "All",
+                optionLabel: this.$i18n.t('Common.All'),
                 autoWidth: true
             });
         },
@@ -98,6 +99,19 @@ export default {
                 optionLabel: "All",
                 autoWidth: true
             });
+        },
+        getTooltipTilte: function(e) {
+            return e.target.text() 
         }
+    },
+    i18n: {
+        messages: {
+            en: {
+                ...localeEn
+            },
+            ar: {
+                ...localeAr
+            }
+        },
     }
 }

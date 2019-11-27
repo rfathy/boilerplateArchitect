@@ -13,6 +13,8 @@
     "OnlyEn": "Only English",
     "OnlyAr": "Only Arabic",
     "OnlyNum": "Only Number",
-    "AllowDecimal": "Allow Decimal"
+    "AllowDecimal": "Allow Decimal",
+    "NewCategory": "New Category",
+    "CategoryCode": "Category Code"
   }
 }
