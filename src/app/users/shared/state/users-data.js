@@ -39,8 +39,8 @@ const {
  */
 const mutations = {
   // products data
-  getProductsData(response) {
-    this.productsData = response.data;
+  getProductsData(state, response) { debugger
+    state.productsData = response.data;
   },
 
   /** user data request */
@@ -70,7 +70,7 @@ const mutations = {
 
 // get products data
 const getters = {
-  getProducts: state => {
+  getProducts: state => { debugger
     return state.productsData
   }
 };
@@ -85,8 +85,7 @@ const actions = {
   // Fetch products data
   getProductsData(state) {
     return Axios.get('http://localhost:8080/mock-data/product.json')
-                .then(response => {
-                  debugger
+                .then(response => { debugger
                   state.commit('getProductsData', response)
                 }).catch(error => console.log(error))
   },
