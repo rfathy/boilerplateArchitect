@@ -13,7 +13,8 @@
           { "id": "4", "name" : "Form Valation", "link": "/" },
           { "id": "5", "name" : "User Item", "link": "/users/user-item" },
           { "id": "6", "name" : "Grids", "link": "/users/grids" },
-          { "id": "7", "name" : "Product Category", "link": "/users/product-category" }
+          { "id": "7", "name" : "Product Category", "link": "/users/product-category" },
+          { "id": "8", "name" : "UOM Category", "link": "/users/uom-category" }
         ]
       }
     ]  

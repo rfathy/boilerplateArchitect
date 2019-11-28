@@ -94,7 +94,10 @@
         margin: 0 0.4rem;
         background: transparent;
         border: 0;
-        &.k-grid-edit,&.k-grid-update{
+        &.k-grid-edit{
+            color: $Endeavour;
+        }
+        &.k-grid-update{
             color: $shamrock;
         }
         &.k-grid-cancel,&.k-grid-delete{
