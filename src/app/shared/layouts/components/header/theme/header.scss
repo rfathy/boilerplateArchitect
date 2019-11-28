@@ -193,7 +193,8 @@
                     div{
                         .pages{
                             a{
-                                color: $spindle
+                                color: $spindle;
+                                white-space: nowrap;
                             }
                             a:hover{
                                 background: transparent !important;

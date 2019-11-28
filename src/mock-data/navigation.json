@@ -17,7 +17,7 @@
               {
                 "id": "1.1.1.1", 
                 "name" : "Product Category", 
-                "link": "javascript:;"
+                "link": "/inventory-managemen/product-category"
               },
               {
                 "id": "1.1.1.2", 
@@ -51,5 +51,22 @@
         ]
       }
     ]  
+  },
+  {
+    "id": "2",
+    "name" : "Testing links",
+    "isActivelink": false,
+    "isExpand": false,
+    "maincat":[
+      {      
+        "id": "2.1",
+        "name" : "testing pages",
+        "submodules" : [
+          { "id": "1", "name" : "User List", "link": "/users/user-list" },
+          { "id": "2", "name" : "Form Valation", "link": "/" },
+          { "id": "3", "name" : "User Item", "link": "/users/user-item" }
+        ]
+      }
+    ]
   }
 ]

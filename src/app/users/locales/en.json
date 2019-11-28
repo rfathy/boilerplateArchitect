@@ -13,6 +13,16 @@
     "OnlyEn": "Only English",
     "OnlyAr": "Only Arabic",
     "OnlyNum": "Only Number",
-    "AllowDecimal": "Allow Decimal"
+    "AllowDecimal": "Allow Decimal",
+    "NewCategory": "New Category",
+    "CategoryCode": "Category Code",
+    "CategoryEnName":"Category En Name",
+    "CategryArName":"Categry Ar Name",
+    "ProductClassification":"Product Classification",
+    "Description":"Description",
+    "ParentCategory":"Parent Category",
+    "TaxableBonus":"Taxable Bonus",
+    "Status":"Status",
+    "Action":"Actions"
   }
 }
