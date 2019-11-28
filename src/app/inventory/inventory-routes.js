@@ -6,15 +6,15 @@ const inventoryRoutes = [
     path: '/inventory-management',
     component: AppInventory,
     meta: {title: 'Inventory Management'},
-    // children: [
-    //   {
-    //   path: 'product-category',
-    //   name: 'product-category',
-    //   meta: {title: 'Product Category'},
-    //   component: ProductCategory
-    //   }
+    children: [
+      {
+      path: 'uom-category',
+      name: 'uom-category',
+      meta: {title: 'UOM Category'},
+      component: UOMCategory
+      }
       
-    // ]
+    ]
   },      
 ];
 

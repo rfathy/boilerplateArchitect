@@ -22,7 +22,7 @@
               {
                 "id": "1.1.1.2", 
                 "name" : "UOM Category", 
-                "link": "javascript:;"
+                "link": "/users/uom-category"
               },
               {
                 "id": "1.1.1.3", 
