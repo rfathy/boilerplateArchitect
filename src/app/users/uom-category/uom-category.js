@@ -50,6 +50,13 @@ export default {
         }
     },
     methods: {
+        customTemp : function(e){
+            debugger
+            console.log(e);
+        //    if(){
+        //        return 
+        //    }
+          },
         customBoolEditor(container, options) {
             $('<input type="checkbox" name="' + options.field + '"/>')
                   .appendTo(container)

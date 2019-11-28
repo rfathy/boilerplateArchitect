@@ -27,13 +27,19 @@
                                     v-show="m.isExpand && mega" :class="{ displayMega : m.isExpand }">
                                     <div class="col-md-auto d-inline-block align-top rout-holder text-capitalize text-left pt-3 pl-4 pb-2" 
                                         v-for="n in m.maincat" :key="n.id">
-                                        <h6 class="font-weight-normal pl-1 ml-lg-n2 links-parent">{{n.name}}</h6>
-                                        <ul class="level-2">
-                                            <li class="list-inline-item col mb-1"
+                                        <h6 class="pl-1 ml-lg-n2 links-parent underlined">{{n.name}}</h6>
+                                        <div class="level-2 row">
+                                            <div class="list-inline-item col mb-1 ml-1 pl-2"
                                                 v-for="s in n.submodules" :key="s.id"
                                                 @click="navEl = !navEl">
-                                                <router-link :to="{ path: s.link }" class="text-white">{{s.name}}</router-link></li> 
-                                        </ul>
+                                                <router-link :to="{ path: s.link }" class="text-white font-weight-bold underlined mb-2 mt-2">{{s.name}}</router-link>
+                                                <div class="pages"
+                                                v-for="p in s.pageholder" :key="p.id"
+                                                @click="navEl = !navEl">
+                                                    <router-link class="mb-1" :to="{ path: p.link }">{{p.name}}</router-link>
+                                                </div>
+                                            </div> 
+                                        </div>
                                     </div>
                                 </div> 
                             </div>                                

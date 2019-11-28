@@ -41,7 +41,7 @@
                             :filterable-cell-template="statusFilter"
                             :filterable-cell-show-operators="false"
                             :editor="customBoolEditor"
-                            :template="`#= Status ? '<div class= bg-activation-status> Active </div>' : '<div class=bg-inactive-status bg-activation-status> Inactive </div> '#`"
+                            :template="customTemp"
                             :width="100"></kendo-grid-column>
             <kendo-grid-column :command="customGridCommand"
                             :title= "this.$i18n.t('Users.Action')"
