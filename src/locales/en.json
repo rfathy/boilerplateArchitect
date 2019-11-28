@@ -2,6 +2,15 @@
   "Common": {
     "En": "En",
     "Ar": "Ar",
-    "SearchPatient": "Search for patient (Name, Code, Phone Number)"
+    "SearchPatient": "Search for patient (Name, Code, Phone Number)",
+    "Edit": "Edit",
+    "Update": "Update",
+    "Cancel": "Cancel",
+    "Yes": "Yes",
+    "No": "No",
+    "Active": "Active",
+    "InActive": "InActive",
+    "All":"All",
+    "Delete":"Delete"
   }
 }

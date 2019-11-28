@@ -13,6 +13,18 @@
     "OnlyEn": "انجليزى فقط",
     "OnlyAr": "عربى فقط",
     "OnlyNum": "أرقام فقط",
-    "AllowDecimal": "السماح بالعلامة العشرية"
+    "AllowDecimal": "السماح بالعلامة العشرية",
+    "NewCategory": "فئة جديدة",
+    "CategoryCode": "كود الفئة",
+    "CategoryEnName":"اسم الفئة الانجليزي",
+    "CategryArName":"اسم الفئة العربي",
+    "ProductClassification":"تصنيف المنتج",
+    "Description":"الوصف",
+    "ParentCategory":"الفئة الرئيسية",
+    "TaxableBonus":"ضريبة الحوافز",
+    "Status":"الحالة",
+    "Action":"أفعال"
+
+
   }
 }
