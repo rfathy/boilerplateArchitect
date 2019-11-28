@@ -12,3 +12,22 @@
     font-family: "Font Awesome 5 Free";
     font-size: 1rem !important;
 }
+
+.fa-times-circle{
+background-color: white;
+border-radius: 9px;
+}
+
+.bg-inactive-status{
+background-color: $FairPink;
+}
+
+.bg-active-status{
+    background-color: $shamrock;
+    }
+
+.bg-activation-status{
+    text-align:center;
+    padding:8px;
+    border-radius: 18px
+}

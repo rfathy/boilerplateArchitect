@@ -103,8 +103,11 @@
         &.k-grid-update{
             color: $shamrock;
         }
-        &.k-grid-cancel,&.k-grid-delete{
+        &.k-grid-cancel{
             color:$seaPink;
+        }
+        &.k-grid-delete{
+            color:$Sunglo;
         }
         &:focus,&:active{
             border: 0;

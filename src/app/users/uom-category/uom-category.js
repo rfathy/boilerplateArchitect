@@ -160,7 +160,7 @@ export default {
                 title: this.$i18n.t('Users.Status'),
                 editor: this.customBoolEditor,
                 width: '100px',
-                template:" #=UOM.UOMStatus ? 'Active' : 'Inactive'#"
+                template: " #=UOM.UOMStatus ? 'Active' : 'Inactive'#"
               },
               {
                 command: [
