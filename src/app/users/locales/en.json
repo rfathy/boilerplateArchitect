@@ -23,6 +23,13 @@
     "ParentCategory":"Parent Category",
     "TaxableBonus":"Taxable Bonus",
     "Status":"Status",
-    "Action":"Actions"
+    "Action":"Actions",
+    "UOMCode":"UOM Code",
+    "UOMEnName":"UOM En Name",
+    "UOMArName":"UOM Ar Name",
+    "AddUOM":"Add UOM",
+    "Reference":"Reference",
+    "Ratio":"Ratio"
+    
   }
 }
