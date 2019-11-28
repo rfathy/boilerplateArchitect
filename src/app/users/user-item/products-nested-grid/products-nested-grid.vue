@@ -9,6 +9,9 @@
                 :toolbar="['create']"
                 :filterable-extra="false"
                 :filterable-mode="'row'"
+                @edit="editRow"
+                @update="showFilterRow"
+                @cancel="showFilterRow"
                 @filter="onFilter"
                 @detailinit="detailInit" 
                 @databound="dataBound">
@@ -52,7 +55,7 @@
                             :editor="customBoolEditor"
                             :width="100"></kendo-grid-column>
                             <!-- :filterable-ui="statusFilter" -->
-            <kendo-grid-column :command="['edit', 'destroy']"
+                       <kendo-grid-column :command="['edit', 'destroy']"
                             :title="'&nbsp;'"
                             :width="100"></kendo-grid-column>
         </kendo-grid>

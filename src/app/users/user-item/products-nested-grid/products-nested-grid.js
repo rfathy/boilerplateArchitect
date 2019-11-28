@@ -33,7 +33,7 @@ export default {
     created() { 
         this.$store.dispatch('getProductsData')
     },
-    mounted() { debugger
+    mounted() { 
         // this.centralizedData = this.$store.getters.getProducts
     },
     computed: {
@@ -160,7 +160,7 @@ export default {
                             edit: "fas fa-edit",
                             update: "fas fa-check-circle",
                             cancel: "far fa-times-circle"
-                        }
+                        }                      
                     },
                     {
                         name: 'destroy',
@@ -174,8 +174,25 @@ export default {
               ]
             })
         },
-        dataBound: function (ev) {
-            ev.sender.expandRow(ev.sender.tbody.find('tr.k-master-row').first())
+        editRow:function (e){
+            e.sender.wrapper.find(".k-filter-row").hide();
+            e.sender.expandRow(e.container);
+            if(e.model.isNew()){
+            e.sender.content.find(".k-detail-row .k-grid-add").trigger("click");
+            e.container.find("input")[0].focus();
+            }
+        },
+        showFilterRow:function(e){
+             e.sender.wrapper.find(".k-filter-row").show();
+        },
+       
+       
+        dataBound: function (e) {
+            console.log(e);
+            if(!e.sender._data[0].isNew()){
+                this.showFilterRow(e);
+            }
+            // ev.sender.expandRow(ev.sender.tbody.find('tr.k-master-row').first())
         },
     }
 }
