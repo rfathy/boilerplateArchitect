@@ -1,41 +1,36 @@
 <template>
     <div class="grids">
-        <kendo-datasource ref="datasource1"
-                      :transport-read-url="'https://demos.telerik.com/kendo-ui/service/Products'"
-                      :transport-read-data-type="'jsonp'"
-                      :transport-update-url="'https://demos.telerik.com/kendo-ui/service/Products/Update'"
-                      :transport-update-data-type="'jsonp'"
-                      :transport-destroy-url="'https://demos.telerik.com/kendo-ui/service/Products/Destroy'"
-                      :transport-destroy-data-type="'jsonp'"
-                      :transport-create-url="'https://demos.telerik.com/kendo-ui/service/Products/Create'"
-                      :transport-create-data-type="'jsonp'"
-                      :transport-parameter-map="parameterMap"
-                      :schema-model-id="'ProductID'"
-                      :schema-model-fields="schemaModelFields"
-                      :batch='true'
-                      :page-size='20'>
+        <kendo-datasource ref="localDataSource"
+                        :transport-read-url="'../../../mock-data/warehouse.json'"
+                        :batch='true'
+                        :page-size='5'>
         </kendo-datasource>
-
-        <kendo-grid :data-source-ref="'datasource1'"
-                    :navigatable="true"
-                    :pageable="true"
-                    :sortable="true"
-                    :scrollable="false"
-                    :editable="true"
-                    :toolbar="['create', 'save', 'cancel']">
-            <kendo-grid-column :field="'ProductName'"></kendo-grid-column>
-            <kendo-grid-column :field="'UnitPrice'"
-                            :title="'Unit Price'"
-                            :width="120"
-                            :format="'{0:c}'"></kendo-grid-column>
-            <kendo-grid-column :field="'UnitsInStock'"
-                            :title="'Units In Stock'"
-                            :width="120"></kendo-grid-column>
-            <kendo-grid-column :field="'Discontinued'" :width="120"></kendo-grid-column>
-            <kendo-grid-column :command="['destroy']"
-                            :title="'&nbsp;'"
-                            :width="100"></kendo-grid-column>
-        </kendo-grid>
+        <kendo-grid :data-source-ref="'localDataSource'"
+                    :pageable='true'
+                    :editable="'inline'"
+                    :toolbar="['create']">
+        <kendo-grid-column :field="'Code'"
+                            :title="'Code'"
+                           :width="30"></kendo-grid-column>
+        <kendo-grid-column :field="'EnName'"
+                           :title="'English Name'"
+                           :width="120"></kendo-grid-column>
+        <kendo-grid-column :field="'ArName'"
+                           :title="'Arabic Name'"
+                           :width="120"></kendo-grid-column>
+        <kendo-grid-column :field="'Description'"
+                            :title="'Description'"
+                           :width="120"></kendo-grid-column>
+        <kendo-grid-column :field="'ParentCategory'"
+                            :title="'Parent Category'"
+                           :width="120"></kendo-grid-column>
+        <kendo-grid-column :field="'Status'"
+                            :title="'Status'"
+                           :width="50"></kendo-grid-column>
+        <kendo-grid-column :command="['edit', 'destroy']"
+                           :title="'&nbsp;'"
+                           :width="70"></kendo-grid-column>
+    </kendo-grid>
     </div>
 </template>
 

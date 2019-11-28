@@ -1,3 +1,4 @@
+@import '../../../../../theme/partials/variables';
 .main-header {
     .horizontal-navbar{
         margin-top: 70px;
@@ -186,14 +187,17 @@
                 .rout-holder{                  
                     h6{
                         border-left: 3px solid #11e4ea;
-                        color: #bfd5e9;
-                        font-size: 12px;
+                        color: $white;
+                        font-size: 14px;                        
                     }
-                    ul{
-                        li{
+                    div{
+                        .pages{
+                            a{
+                                color: $spindle
+                            }
                             a:hover{
                                 background: transparent !important;
-                                color: #11e4ea !important
+                                color: #11e4ea !important;
                             }
                             &:hover{
                                 background: transparent !important;
