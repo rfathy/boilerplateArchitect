@@ -1,3 +1,4 @@
+@import '../../../../../theme/partials/variables';
 .main-header {
     .horizontal-navbar{
         margin-top: 70px;
@@ -7,51 +8,107 @@
     }
     .fixed-top{
         background-color: #fff !important;
+        height: 44px;
     }
     .custom-logo {
-        width: 182px;
+        width: 151px;
+        margin-left: 7px;
+        margin-top: -10px;
     }
     .user-img{
-        width: 35px;
-        max-height: 35px;
+        width: 38px;
+        max-height: 38px;
         border-radius: 50%;
     }
     .user-id{
-        line-height: 15px;
+        line-height: 4px;
+        font-size: 10.5px;
+        letter-spacing: -0.5px;
+        font-weight: normal;
     }
     .search-patient{
-        button:first-child{
-            border-bottom-right-radius: 0 !important;
-            border-top-right-radius: 0 !important;
-            border-bottom: 1px solid transparent;
+        margin-left: 10px;
+        .bg-grey-lt{
+            padding: 2px 3px 2px 5px;
+            line-height: 20px;
         }
-        button:nth-child(2){
+        button{
+            padding: 3px 5px 4px 5px !important;
+            line-height: 17px;
+            margin-top: 1px;
             border-bottom-left-radius: 0 !important;
             border-top-left-radius: 0 !important;
-            border-bottom: 1px solid transparent;
-            margin-left: 2px;
+            border-left: 1px solid #bed4e9;
         }
         input{            
             border-bottom: 1px solid transparent;
+            max-height: 27px;
+            width: 81% !important;
+            font-size: 12px;
+            border-bottom-right-radius: 0 !important;
+            border-top-right-radius: 0 !important;
             &::placeholder{
                 opacity: 0.5;
                 color:#0357a8
             }
         }
     }
+    #profile-dropdown-right{
+        /deep/ button{
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        /deep/ .dropdown-menu{
+            font-size: 12px;
+            margin-top: 12px;
+        }
+    }
+    #language-dropdown-right{
+        font-size: 11px;
+        border-right: 1px solid #e3ebf3;
+        height: 44px;
+        /deep/ button{
+            font-size: 12px;
+        }
+        /deep/ .dropdown-menu{
+            font-size: 12px;
+            margin-top: 2px;
+        }
+    }
+    .overlay{
+        position: fixed;
+        background: #000;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        z-index: 10000;
+        top: 44px;
+        left: 0;
+        opacity: 0.5;
+    }
+    .hide-scroll{
+        width: 100%;
+        height: 82px;
+        background: #f3f9ff;
+        position: fixed;
+        left: 0;
+        z-index: 9;
+        opacity: 0.7;
+    }
     .breadcrumbs{
-        top: 70px;
-        width: 98%;
-        z-index: 100;
+        top: 50px;
+        width: 97.5%;
+        z-index: 10000;
         background: #0357a8 !important;
         color: #fff !important;
-        height:35px;
+        height: 32px;
         a.start-nav{
             display: inline-block;
-            height: 35px;
+            height: 32px;
             border-right: 1px solid #7fa8d1;
             img{
                 vertical-align: text-top;
+                margin: 7px 0 0 7px;
             }
         }
         a:hover {
@@ -71,23 +128,32 @@
                 a:hover{
                     span{
                         color: #0357a8;
-                        font-weight: bold
                     }
                 }
             }      
             ul li {
                 padding: 0;
                 margin: 0 1px 0 0;
+                span{
+                    font-size: 10px;
+                }
                 a{
+                    display: block;
                     img{
-                        height:65px;
+                        height:45px;
                     }
                 }
                 &:hover{
                     background: #e5f3f7;
+                    span{
+                        font-weight: bold
+                    }
                 }
                 &.active-link{
-                    border-bottom: 3px solid #0357a8
+                    border-bottom: 3px solid #0357a8;
+                    span{
+                        font-weight: bold
+                    }
                 }
                 &.active-link:after{
                     content: "";
@@ -100,33 +166,39 @@
                     margin-left: -5px;
                 }
             }
+            ul#site-navigation{
+                height: 78px;
+                li.list-inline-item.text-center{
+                    min-width: 100px;
+                    cursor: pointer
+                }
+            }
             .displayMega {
-                display: block;
-                opacity: 1;
+                width: max-content;
+                background: #0357a8;
                 position: absolute;
-                left: 0;
-                width: 100%;
-                top: 111px;
-                z-index: 999999;
-                .rout-holder{
-                    background: #0357a8;
-                    &:first-child{
-                        border-top-left-radius: 0.3rem ;
-                        border-bottom-left-radius: 0.3rem ;
-                    }
-                    &:last-child{
-                        border-top-right-radius: 0.3rem ;
-                        border-bottom-right-radius: 0.3rem ;
-                    }                    
+                top: 80px;
+                left: 0px;
+                z-index: 1000;
+                float: left;
+                // min-width: 10rem;
+                padding: 0.5rem 0px;
+                margin: 0.125rem 0px 0px;
+                .rout-holder{                  
                     h6{
                         border-left: 3px solid #11e4ea;
-                        color: #bfd5e9;
+                        color: $white;
+                        font-size: 14px;                        
                     }
-                    ul{
-                        li{
+                    div{
+                        .pages{
+                            a{
+                                color: $spindle;
+                                white-space: nowrap;
+                            }
                             a:hover{
                                 background: transparent !important;
-                                color: #11e4ea !important
+                                color: #11e4ea !important;
                             }
                             &:hover{
                                 background: transparent !important;
@@ -135,7 +207,6 @@
                     }
                 }
             }
-            
         }        
         
         .displaynavEl{
@@ -148,12 +219,13 @@
             left: 0;
             width: 100%;
             z-index: 999999;
-            top: 35px;
+            top: 30px;
         }          
         ul.level-2 {
             color: #fff;
         }
         .bread-links{
+            height: 32px;
             a,
             a:link,
             a:active,
@@ -162,6 +234,11 @@
                 color:#fff;
             }
             ul{
+                height: 32px;
+                font-size: 10px;
+                li{
+                    margin-top: -1px;
+                }
                 li:after {
                     content:'\003e';
                     margin-right: 5px;
@@ -176,26 +253,30 @@
                 }
             }
 
-        }
-        .horizontal-navbar-menu {
-            position: absolute;
-            width: 100%;
-            height: 100px;
-            background-color: #0257A8;
-            z-index: 1;
-            left: 0;
-            top: 48px;
-            li {
-                img {
-                    width: 100px;
-                    height: 100px;
-                }
-            }
-        }   
+        }  
         #patient-classification{
-            height: 31px;
-            margin: 2px 2px 2px 0;
-            
+            height: 25px;
+            margin: 4px 6px 2px 0;   
+            /deep/ button{
+                color: inherit;
+                line-height: 0px;
+                text-transform: inherit;
+                font-size: 10px;
+                text-decoration: none;
+                height: 20px;
+            }        
+            /deep/ .dropdown-toggle::after {
+                content: "\2304";
+                border-top: none;
+                border-right: none;
+                border-bottom: 0;
+                border-left: none;
+                margin-top: -1px;
+            }
+            /deep/ .dropdown-menu{
+                font-size: 12px;
+                margin-top: 5px;
+            }
         }    
     }
 }

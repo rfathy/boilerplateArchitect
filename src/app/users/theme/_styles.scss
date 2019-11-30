@@ -1,0 +1,31 @@
+input, label{
+    display: block
+}
+label{
+    text-transform: capitalize;
+}
+.mt10{
+    margin-top:10px
+}
+.mb10{
+    margin-bottom:10px
+}
+.form-group{
+    display: block;
+}
+span.err {
+    color: red;
+}
+
+//scroll in sub grid only for this screen 
+.uom-category{
+    .k-grid {
+        .k-grid-content{
+        .k-grid-content{
+          max-height:176px;
+          overflow-y:scroll;
+        }
+        }
+    }
+}
+ 

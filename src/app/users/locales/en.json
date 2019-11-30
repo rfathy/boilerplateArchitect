@@ -1,0 +1,35 @@
+{
+  "Users": {
+    "Required": "Required",
+    "Validation": "Form Validation",
+    "Example": "Example",
+    "Email": "Email",
+    "Min5": "Min 5",
+    "Max5": "Max 5",
+    "Password": "Password",
+    "ConfirmPassword": "Confirm Password",
+    "Save": "Save",
+    "Direvtives": "Direvtives",
+    "OnlyEn": "Only English",
+    "OnlyAr": "Only Arabic",
+    "OnlyNum": "Only Number",
+    "AllowDecimal": "Allow Decimal",
+    "NewCategory": "New Category",
+    "CategoryCode": "Category Code",
+    "CategoryEnName":"Category En Name",
+    "CategryArName":"Categry Ar Name",
+    "ProductClassification":"Product Classification",
+    "Description":"Description",
+    "ParentCategory":"Parent Category",
+    "TaxableBonus":"Taxable Bonus",
+    "Status":"Status",
+    "Action":"Actions",
+    "UOMCode":"UOM Code",
+    "UOMEnName":"UOM En Name",
+    "UOMArName":"UOM Ar Name",
+    "AddUOM":"Add UOM",
+    "Reference":"Reference",
+    "Ratio":"Ratio"
+    
+  }
+}

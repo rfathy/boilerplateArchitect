@@ -1,37 +1,5 @@
 <template>
   <div class="user-list">
-    <kendo-datasource ref="datasource1"
-                        :transport-read-url="'../../../mock-data/users.json'"
-                        :batch='true'
-                        :page-size='15'>
-    </kendo-datasource>
-
-    <kendo-grid :height="600"
-                :data-source-ref="'datasource1'"
-                :pageable='true'
-                :editable="'inline'"
-                :filterable="true"
-                :server-paging="true">
-        <kendo-grid-column :field="'name'"
-                           :title="'User Name'"
-                           :filterable-cell-operator="'contains'"
-                           :filterable-multi="true"
-                           :filterable-search="true"
-                           :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'age'"
-                           :title="'User Age'"
-                           :filterable-cell-operator="'contains'"
-                           :filterable-multi="true"
-                           :filterable-search="true"
-                           :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'company'"
-                           :title="'Company'"
-                           :filterable-cell-operator="'contains'"
-                           :filterable-multi="true"
-                           :filterable-search="true"
-                           :width="120"></kendo-grid-column>
-    </kendo-grid>
-
 
     <kendo-datasource ref="datasource2"
                         :transport-read-url="'../../../mock-data/users.json'"
@@ -42,8 +10,7 @@
     <kendo-grid :height="600"
                 :data-source-ref="'datasource2'"
                 :pageable='true'
-                :editable="'inline'"
-                :filterable="true">
+                :editable="'inline'">
         <kendo-grid-column :field="'name'"
                            :title="'User Name'"
                            :filterable-cell-operator="'contains'"
@@ -63,6 +30,41 @@
                            :filterable-search="true"
                            :width="120"></kendo-grid-column>
     </kendo-grid>
+
+    <br /><br />
+
+    <kendo-datasource ref="datasource3"
+                        :transport-read-url="'../../../mock-data/users.json'"
+                        :batch='true'
+                        :page-size='15'>
+    </kendo-datasource>
+
+    <kendo-grid :height="600"
+                :data-source-ref="'datasource3'"
+                :pageable='true'
+                filterable="true"
+                :editable="'inline'">
+        <kendo-grid-column :field="'name'"
+                           :title="'User Name'"
+                           :filterable-cell-operator="'contains'"
+                           :filterable-multi="true"
+                           :filterable-search="true"
+                           :width="120"></kendo-grid-column>
+        <kendo-grid-column :field="'age'"
+                           :title="'User Age'"
+                           :filterable-cell-operator="'contains'"
+                           :filterable-multi="true"
+                           :filterable-search="true"
+                           :width="120"></kendo-grid-column>
+        <kendo-grid-column :field="'company'"
+                           :title="'Company'"
+                           :filterable-cell-operator="'contains'"
+                           :filterable-multi="true"
+                           :filterable-search="true"
+                           :width="120"></kendo-grid-column>
+    </kendo-grid>
+
+    <AppUserItem />
   </div>
 </template>
 

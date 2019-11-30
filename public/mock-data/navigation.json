@@ -1,28 +1,17 @@
-[{
-  "id": "1",
-  "name" : "Testing links",
-  "submodules" : [
-    { "id": "1", "name" : "User List", "link": "/users/user-list" },
-    { "id": "2", "name" : "Form Valation", "link": "/" },
-    { "id": "3", "name" : "User Item", "link": "/users/user-item" }
-  ]
-},{
-  "id": "2",
-  "name" : "module name 1",
-  "submodules" : [
-    { "id": "1", "name" : "submodule.1" },
-    { "id": "2", "name" : "submodule.2" }
-  ]
-},
-{
-  "id": "3",
-  "name" : "module name 2",
-  "submodules" : [
-    { "id": "1", "name" : "submodule.3" },
-    { "id": "2", "name" : "submodule.4" },
-    { "id": "3", "name" : "submodule.5" },
-    { "id": "4", "name" : "submodule.6" },
-    { "id": "5", "name" : "submodule.7" },
-    { "id": "6", "name" : "submodule.8" }
-  ]
-}]
+[
+  {
+    "id":"1",
+    "name": "Inventory Managment",
+    "isActivelink": false,
+    "isExpand": false,
+    "maincat":[
+      {      
+        "id": "1.1",
+        "name" : "Setups",
+        "submodules" : [
+          { "id": "1.1.1", "name" : "User List", "link": "/users/user-list" }
+        ]
+      }
+    ]  
+  }
+]

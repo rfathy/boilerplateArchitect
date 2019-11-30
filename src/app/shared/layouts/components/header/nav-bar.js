@@ -1,11 +1,11 @@
 import json from '../../../../../mock-data/navigation.json'
+
 export default {
   name: "nav-bar",
   component :{
       props: [ 
           'mega', 
           'isActivelink',
-          'level3', 
           'products',
           'navEl'
       ],
@@ -15,13 +15,14 @@ export default {
       mega: false,
       navEl: false,
       isActivelink: false,
-      level3: '',
       modules: json
     }), 
     methods: {
-      // Reset all variables upon leaving mega menu area
-      levelReset: function() {
-        this.level3 = ''
+      collapseothers() {  //collapse other mega menu when one is clicked
+        let activeList = document.querySelectorAll('li.active-link');
+        for (var i = 0; i < activeList.length; i++){ 
+          if(!activeList[i].contains(event.target)) activeList[i].click()
+        }
       }
     }
   };

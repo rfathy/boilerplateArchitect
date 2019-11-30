@@ -20,28 +20,21 @@ export default {
         }
     },
     methods: {
-        generateRowTemplate: function() {
-            var template =
-                '<tr data-uid="#: uid #">' +
-                    '<td class="details">' +
-                        '<span class="name">#: name# #: age# </span>' +
-                        '<span class="title">Title: #: age #</span>' +
-                    '</td>' +
-                    '<td class="country">' +
-                        `<kendo-dropdowntree :data-source="${this.SelectedTypes}"
-                                :checkboxes="true"
-                                :check-all="true"
-                                :auto-close="false"
-                                :placeholder="'Select ...'">
-                    </kendo-dropdowntree>` +
-                    '</td>' +
-                    '<td class="employeeID">' +
-                        '#: company #' +
-                    '</td>' +
-                '</tr>'
+        // generateRowTemplate: function() {
+        //     var template =
+        //         '<tr data-uid="#: uid #">' +
+        //             '<td class="details">' +
+        //                 '<span class="name">#: name# #: age# </span>' +
+        //                 '<span class="title">Title: #: age #</span>' +
+        //             '</td>' +
+        //             '<td class="country">#: company#</td>' +
+        //             '<td class="employeeID">' +
+        //                 '#: company #' +
+        //             '</td>' +
+        //         '</tr>'
 
-            return kendo.template(template);
-        }
+        //     return kendo.template(template);
+        // }
     },
     components: {
         ErrorBoundary,
@@ -49,8 +42,8 @@ export default {
         HierarchicalDataSource
     },
     created() {
-        if (!this.rowTemplate) {
-            this.rowTemplate = this.generateRowTemplate() 
-        }    
+        // if (!this.rowTemplate) {
+        //     this.rowTemplate = this.generateRowTemplate() 
+        // }    
     }
 }

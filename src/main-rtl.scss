@@ -1,0 +1,19 @@
+@import './theme/bootstrap-4-rtl/scss/bootstrap-rtl.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+@import 'node_modules/@progress/kendo-theme-bootstrap/scss/all';
+
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts'; 
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+// @import "~@fortawesome/fontawesome-free/scss/brands"; // fab
+
+@import './theme/partials/direction-rtl';
+@import './theme/partials/variables';
+@import './theme/partials/utilites';
+@import './theme/partials/grid';
+@import './theme/partials/custom_Styles';
+
+// @import './main.scss';
+// @import './theme/bootstrap-4-rtl/scss/bootstrap-rtl.scss';
+// @import './theme/partials/direction-rtl';

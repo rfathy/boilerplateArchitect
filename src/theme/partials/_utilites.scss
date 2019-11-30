@@ -1,0 +1,51 @@
+//text trimming
+.text-ellipses{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+// border raduis 8
+.rounded-xl{
+    border-radius: 8px;
+}
+//font awesome
+.fa,.fas,.far,.fal,.fab {
+    font-family: "Font Awesome 5 Free";
+    font-size: 1rem !important;
+}
+
+
+.fa-times-circle{
+background-color: white;
+border-radius: 9px;
+}
+
+.bg-inactive-status{
+background-color: $FairPink;
+}
+
+.bg-active-status{
+    background-color: $shamrock;
+    }
+
+.bg-activation-status{
+    text-align:center;
+    padding:8px;
+    border-radius: 18px
+
+}
+//underlined text
+.underlined{
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        height: 1px;
+        background: white;
+        width: 100%;
+        bottom: -6px;
+        margin: 0 auto;
+        left: 0;
+        opacity: 0.5;
+    }
+}

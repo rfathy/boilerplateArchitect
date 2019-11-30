@@ -1,8 +1,16 @@
 import { ValidationProvider, extend, ValidationObserver } from 'vee-validate';
 import { required, email, min, max } from 'vee-validate/dist/rules';
+import { setInteractionMode } from 'vee-validate';
+setInteractionMode('passive');
 import { onlyAr, onlyEn, onlyNumeric, allowDecimal } from '@/app/shared/directives/InputHelpers.js';
 import Loader from '@/app/shared/layouts/components/loader/loader';
 
+localStorage.getItem('selectedLang') == 'en' ? import('../theme/users.scss') : import('../theme/users-rtl.scss');
+
+
+//Module localization 
+import localeEn from '../locales/en'
+import localeAr from '../locales/ar'
 
 extend('required', {
     ...required,
@@ -37,29 +45,28 @@ export default {
         ValidationObserver,
         Loader
     },
-    methods:{
-        async submit () {        
-        const isValid = await this.$refs.observer.validate();
+    methods: {
+        async submit() {
+            const isValid = await this.$refs.observer.validate();
             if (isValid) {
-                
-                alert('Data is valid'); 
+                alert('Data is valid');
                 return
             } else {
-            alert('Data is not valid');
-            return
-            }          
-        
+                alert('Data is not valid');
+                return
+            }
+
         }
     },
     data: () => ({
         isLoading: false,
         value: '',
         email: '',
-        password:'',
-        min:'',
-        max:'',
-        compared:'',
-        confirm:''
+        password: '',
+        min: '',
+        max: '',
+        compared: '',
+        confirm: ''
     }),
     directives: {
         onlyEn,
@@ -67,4 +74,14 @@ export default {
         onlyNumeric,
         allowDecimal
     },
-  };
+    i18n: {
+        messages: {
+            en: {
+                ...localeEn
+            },
+            ar: {
+                ...localeAr
+            }
+        },
+    }
+};
