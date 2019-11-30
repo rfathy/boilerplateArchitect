@@ -1,5 +1,11 @@
 {
   "Inventory": {
+    "Warehouse":{
+      "NewWarehouse": "New Warehouse",      
+      "WarehouseCode": "Warehouse Code",
+      "WarehouseEnName":"Warehouse En Name",
+      "WarehouseArName":"Warehouse Ar Name"
+    },
     "Required": "Required",
     "Validation": "Form Validation",
     "Example": "Example",
@@ -13,23 +19,12 @@
     "OnlyEn": "Only English",
     "OnlyAr": "Only Arabic",
     "OnlyNum": "Only Number",
-    "AllowDecimal": "Allow Decimal",
-    "NewCategory": "New Category",
-    "CategoryCode": "Category Code",
-    "CategoryEnName":"Category En Name",
-    "CategryArName":"Categry Ar Name",
-    "ProductClassification":"Product Classification",
-    "Description":"Description",
-    "ParentCategory":"Parent Category",
-    "TaxableBonus":"Taxable Bonus",
+    "AllowDecimal": "Allow Decimal",    
     "Status":"Status",
     "Action":"Actions",
-    "UOMCode":"UOM Code",
-    "UOMEnName":"UOM En Name",
-    "UOMArName":"UOM Ar Name",
-    "AddUOM":"Add UOM",
+    "Description":"Description",
     "Reference":"Reference",
-    "Ratio":"Ratio"
-    
+    "Ratio":"Ratio",
+    "ParentCategory":"Parent Category"   
   }
 }

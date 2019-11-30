@@ -1,5 +1,11 @@
 {
   "Inventory": {
+    "Warehouse":{
+      "NewWarehouse": "مستودع جديد",      
+      "WarehouseCode": "رمز المستودع",
+      "WarehouseEnName":"اسم مستودع باللغة الإنجليزية",
+      "WarehouseArName":"اسم المستودع باللغة العربية"
+    },
     "Required": "مطلوب",
     "Validation": "التحقق من النموذج",
     "Example": "مثال",
@@ -13,23 +19,13 @@
     "OnlyEn": "انجليزى فقط",
     "OnlyAr": "عربى فقط",
     "OnlyNum": "أرقام فقط",
-    "AllowDecimal": "السماح بالعلامة العشرية",
-    "NewCategory": "فئة جديدة",
-    "CategoryCode": "كود الفئة",
-    "CategoryEnName":"اسم الفئة الانجليزي",
-    "CategryArName":"اسم الفئة العربي",
-    "ProductClassification":"تصنيف المنتج",
-    "Description":"الوصف",
-    "ParentCategory":"الفئة الرئيسية",
-    "TaxableBonus":"ضريبة الحوافز",
+    "AllowDecimal": "السماح بالعلامة العشرية",   
+    "Description":"الوصف",    
     "Status":"الحالة",
     "Action":"أفعال",
-    "UOMCode":"كود وحدة القياس",
-    "UOMEnName":"اسم وحدة القياس بالانجليزية",
-    "UOMArName":"اسم وحدة القياس بالعربية",
-    "AddUOM":"اضافة وحدة قياس",
     "Reference":" المرجع",
-    "Ratio":"النسبة"
+    "Ratio":"النسبة",
+    "ParentCategory":"القسم الرئيسي"
     
 
   }
