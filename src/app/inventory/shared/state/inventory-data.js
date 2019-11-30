@@ -1,6 +1,6 @@
 import { reflectKeys } from '@/app/shared/services';
 
-import { fetchInventory } from '../services';
+import { fetchInventory } from '../services/inventory/inventory.js';
 import Axios from 'axios';
 
 /** Initial state */
@@ -12,30 +12,30 @@ const initialState = {
 };
 
 /** Prefix for mutation types and actiontypes */
-const namespacedPrefix = '[Inventory]';
+const namespacedPrefix = '[INVENTORY]';
 
 /**
  * Mutation types
  */
 const mutationTypes = reflectKeys(
   [
-    'Inventory_DATA_SUCCESS',
-    'Inventory_DATA_REQUEST',
-    'Inventory_DATA_ERROR',
-    'Inventory_DATA_RESET'
+    'INVENTORY_DATA_SUCCESS',
+    'INVENTORY_DATA_REQUEST',
+    'INVENTORY_DATA_ERROR',
+    'INVENTORY_DATA_RESET'
   ],
   namespacedPrefix
 );
 
 const {
-  Inventory_DATA_ERROR,
-  Inventory_DATA_REQUEST,
-  Inventory_DATA_RESET,
-  Inventory_DATA_SUCCESS
+  INVENTORY_DATA_ERROR,
+  INVENTORY_DATA_REQUEST,
+  INVENTORY_DATA_RESET,
+  INVENTORY_DATA_SUCCESS
 } = mutationTypes;
 
 /**
- * Inventory data mutations
+ * Users data mutations
  */
 const mutations = {
   // products data
@@ -44,17 +44,17 @@ const mutations = {
   },
 
   /** user data request */
-  [Inventory_DATA_REQUEST](state) {
+  [INVENTORY_DATA_REQUEST](state) {
     Object.assign(state, { loading: true, error: null });
   },
 
   /** user data success */
-  [Inventory_DATA_SUCCESS](state, payload) {
+  [INVENTORY_DATA_SUCCESS](state, payload) {
     Object.assign(state, { loading: false, data: payload });
   },
 
   /** user data error */
-  [Inventory_DATA_ERROR](state, payload) {
+  [INVENTORY_DATA_ERROR](state, payload) {
     Object.assign(state, {
       loading: false,
       data: null,
@@ -63,7 +63,7 @@ const mutations = {
   },
 
   /** reset user data */
-  [Inventory_DATA_RESET](state) {
+  [INVENTORY_DATA_RESET](state) {
     Object.assign(state, ...initialState);
   }
 };
@@ -76,10 +76,10 @@ const getters = {
 };
 
 /** Actions types constants */
-export const actionsTypes = reflectKeys(['FETCH_USER_DATA'], namespacedPrefix);
+export const actionsTypes = reflectKeys(['FETCH_INVENTORY_DATA'], namespacedPrefix);
 
 /**
- * Inventory data actions
+ * INVENTORY data actions
  */
 const actions = {
   // Fetch products data
@@ -89,16 +89,16 @@ const actions = {
                   state.commit('getProductsData', response)
                 }).catch(error => console.log(error))
   },
-  /** fetch user data */
-  async [actionsTypes.FETCH_USER_DATA](context, authCred) {
-    context.commit(Inventory_DATA_REQUEST);
+  /** fetch INVENTORY data */
+  async [actionsTypes.FETCH_INVENTORY_DATA](context, authCred) {
+    context.commit(INVENTORY_DATA_REQUEST);
 
     const result = await fetchInventory(authCred).catch(e => {
-      context.commit(Inventory_DATA_ERROR, e);
+      context.commit(INVENTORY_DATA_ERROR, e);
     });
 
     if (result) {
-      context.commit(Inventory_DATA_SUCCESS, result);
+      context.commit(INVENTORY_DATA_SUCCESS, result);
     }
 
     return result;

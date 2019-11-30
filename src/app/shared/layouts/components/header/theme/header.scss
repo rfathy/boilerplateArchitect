@@ -136,6 +136,8 @@
                 margin: 0 1px 0 0;
                 span{
                     font-size: 10px;
+                    letter-spacing: 0.3px;
+                    transition: text-shadow .3s;
                 }
                 a{
                     display: block;
@@ -146,13 +148,13 @@
                 &:hover{
                     background: #e5f3f7;
                     span{
-                        font-weight: bold
+                        text-shadow: 0 0 .65px #0357a8, 0 0 .65px #0357a8;
                     }
                 }
                 &.active-link{
                     border-bottom: 3px solid #0357a8;
                     span{
-                        font-weight: bold
+                        text-shadow: 0 0 .65px #0357a8, 0 0 .65px #0357a8;
                     }
                 }
                 &.active-link:after{

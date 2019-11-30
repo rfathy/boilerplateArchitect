@@ -1,2 +1,2 @@
-export { default as InventoryData } from './inventory-data';
+export { default as inventoryData } from './inventory-data';
 export * from './inventory-data';

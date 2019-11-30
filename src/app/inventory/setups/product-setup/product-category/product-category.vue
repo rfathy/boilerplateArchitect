@@ -1,5 +1,6 @@
 <template>
     <div class="product-category">
+        product-category created
     </div>
 </template>
         
