@@ -36,12 +36,12 @@ export default {
                         id: "ProductID",
                         fields: {
                         ProductID: { editable: false, nullable: true },
-                        Code: {  validation: { min: 1 } },
-                        EnName: { validation: { required: {message: "Must not be empty!"} } },
-                        AnName: {  validation: { required: true } },
-                        ProductClassification: {  },
+                        Code: {  editable: false, validation: { min: 1 } },
+                        EnName: { validation: { required: {message: this.$i18n.t("Common.Required")} } },
+                        ArName: { validation: { required: {message: this.$i18n.t("Common.Required")} } },
+                        ProductClassification: { },
                         Description: {  },
-                        ParentCategory: { validation: { required: true } },
+                        ParentCategory: { },
                         TaxableBonus: { type: 'boolean' },
                         Status: { type: 'boolean' } 
                         }
@@ -61,12 +61,65 @@ export default {
             });
           },
         preventEditColumn(e) { 
-        console.log(e.isNew());
-        if (e.isNew()) {
-            return true;
-        } else {
-            return false
-        }
+            console.log(e.isNew());
+            if (e.isNew()) {
+                return true;
+            } else {
+                return false
+            }
+        },
+        // Product Classification ddl Singlr Select
+        customSSDdlEditor(container, options) {
+            $(`<input required name="${options.field}" data-required-msg="${this.$i18n.t("Common.Required")}"/>`)
+                .appendTo(container)
+                .kendoDropDownList({
+                    autoBind: false,
+                    dataTextField: "text",
+                    dataValueField: "value",
+                    valuePrimitive: true,
+                    filter: 'contains',
+                    dataSource: {
+                        data: [
+                            {text: 'option 1', value: 1},
+                            {text: 'option 2', value: 2}
+                        ]
+                    },
+                    // value: options.model.Category.CategoryID,
+                    change: function(e) {
+                        let names = e.sender._tags.map(item => item.text).join(', ')
+                        options.model.text = names
+                    }
+                });
+        },
+        // Parent Category ddl tree Single Select
+        categoryDropDownEditor: function(container, options) { 
+            $('<input name="' + options.field + '" />')
+                .appendTo(container)
+                .kendoDropDownTree({
+                    autoBind: false,
+                    dataTextField: "text",
+                    dataValueField: "value",
+                    valuePrimitive: true,
+                    autoClose: false,
+                    filter: 'startswith',
+                    dataSource: {
+                        data: [
+                            {
+                                text: 'option 1', 
+                                items: [{text: 'option 1', value: 1}]
+                            },
+                            {
+                                text: 'option 2', 
+                                items: [{text: 'option 2', value: 2}]
+                            }
+                        ]
+                    },
+                    // value: options.model.Category.CategoryID,
+                    change: function(e) {
+                        let names = e.sender._tags.map(item => item.text).join(', ')
+                        options.model.text = names
+                    }
+                });
         },
         // DropdownList Filter in Grid
         statusFilter(args) { 
