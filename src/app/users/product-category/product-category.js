@@ -21,6 +21,10 @@ export default {
                         edit: "fas fa-edit",
                         update: "fas fa-check-circle",
                         cancel: "far fa-times-circle"
+                    },
+                    click: function (e) {
+                        console.log(e);
+                        debugger
                     }
                 },
                 {
@@ -36,14 +40,22 @@ export default {
                         id: "ProductID",
                         fields: {
                         ProductID: { editable: false, nullable: true },
-                        Code: {  validation: { min: 1 } },
-                        EnName: { validation: { required: {message: "Must not be empty!"} } },
-                        AnName: {  validation: { required: true } },
-                        ProductClassification: {  },
+                        Code: {  editable: false, validation: { min: 1 } },
+                        EnName: { 
+                            validation: { 
+                                required: {message: this.$i18n.t("Common.Required")},
+                                uniqueness: function (e) {
+                                    console.log(e);
+                                    debugger
+                                }
+                            } 
+                        },
+                        ArName: { validation: { required: {message: this.$i18n.t("Common.Required")} } },
+                        ProductClassification: { },
                         Description: {  },
-                        ParentCategory: { validation: { required: true } },
-                        TaxableBonus: { type: 'boolean' },
-                        Status: { type: 'boolean' } 
+                        ParentCategory: { },
+                        TaxableBonus: { type: 'boolean', defaultValue: true },
+                        Status: { type: 'boolean', defaultValue: true } 
                         }
                     }
                 },
@@ -52,21 +64,77 @@ export default {
         }
     },
     methods: {
+        // Taxable Bonus and Status Switch
         customBoolEditor(container, options) {
-            $('<input type="checkbox" name="' + options.field + '"/>')
+            $('<input type="checkbox" name="' + options.field + '" />')
                   .appendTo(container)
                   .kendoMobileSwitch({
-                  onLabel: this.$i18n.t('Common.Yes'),
-                  offLabel: this.$i18n.t('Common.No')
+                    onLabel: this.$i18n.t('Common.Yes'),
+                    offLabel: this.$i18n.t('Common.No'),
+                    checked: true
             });
           },
         preventEditColumn(e) { 
-        console.log(e.isNew());
-        if (e.isNew()) {
-            return true;
-        } else {
-            return false
-        }
+            console.log(e.isNew());
+            if (e.isNew()) {
+                return true;
+            } else {
+                return false
+            }
+        },
+        // Product Classification ddl Singlr Select
+        customSSDdlEditor(container, options) {
+            $(`<input required name="${options.field}" data-required-msg="${this.$i18n.t("Common.Required")}"/>`)
+                .appendTo(container)
+                .kendoDropDownList({
+                    autoBind: false,
+                    dataTextField: "text",
+                    dataValueField: "value",
+                    valuePrimitive: true,
+                    autoClose: true,
+                    filter: 'contains',
+                    dataSource: {
+                        data: [
+                            {text: 'option 1', value: 1},
+                            {text: 'option 2', value: 2}
+                        ]
+                    },
+                    // value: options.model.Category.CategoryID,
+                    change: function(e) {
+                        let names = e.sender._tags.map(item => item.text).join(', ')
+                        options.model.text = names
+                    }
+                });
+        },
+        // Parent Category ddl tree Single Select
+        categoryDropDownEditor: function(container, options) { 
+            $('<input name="' + options.field + '" />')
+                .appendTo(container)
+                .kendoDropDownTree({
+                    autoBind: false,
+                    dataTextField: "text",
+                    dataValueField: "value",
+                    valuePrimitive: true,
+                    autoClose: true,
+                    filter: 'startswith',
+                    dataSource: {
+                        data: [
+                            {
+                                text: 'option 1', 
+                                items: [{text: 'option 1', value: 1}]
+                            },
+                            {
+                                text: 'option 2', 
+                                items: [{text: 'option 2', value: 2}]
+                            }
+                        ]
+                    },
+                    // value: options.model.Category.CategoryID,
+                    change: function(e) {
+                        let names = e.sender._tags.map(item => item.text).join(', ')
+                        options.model.text = names
+                    }
+                });
         },
         // DropdownList Filter in Grid
         statusFilter(args) { 
@@ -100,8 +168,25 @@ export default {
                 autoWidth: true
             });
         },
+        
+    
         getTooltipTilte: function(e) {
             return e.target.text() 
+        },
+        onEditGrid: function() {
+            debugger
+        },
+        onSave: function () {
+            debugger
+        },
+        onRemoveRow: function () {
+            debugger
+        },
+        onBeforeedit: function () {
+            debugger
+        },
+        onChange: function () {
+            debugger
         }
     },
     i18n: {

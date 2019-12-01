@@ -12,6 +12,7 @@
     "InActive": "InActive",
     "All":"All",
     "Delete":"Delete",
-    "Required":"Required"
+    "Required": "Required",
+    "Duplicated": "Duplicated" 
   }
 }

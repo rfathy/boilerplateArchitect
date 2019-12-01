@@ -12,7 +12,7 @@
     "InActive": "غير مفعل",
     "All":"الكل",
     "Delete":"حذف",
-    "Required":"مطلوب"
-   
+    "Required": "مطلوب",
+    "Duplicated": "مكرر" 
   }
 }

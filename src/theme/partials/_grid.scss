@@ -4,6 +4,7 @@
     box-shadow: 0px 0px 5px 1px #b3bfc370;
     border-radius:4px;
     margin-bottom: 20px;
+
     .k-grid-header-wrap {
         border-width: 0 0 0 0 ;
     }
@@ -37,83 +38,125 @@
         border-radius:0 0 4px 4px;
         overflow:hidden;
     }
-    .k-grid-header{
-        padding-right:0 !important;
-        border-radius:4px 4px 0 0;
-        padding-left: 0 !important;
-        .k-header:first-child{
-            border-radius:4px 0 0 0;
+    .k-filter-row {
+        th {
+            .k-filtercell{   
+                .k-autocomplete{
+                    &:after {
+                        content: "\F002";
+                        font-family: "Font Awesome 5 Free";
+                        left: 20px;
+                        top: 1px;
+                        position: relative;
+                    }
+                }
+                 
         }
-        
-        th{
-            font-size: 14px;
-            border:0;
-            color:$tundora;
-            font-weight: 600;
-            padding: 10px 10px 10px 28px;
-            text-align: left;
+        }     
+    }
+    .k-dropdowntree {
+        .k-dropdown-wrap{
+            border-color: white;
+            color: #7A8492;
+            background-color: white;      
+            border-radius: 0.25rem;
+            height: 22px;
+        .k-input{
+            height: calc( -0.25rem + 1.5em);
+        }  
+    }
+    }
 
-            & > a.k-link{
-                padding: 0;
-                margin: 0;
-            }
-            &.k-state-focused{
-                box-shadow: none;
-            }
-            &>a{
-                color:$tundora;
-            }
+.k-dropdown  .k-widget.k-tooltip.k-tooltip-validation{
+    top: -33px !important;
+    right: -7px !important;
+}
+
+.k-grid-header{
+    padding-right:0 !important;
+    border-radius:4px 4px 0 0;
+    padding-left: 0 !important;
+    .k-header:first-child{
+        border-radius:4px 0 0 0;
+    }
+    
+    th{
+        font-size: 14px;
+        border:0;
+        color:$tundora;
+        font-weight: 600;
+        padding: 10px 10px 10px 28px;
+        text-align: left;
+
+        & > a.k-link{
+            padding: 0;
+            margin: 0;
         }
-        tr:not(.k-filter-row){
-            background-color: $linkWater;
-            text-transform: capitalize;
+        &.k-state-focused{
+            box-shadow: none;
         }
-        .k-filter-row{
-            background-color:$athensGray;
-            .k-button-icon[title=Clear]{
-                display: none;
-                        }
+        &>a{
+            color:$tundora;
         }
     }
-    .k-grid-content{
-        overflow: visible;
+    tr:not(.k-filter-row){
+        background-color: $linkWater;
+        text-transform: capitalize;
+    }
+    .k-filter-row{
+        background-color:$athensGray;
+        .k-button-icon[title=Clear]{
+            display: none;
+                    }
+    }
+}
+.k-grid-content{
+    overflow: visible;
 
-        .k-alt{
-            background-color:$athensGray;
+    .k-alt{
+        background-color:$athensGray;
+    }
+    td{
+        border:0;
+        @extend .text-ellipses;
+        font-size: 12px;
+        color: $rollingStone;
+        padding: 10px 10px 10px 28px;
+        text-align: left;
+
+        &.k-state-focused{
+            box-shadow: none;
         }
-        td{
-            border:0;
-            @extend .text-ellipses;
-            font-size: 12px;
-            color: $rollingStone;
-            padding: 10px 10px 10px 28px;
-            text-align: left;
-
-            &.k-state-focused{
-                box-shadow: none;
+        span.statusHolder{
+            width: 65px;
+            height: 22px;
+            border-radius: 18px;
+            display: block;
+            text-align: center;
+            line-height: 22px;
+            &.isactive{
+                background: $OffGreen;
+                color: $shamrock
             }
-            span.statusHolder{
-                width: 65px;
-                height: 22px;
-                border-radius: 18px;
-                display: block;
-                text-align: center;
-                line-height: 22px;
-                &.isactive{
-                    background: #f3f9ff;
-                    color: #3cc8a2
-                }
-                &.isinactive{
-                    background: #ffe8e8;
-                    color: #ff6363;
-                }
+            &.isinactive{
+                background: $FairPink;
+                color: $Bittersweet;
             }
         }
+    }
 
-    // kendo command button without text
-    .k-command-cell {
-        a.k-button.k-button{
-            padding: 0;
+// kendo command button without text
+.k-command-cell {
+    a.k-button.k-button{
+        padding: 0;
+    }
+    .k-button-icontext {
+        font-size: 0;
+        margin: 0 0.4rem;
+        background: transparent;
+        border: 0;
+        &.k-grid-edit{
+            color: $Endeavour;
         }
         .k-button-icontext {
             font-size: 0;
@@ -140,50 +183,44 @@
             margin: 0;
         } 
         }
+    .k-icon { 
+        margin: 0;
+    } 
     }
+}
 
-    .k-grid-edit-row {
-        background-color:$tropicalBlue ;
-        td {
-            position: relative;
-            overflow: visible;
-            padding-top: 0.25rem;
+.k-grid-edit-row {
+    background-color:$tropicalBlue ;
+    td {
+        position: relative;
+        overflow: visible;
+        padding-top: 0.25rem;
 
             &.k-command-cell {
                 display: flex;
             }
 
-            .k-widget.k-tooltip.k-tooltip-validation {
-                top: -19px;
-                right: -18px;
-                padding: 0.25rem 0.5rem;
-                background-color: $Madison;
-                font-size: 12px;
-                font-weight: 600;
-                border-radius: 0;
-                .k-icon.k-i-warning {
-                    position: absolute;
-                    right: 15px;
-                    bottom: -24px;
-                    color: red;
-                    font-size: 1.3rem;
-                }
-
-                .k-callout-n {
-                    top: 26px;
-                    transform: rotate(180deg);
-                    border-bottom-color: $Madison;
-
-                }
+        .k-widget.k-tooltip.k-tooltip-validation {
+            top: -19px;
+            right: -18px;
+            padding: 0.25rem 0.5rem;
+            background-color: $Madison;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 0;
+            .k-icon.k-i-warning {
+                position: absolute;
+                right: 15px;
+                bottom: -24px;
+                color: red;
+                font-size: 1.3rem;
             }
-            .k-textbox{
-                font-size: 12px;
-                padding: 0.35rem 0.5rem;
-                height: calc( 0.35rem + 1.5em);
-                border-color: $alto;
-                &.k-invalid{
-                    padding-inline-end: 22px;
-                }
+
+            .k-callout-n {
+                top: 26px;
+                transform: rotate(180deg);
+                border-bottom-color: $Madison;
+
             }
         }
         // Disable button in grid that opens popup in case of add/edit row
@@ -212,42 +249,50 @@
     .k-pager-wrap{
         font-size: 10px;
         .k-pager-info{
-            font-size: 12px;
-        }
-        .k-pager-numbers{
-    .k-state-selected,.k-state-selected:hover{
-        background-color:$turquoise;
-        border-color:$turquoise;
-    }
-    }
-    .k-link, .k-pager-nav{
-        color: $black;
-    }
-
-    }
-    .k-dropdown{
-        .k-dropdown-wrap{
-            background-color:$white;
-            color: $rollingStone;
-            border-color: $alto;
-            font-size: 12px;
-            padding: 2px 0;
-            & > .k-input , & > .k-select{
-                padding: 0px 5px;
-                height: calc( 0.35rem + 1.5em);
-            }
-        }
-    }
-    .k-autocomplete ,.k-numeric-wrap{
-        .k-input{
+        .k-textbox{
             font-size: 12px;
             padding: 0.35rem 0.5rem;
             height: calc( 0.35rem + 1.5em);
             border-color: $alto;
+            &.k-invalid{
+                padding-inline-end: 22px;
+            }
         }
-        .k-clear-value{
-            top: 0;
-            display: inline-flex;
+    }
+    // Disable button in grid that opens popup in case of add/edit row
+    .btn-open-popup {
+    pointer-events: none;
+    }
+}
+
+}
+
+.k-pager-wrap{
+    font-size: 10px;
+    .k-pager-info{
+        font-size: 12px;
+    }
+    .k-pager-numbers{
+.k-state-selected,.k-state-selected:hover{
+    background-color:$turquoise;
+    border-color:$turquoise;
+}
+}
+.k-link, .k-pager-nav{
+    color: $black;
+}
+
+}
+.k-dropdown{
+    .k-dropdown-wrap{
+        background-color:$white;
+        color: $rollingStone;
+        border-color: $alto;
+        font-size: 12px;
+        padding: 2px 0;
+        & > .k-input , & > .k-select{
+            padding: 0px 5px;
+            height: calc( 0.35rem + 1.5em);
         }
     }
     .bg-inactive-status{
@@ -276,3 +321,18 @@
         }
 
     }
+}
+.k-autocomplete ,.k-numeric-wrap{
+    .k-input{
+        font-size: 12px;
+        padding: 0.35rem 0.5rem;
+        height: calc( 0.35rem + 1.5em);
+        border-color: $alto;
+    }
+    .k-clear-value{
+        top: 0;
+        display: inline-flex;
+    }
+}
+}
+  
