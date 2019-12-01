@@ -21,6 +21,10 @@ export default {
                         edit: "fas fa-edit",
                         update: "fas fa-check-circle",
                         cancel: "far fa-times-circle"
+                    },
+                    click: function (e) {
+                        console.log(e);
+                        debugger
                     }
                 },
                 {
@@ -165,6 +169,15 @@ export default {
             debugger
         },
         onSave: function () {
+            debugger
+        },
+        onRemoveRow: function () {
+            debugger
+        },
+        onBeforeedit: function () {
+            debugger
+        },
+        onChange: function () {
             debugger
         }
     },

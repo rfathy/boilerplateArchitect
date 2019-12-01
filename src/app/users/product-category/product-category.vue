@@ -15,7 +15,10 @@
                 :pageable-always-visible="true"
                 :pageable-page-sizes="[5, 10, 20, 30]"
                 @edit="onEditGrid"
-                @save="onSave">
+                @savechanges="onSave"
+                @remove="onRemoveRow"
+                @beforeedit="onBeforeedit"
+                @change="onChange">
                 <kendo-grid-column :field="'Code'"
                                 :title="$t('Users.CategoryCode')"
                                 :editable="preventEditColumn"
@@ -57,7 +60,7 @@
                                 :filterable-cell-template="taxableBonusFilter"
                                 :filterable-cell-show-operators="false"
                                 :editor="customBoolEditor"
-                                :template="`#= TaxableBonus ? 'Yes' : 'No'#`"
+                                :template="`#= TaxableBonus ? '<div class= bg-active-status> Yes </div>' : '<div class= bg-inactive-status> No </div>'#`"
                                 :width="90"></kendo-grid-column>
                 <kendo-grid-column :field="'Status'"
                                 :title="$t('Users.Status')"
