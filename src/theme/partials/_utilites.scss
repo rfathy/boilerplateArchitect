@@ -14,31 +14,21 @@
     font-size: 1rem !important;
 }
 
-
 .fa-times-circle{
 background-color: white;
 border-radius: 9px;
 }
 
-.bg-inactive-status{
-    background-color: $FairPink;
-    color:$Bittersweet;
-    @extend .bg-activation-status;
-}
-
-.bg-active-status{
-    background-color: $OffGreen;
-    color:$shamrock;
-    @extend .bg-activation-status;
-    }
-
-.bg-activation-status{
-    text-align:center;
-    padding:8px;
+.fas{
+    background-color: white;
     border-radius: 18px;
-    font-weight:bold;
-
 }
+
+*:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 //underlined text
 .underlined{
     position: relative;
