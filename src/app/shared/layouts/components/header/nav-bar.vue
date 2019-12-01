@@ -31,11 +31,11 @@
                                         <div class="level-2 row">
                                             <div class="list-inline-item col mb-1 ml-1 pl-2"
                                                 v-for="s in n.submodules" :key="s.id"
-                                                @click="navEl = !navEl">
+                                                @click="navEl = false">
                                                 <router-link :to="{ path: s.link }" class="text-white font-weight-bold underlined mb-2 mt-2">{{s.name}}</router-link>
                                                 <div class="pages"
                                                 v-for="p in s.pageholder" :key="p.id"
-                                                @click="navEl = !navEl">
+                                                @click="navEl = false">
                                                     <router-link class="mb-1" :to="{ path: p.link }">{{p.name}}</router-link>
                                                 </div>
                                             </div> 
@@ -49,10 +49,14 @@
             </transition>
             <div class="bread-links d-inline-block text-capitalize mr-auto">
                 <ul class="m-0 d-inline-block">
-                    <li class="opaque-5 d-inline-block"><router-link :to="'/'"><img class="ml-1 mr-lg-n1 mt-1" src="@/assets/svg/home.svg" alt=""></router-link></li>
+                    <li class="opaque-5 d-inline-block">
+                        <router-link :to="'/'">
+                            <img class="ml-1 mr-lg-n1 mt-1" src="@/assets/svg/home.svg" alt="">
+                        </router-link>
+                    </li>
                     <li class="opaque-5 d-inline-block" v-for="route in $route.matched" :key="route.name">
-                        <router-link :to="{name: route.name}">
-                        {{ route.meta.title }}
+                        <router-link :to="{name: route.path}">
+                        {{ route.meta.breadcrumb }}
                         </router-link>
                     </li>
                 </ul>

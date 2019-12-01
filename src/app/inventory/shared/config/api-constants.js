@@ -1,3 +1,3 @@
-export const apiConstants = {
-  users: 'mock-data/users.json'
-};
+// export const apiConstants = {
+//   users: 'mock-data/users.json'
+// };

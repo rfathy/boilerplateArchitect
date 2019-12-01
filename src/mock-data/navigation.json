@@ -17,17 +17,17 @@
               {
                 "id": "1.1.1.1", 
                 "name" : "Product Category", 
-                "link": "/inventory-managemen/product-category"
+                "link": "/inventory/setups/product-setup/product-category"
               },
               {
                 "id": "1.1.1.2", 
                 "name" : "UOM Category", 
-                "link": "/users/uom-category"
+                "link": "/inventory/setups/product-setup/uom-category"
               },
               {
                 "id": "1.1.1.3", 
                 "name" : "Products List", 
-                "link": "javascript:;"
+                "link": "/inventory/setups/product-setup/products-list"
               }
             ]
           },
@@ -39,12 +39,12 @@
               {
                 "id": "1.1.2.1", 
                 "name" : "Warehouse Category", 
-                "link": "javascript:;"
+                "link": "/inventory/setups/warehouse-setup/warehouse-category"
               },
               {
                 "id": "1.1.2.2", 
                 "name" : "Warehouses List", 
-                "link": "javascript:;"
+                "link": "/inventory/setups/warehouse-setup/warehouses-list"
               }
             ]
           }
