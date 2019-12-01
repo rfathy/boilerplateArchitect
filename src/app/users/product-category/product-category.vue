@@ -14,7 +14,8 @@
                 :filterable-mode="'row'"
                 :pageable-always-visible="true"
                 :pageable-page-sizes="[5, 10, 20, 30]"
-                @edit="onEditGrid">
+                @edit="onEditGrid"
+                @save="onSave">
                 <kendo-grid-column :field="'Code'"
                                 :title="$t('Users.CategoryCode')"
                                 :editable="preventEditColumn"
@@ -63,7 +64,7 @@
                                 :filterable-cell-template="statusFilter"
                                 :filterable-cell-show-operators="false"
                                 :editor="customBoolEditor"
-                                :template="`#= Status ? 'Active' : 'Inactive'#`"
+                                :template="`#= Status ? '<div class= bg-active-status> Active </div>' : '<div class= bg-inactive-status> Inactive </div> '#`"
                                 :width="90"></kendo-grid-column>
                 <kendo-grid-column :command="customGridCommand"
                                 :title="$t('Users.Action')"

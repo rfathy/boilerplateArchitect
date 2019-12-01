@@ -163,6 +163,9 @@ export default {
         },
         onEditGrid: function() {
             debugger
+        },
+        onSave: function () {
+            debugger
         }
     },
     i18n: {
