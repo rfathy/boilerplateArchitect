@@ -135,12 +135,12 @@
             text-align: center;
             line-height: 22px;
             &.isactive{
-                background: #f3f9ff;
-                color: #3cc8a2
+                background: $OffGreen;
+                color: $shamrock
             }
             &.isinactive{
-                background: #ffe8e8;
-                color: #ff6363;
+                background: $FairPink;
+                color: $Bittersweet;
             }
         }
     }

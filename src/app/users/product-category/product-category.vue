@@ -60,14 +60,14 @@
                                 :filterable-cell-template="taxableBonusFilter"
                                 :filterable-cell-show-operators="false"
                                 :editor="customBoolEditor"
-                                :template="`#= TaxableBonus ? '<div class= bg-active-status> Yes </div>' : '<div class= bg-inactive-status> No </div>'#`"
+                                :template="'# if(TaxableBonus) {# <span class=\'statusHolder isactive\'>' + $t('Common.Yes') + '</span>#} else{# <span class=\'statusHolder isinactive\'>' + $t('Common.No') + '</span> #} #'"
                                 :width="90"></kendo-grid-column>
                 <kendo-grid-column :field="'Status'"
                                 :title="$t('Users.Status')"
                                 :filterable-cell-template="statusFilter"
                                 :filterable-cell-show-operators="false"
                                 :editor="customBoolEditor"
-                                :template="`#= Status ? '<div class= bg-active-status> Active </div>' : '<div class= bg-inactive-status> Inactive </div> '#`"
+                                :template="'# if(Status) {# <span class=\'statusHolder isactive\'>' + $t('Common.Active') + '</span>#} else{# <span class=\'statusHolder isinactive\'>' + $t('Common.InActive') + '</span> #} #'"
                                 :width="90"></kendo-grid-column>
                 <kendo-grid-column :command="customGridCommand"
                                 :title="$t('Users.Action')"

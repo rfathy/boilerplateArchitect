@@ -41,13 +41,21 @@ export default {
                         fields: {
                         ProductID: { editable: false, nullable: true },
                         Code: {  editable: false, validation: { min: 1 } },
-                        EnName: { validation: { required: {message: this.$i18n.t("Common.Required")} } },
+                        EnName: { 
+                            validation: { 
+                                required: {message: this.$i18n.t("Common.Required")},
+                                uniqueness: function (e) {
+                                    console.log(e);
+                                    debugger
+                                }
+                            } 
+                        },
                         ArName: { validation: { required: {message: this.$i18n.t("Common.Required")} } },
                         ProductClassification: { },
                         Description: {  },
                         ParentCategory: { },
-                        TaxableBonus: { type: 'boolean' },
-                        Status: { type: 'boolean' } 
+                        TaxableBonus: { type: 'boolean', defaultValue: true },
+                        Status: { type: 'boolean', defaultValue: true } 
                         }
                     }
                 },
