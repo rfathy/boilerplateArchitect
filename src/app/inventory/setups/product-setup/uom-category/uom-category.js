@@ -11,6 +11,7 @@ localStorage.getItem('selectedLang') == 'en' ? import('../../../theme/inventory.
 export default {
     name: 'UomCategory',
     data() {
+
         return {
             checked: true,    
             customGridCommand: [
@@ -50,6 +51,14 @@ export default {
         }
     },
     methods: {
+        coloringRowBorder(){  
+             //console.log(this);
+             $('tr.k-master-row').removeClass('row-border')
+    },
+    RemoveColoringRowBorder(){
+        $('tr.k-master-row').addClass('row-border')
+    },
+       
         customBoolEditor(container, options) {
             $('<input type="checkbox" name="' + options.field + '"/>')
                   .appendTo(container)
