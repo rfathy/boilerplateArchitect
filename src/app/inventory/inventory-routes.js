@@ -1,4 +1,6 @@
 import AppInventory from './inventory.vue';
+// import UOMCategory from '../users/uom-category/uom-category';
+
 import WarehousesList from './setups/warehouse-setup/warehouses-list/warehouses-list.vue';
 import WarehouseCategory from './setups/warehouse-setup/warehouse-category/warehouse-category.vue'
 import ProductCategory from './setups/product-setup/product-category/product-category.vue'

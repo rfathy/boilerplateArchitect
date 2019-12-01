@@ -21,17 +21,22 @@ border-radius: 9px;
 }
 
 .bg-inactive-status{
-background-color: $FairPink;
+    background-color: $FairPink;
+    color:$Bittersweet;
+    @extend .bg-activation-status;
 }
 
 .bg-active-status{
-    background-color: $shamrock;
+    background-color: $OffGreen;
+    color:$shamrock;
+    @extend .bg-activation-status;
     }
 
 .bg-activation-status{
     text-align:center;
     padding:8px;
-    border-radius: 18px
+    border-radius: 18px;
+    font-weight:bold;
 
 }
 //underlined text
