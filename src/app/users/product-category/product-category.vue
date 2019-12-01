@@ -13,7 +13,8 @@
                 :filterable-extra="false"
                 :filterable-mode="'row'"
                 :pageable-always-visible="true"
-                :pageable-page-sizes="[5, 10, 20, 30]">
+                :pageable-page-sizes="[5, 10, 20, 30]"
+                @edit="onEditGrid">
                 <kendo-grid-column :field="'Code'"
                                 :title="$t('Users.CategoryCode')"
                                 :editable="preventEditColumn"

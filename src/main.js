@@ -17,7 +17,7 @@ Vue.use(GridInstaller);
 import { DataSource, DataSourceInstaller } from '@progress/kendo-datasource-vue-wrapper';
 Vue.use(DataSourceInstaller)
 
-import { Tooltip, KendoPopupsInstaller } from '@progress/kendo-popups-vue-wrapper'
+import { Tooltip, Notification, KendoPopupsInstaller } from '@progress/kendo-popups-vue-wrapper'
 Vue.use(KendoPopupsInstaller)
 
 import { InputsInstaller } from '@progress/kendo-inputs-vue-wrapper'
@@ -49,6 +49,7 @@ new Vue({
     Grid,
     DataSource,
     Tooltip,
+    Notification
     // Switch
   },
 

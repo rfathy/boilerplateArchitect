@@ -52,12 +52,14 @@ export default {
         }
     },
     methods: {
+        // Taxable Bonus and Status Switch
         customBoolEditor(container, options) {
-            $('<input type="checkbox" name="' + options.field + '"/>')
+            $('<input type="checkbox" name="' + options.field + '" />')
                   .appendTo(container)
                   .kendoMobileSwitch({
-                  onLabel: this.$i18n.t('Common.Yes'),
-                  offLabel: this.$i18n.t('Common.No')
+                    onLabel: this.$i18n.t('Common.Yes'),
+                    offLabel: this.$i18n.t('Common.No'),
+                    checked: true
             });
           },
         preventEditColumn(e) { 
@@ -77,6 +79,7 @@ export default {
                     dataTextField: "text",
                     dataValueField: "value",
                     valuePrimitive: true,
+                    autoClose: true,
                     filter: 'contains',
                     dataSource: {
                         data: [
@@ -100,7 +103,7 @@ export default {
                     dataTextField: "text",
                     dataValueField: "value",
                     valuePrimitive: true,
-                    autoClose: false,
+                    autoClose: true,
                     filter: 'startswith',
                     dataSource: {
                         data: [
@@ -157,6 +160,9 @@ export default {
     
         getTooltipTilte: function(e) {
             return e.target.text() 
+        },
+        onEditGrid: function() {
+            debugger
         }
     },
     i18n: {
