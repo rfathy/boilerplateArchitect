@@ -1,69 +1,57 @@
 <template>
-    <div class="products-nested-grid">
+    <div class="uom-category">
         <kendo-grid :data-source="productsDataSource"
-                :pageable='true'
                 :sortable="true"
                 :no-records="true"
                 :navigatable='true'
                 :editable="'inline'"
-                :toolbar="['create']"
+                :toolbar="[{name: 'create', text: this.$i18n.t('Users.NewCategory')}]"
                 :filterable-extra="false"
                 :filterable-mode="'row'"
-                @edit="editRow"
-                @update="showFilterRow"
-                @cancel="showFilterRow"
-                @filter="onFilter"
+                :pageable-always-visible="true"
                 @detailinit="detailInit" 
-                @databound="dataBound">
+                :filterable-cell-operator="'contains'"
+                :pageable-page-sizes="[5, 10, 20, 30]">
             <kendo-grid-column :field="'Code'"
-                            :title="'Code'"
+                            :title= "this.$i18n.t('Users.CategoryCode')"
                             :editable="preventEditColumn"
                             :filterable-cell-show-operators="false"
                             :filterable-cell-operator="'contains'"
                             :width="100"></kendo-grid-column>
             <kendo-grid-column :field="'EnName'"
-                            :title="'En Name'"
+                            :title= "this.$i18n.t('Users.CategoryEnName')"
                             :filterable-cell-show-operators="false"
                             :filterable-cell-operator="'contains'"
                             :width="120"></kendo-grid-column>
-            <kendo-grid-column :field="'AnName'"
-                            :title="'Ar Name'"
+            <kendo-grid-column :field="'ArName'"
+                            :title= "this.$i18n.t('Users.CategryArName')"
                             :filterable-cell-show-operators="false"
                             :filterable-cell-operator="'contains'"
                             :width="120"></kendo-grid-column>
-            <kendo-grid-column :field="'ProductClassification'"
-                            :title="'Product Classification'"
-                            :filterable-cell-show-operators="false"
-                            :filterable-cell-operator="'contains'"
-                            :filterable-multi="true"
-                            :width="120"></kendo-grid-column> 
+           
             <kendo-grid-column :field="'Description'"
-                            :title="'Description'"
+                            :title= "this.$i18n.t('Users.Description')"
                             :filterable-cell-show-operators="false"
                             :filterable-cell-operator="'contains'"
                             :width="120"
                             ></kendo-grid-column> 
-            <kendo-grid-column :field="'ParentCategory'"
-                            :title="'Parent Category'"
-                            :filterable-cell-show-operators="false"
-                            :filterable-cell-operator="'contains'"
-                            :width="120"></kendo-grid-column>
+            
             <kendo-grid-column :field="'Status'"
-                            :title="'Status'"
+                            :title= "this.$i18n.t('Users.Status')"
                             :filterable-cell-template="statusFilter"
                             :filterable-cell-show-operators="false"
                             :editor="customBoolEditor"
+                            :template="customTemp"
                             :width="100"></kendo-grid-column>
-                            <!-- :filterable-ui="statusFilter" -->
-                       <kendo-grid-column :command="['edit', 'destroy']"
-                            :title="'&nbsp;'"
+            <kendo-grid-column :command="customGridCommand"
+                            :title= "this.$i18n.t('Users.Action')"
                             :width="100"></kendo-grid-column>
         </kendo-grid>
     </div>
 </template>
 
-<script src="./products-nested-grid.js"></script>
+<script src="./uom-category.js"></script>
 
 <style lang="scss" scoped>
-@import '../../theme/users.scss';
+@import '../theme/users.scss';
 </style>

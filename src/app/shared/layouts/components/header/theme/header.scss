@@ -1,3 +1,4 @@
+@import '../../../../../theme/partials/variables';
 .main-header {
     .horizontal-navbar{
         margin-top: 70px;
@@ -135,6 +136,8 @@
                 margin: 0 1px 0 0;
                 span{
                     font-size: 10px;
+                    letter-spacing: 0.3px;
+                    transition: text-shadow .3s;
                 }
                 a{
                     display: block;
@@ -145,13 +148,13 @@
                 &:hover{
                     background: #e5f3f7;
                     span{
-                        font-weight: bold
+                        text-shadow: 0 0 .65px #0357a8, 0 0 .65px #0357a8;
                     }
                 }
                 &.active-link{
                     border-bottom: 3px solid #0357a8;
                     span{
-                        font-weight: bold
+                        text-shadow: 0 0 .65px #0357a8, 0 0 .65px #0357a8;
                     }
                 }
                 &.active-link:after{
@@ -186,14 +189,18 @@
                 .rout-holder{                  
                     h6{
                         border-left: 3px solid #11e4ea;
-                        color: #bfd5e9;
-                        font-size: 12px;
+                        color: $white;
+                        font-size: 14px;                        
                     }
-                    ul{
-                        li{
+                    div{
+                        .pages{
+                            a{
+                                color: $spindle;
+                                white-space: nowrap;
+                            }
                             a:hover{
                                 background: transparent !important;
-                                color: #11e4ea !important
+                                color: #11e4ea !important;
                             }
                             &:hover{
                                 background: transparent !important;

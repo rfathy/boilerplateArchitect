@@ -1,5 +1,5 @@
 export default {
-    name: "grids",
+    name: "products-list",
     data () {
         return {
         }

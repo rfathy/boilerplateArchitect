@@ -1,5 +1,5 @@
 export default {
-    name: "grids",
+    name: "warehouse-category",
     data () {
         return {
         }

@@ -1,5 +1,5 @@
 export default {
-    name: "grids",
+    name: "uom-category",
     data () {
         return {
         }
