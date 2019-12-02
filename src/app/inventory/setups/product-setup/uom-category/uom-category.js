@@ -237,6 +237,16 @@ export default {
               }
               ]
             })
+        },editRow:function (e){
+            e.sender.wrapper.find(".k-filter-row").hide();
+            e.sender.expandRow(e.container);
+            if(e.model.isNew()){
+            e.sender.content.find(".k-detail-row .k-grid-add").trigger("click");
+            e.container.find("input")[0].focus();
+            }
+        },
+        showFilterRow:function(e){
+             e.sender.wrapper.find(".k-filter-row").show();
         }
     },
     i18n: {
