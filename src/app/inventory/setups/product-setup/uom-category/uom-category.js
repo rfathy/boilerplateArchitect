@@ -42,8 +42,14 @@ export default {
                         ArName: {  validation: { required: true } },
                         ProductClassification: {  },
                         Description: {  },
-                        Status: { type: 'boolean' } 
-                        }
+                        Status: { type: 'boolean' }
+                        //, 'UOM.UOMID': {},
+                        //     'UOM.UOMCode': { type: 'number', validation: { min: 1 } },
+                        //     'UOM.UOMEnName': { validation: { required: { message: this.$i18n.t('Common.Required') } } },
+                        //     'UOM.UOMArName': {  validation: { required: { message: this.$i18n.t('Common.Required') } } },
+                        //     'UOM.UOMDescription': { type: 'string' },
+                        //     'UOM.UOMStatus': { type: 'boolean' }  
+                         }
                     }
                 },
                 pageSize: 10
@@ -52,18 +58,20 @@ export default {
     },
     methods: {
         addRowBorder(e){  
-          console.log(e.masterRow[0]);
-          let expandedRow = e.masterRow[0] ;
-          $(expandedRow).addClass('row-border');
-          //$('tr.k-master-row').addClass('row-border')
+          e.sender.collapseRow(e.sender.content.find("tr.row-border"));//collapse last opened row if exist
+          e.masterRow.addClass('row-border');
+          this.startDetailsGridFromLeft(e);
     },
 
     removeRowBorder(e){
-          let collapsedRow = e.masterRow[0] ;
-          $(collapsedRow).removeClass('row-border');
-         //$('tr.k-master-row').removeClass('row-border')
+          e.masterRow.removeClass('row-border'); ;
     },
-
+    startDetailsGridFromLeft:function  (e){
+    e.detailRow.find(".k-hierarchy-cell").hide();
+    
+    let subgrid =e.detailRow.find(".k-detail-cell");
+    subgrid.attr("colspan",+subgrid.attr("colspan")+1);
+},
         customBoolEditor(container, options) {
             $('<input type="checkbox" name="' + options.field + '"/>')
                   .appendTo(container)
@@ -105,18 +113,18 @@ export default {
                         fields: {
                             // 'UOM[dataItem]UOMID': {},
                             'UOM.UOMID': {},
-                            UOMCode: { type: 'number', validation: { min: 1 } },
-                            UOMEnName: { validation: { required: { message: this.$i18n.t('Common.Required') } } },
-                            UOMArName: {  validation: { required: { message: this.$i18n.t('Common.Required') } } },
-                            UOMDescription: { type: 'string' },
-                            UOMStatus: { type: 'boolean' } 
+                            'UOM.UOMCode': { type: 'number', validation: { min: 1 } },
+                            'UOM.UOMEnName': { validation: { required: { message: this.$i18n.t('Common.Required') } } },
+                            'UOM.UOMArName': {  validation: { required: { message: this.$i18n.t('Common.Required') } } },
+                            'UOM.UOMDescription': { type: 'string' },
+                            'UOM.UOMStatus': { type: 'boolean' } 
                         }
                     }
                 },
                 // pageSize: 10,
                 filter: {
                   field: 'ProductID',
-                  operator: 'contains',
+                  operator: 'eq',
                   value: e.data.ProductID
 
                 },
