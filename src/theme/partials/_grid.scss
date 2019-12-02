@@ -128,11 +128,12 @@
             box-shadow: none;
         }
         span.statusHolder{
-            width: 65px;
+            width: 90%;
             height: 22px;
             border-radius: 18px;
             display: block;
             text-align: center;
+            font-weight: 600;
             line-height: 22px;
             &.isactive{
                 background: $OffGreen;
@@ -147,6 +148,7 @@
 
 // kendo command button without text
 .k-command-cell {
+    
     a.k-button.k-button{
         padding: 0;
     }
@@ -198,6 +200,9 @@
 
             &.k-command-cell {
                 display: flex;
+                flex-direction: row-reverse;
+               align-items: flex-start;
+               justify-content: flex-end;
             }
 
         .k-widget.k-tooltip.k-tooltip-validation {
@@ -282,25 +287,25 @@
     }
 }
 
-.bg-inactive-status{
-    background-color: $FairPink;
-    color:$Bittersweet;
-    @extend .bg-activation-status;
-}
+// .bg-inactive-status{
+//     background-color: $FairPink;
+//     color:$Bittersweet;
+//     @extend .bg-activation-status;
+// }
 
-.bg-active-status{
-    background-color: $OffGreen;
-    color:$shamrock;
-    @extend .bg-activation-status;
-    }
+// .bg-active-status{
+//     background-color: $OffGreen;
+//     color:$shamrock;
+//     @extend .bg-activation-status;
+//     }
 
-.bg-activation-status{
-    text-align:center;
-    padding:6px;
-    border-radius: 18px;
-    font-weight:bold;
+// .bg-activation-status{
+//     text-align:center;
+//     padding:6px;
+//     border-radius: 18px;
+//     font-weight:bold;
 
-}
+// }
     .k-hierarchy-cell > .k-icon{
         padding: 0px ;//nested grid collapse || expand arrow 
         color:$Madison;
@@ -313,13 +318,14 @@
         //box-shadow: 3px -2px 0 red !important;
 
         &+ tr.k-detail-row {
-            background-color: blue;
+            background-color: $AliceBlue;
             //  outline: 2px solid #91b8dc !important;
             //box-shadow: 3px -2px 0 red !important;
         }
     }
     .row-border{
         box-shadow: 3px -2px 0 red !important;
+        background-color: $AliceBlue;
     }
     ///////////////////////////////////////////////////////////////////////////
     }
