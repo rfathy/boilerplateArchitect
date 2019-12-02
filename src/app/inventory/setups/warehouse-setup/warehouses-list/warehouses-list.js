@@ -27,15 +27,7 @@ export default {
                         update: "fas fa-check-circle",
                         cancel: "far fa-times-circle"
                     }
-                },
-                // {
-                //     name: 'delete',
-                //     text:this.$i18n.t('Common.Delete'),
-                //     iconClass: 'fas fa-trash-alt',
-                //     click: function(e) {
-                //         console.log(e);
-                //     }
-                // }
+                }
             ],            
             warehousesDataSource: {
                 data: json,

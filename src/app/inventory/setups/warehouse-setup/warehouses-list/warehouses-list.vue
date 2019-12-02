@@ -8,7 +8,7 @@
                         :sortable="true"
                         :no-records="true"
                         :navigatable='true'
-                        :editable="[{mode: 'inline', confirmation: false}]"
+                        :editable="'inline'"
                         :toolbar="[{name: 'create', text: $t('Inventory.Warehouse.NewWarehouse')}]"
                         :filterable-extra="false"
                         :filterable-mode="'row'"
