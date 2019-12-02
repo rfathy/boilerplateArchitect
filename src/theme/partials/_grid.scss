@@ -344,6 +344,9 @@ li{
             padding: 0px 6px;
             height: calc( 0.35rem + 1.5em);
         }
+        &.k-state-focused{
+            box-shadow: none;
+        }
     }
 }
 
@@ -384,8 +387,17 @@ li{
         }
     }
     .row-border{
-        box-shadow: 3px -2px 0 $MorningGlory !important;
+        // box-shadow: 3px -2px 0 $MorningGlory !important;
+        box-shadow: inset 0px 2px 0px 1px $MorningGlory;
         background-color: $AliceBlue;
+        & + .k-detail-row{
+            box-shadow: inset 0px -1px 0px 1px $MorningGlory;
+        }
+        &.k-grid-edit-row{
+            td{
+                padding-top:14px ;
+            }
+        }
     }
     ///////////////////////////////////////////////////////////////////////////
     }
