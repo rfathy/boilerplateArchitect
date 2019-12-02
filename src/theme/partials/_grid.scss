@@ -6,21 +6,24 @@
     margin-bottom: 20px;
     
     span.k-pager-sizes.k-label{
-        display: flow-root;
-    display: -ms-flexbox;
-    flex: 6;
-    text-align: right;
-    font-size: 12px;
-    color: #707070;
+        flex: 6;
+        text-align: right;
+        font-size: 12px;
+        color:$DoveGray;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-right: -30px;
+        font-weight: 300;
     }
     span.k-pager-info.k-label{
-        color:#707070;
+        color:$DoveGray;
+        font-weight: 300;
         
     }
     .k-grid-header-wrap {
         border-width: 0 0 0 0 ;
     }
-    .k-grid-toolbar{
+    .k-grid-toolbar{      
         background-color: transparent;
         border:0;
         position: absolute;
@@ -32,7 +35,11 @@
     }
     .k-grid-add{
         background-color: $turquoise;
+        width: 116px;
+        height: 32px;
         color:$white;
+        font-size: 12px;
+        font-weight: 600;
         .k-icon{
             &::before{
                 border-style: solid;
@@ -49,23 +56,29 @@
     .k-grid-pager{
         border-radius:0 0 4px 4px;
         overflow:hidden;
-       .k-state-default{
-        width: 46px;
-        height: 19px;
-        border-radius: 2px;
-        border: solid 0.5px #dddddd;
+       .k-state-default{  
+        border: solid 0.5px $alto;
+       margin-left: 8px;
+       width: 33px;
+       height: 18px;
+      border-radius: 2px;
         
         span{
-            margin-top: -4px;
+            margin-top: 1px;
+            font-size: 10px;
         }
+        
         .k-i-arrow-60-down{
-            margin-top: 1px;    
+            margin-top: 1px;
+            margin-left: -7px;        
         }
        }
     }
     .k-filter-row {
         th {
-            .k-filtercell{   
+            .k-filtercell{     
+                 height: 24px;
+                  border-radius: 3px; 
                 .k-autocomplete{
                     &:after {
                         content: "\F002";
@@ -73,10 +86,10 @@
                         left: 23px;
                         top: 3px;
                         position: relative;
-                        color: rgb(174, 184, 190);
+                        color: $TowerGray;
                         font-size: 13px;
                     }
-                 
+                    
                 }
                  
         }
@@ -85,8 +98,8 @@
     .k-dropdowntree {
         .k-dropdown-wrap{
             border-color: white;
-            color: #7A8492;
-            background-color: white;      
+            color: $SlateGray;
+            background-color: $white;      
             border-radius: 0.25rem;
             height: 22px;
         .k-input{
@@ -95,7 +108,8 @@
     }
     }
 
-.k-dropdown  .k-widget.k-tooltip.k-tooltip-validation{
+
+    .k-dropdown  .k-widget.k-tooltip.k-tooltip-validation{
     top: -33px !important;
     right: -7px !important;
 }
@@ -119,6 +133,8 @@
         & > a.k-link{
             padding: 0;
             margin: 0;
+            font-size: 12px;
+            font-weight: 600;
         }
         &.k-state-focused{
             box-shadow: none;
@@ -138,6 +154,7 @@
                     }
     }
 }
+
 .k-grid-content{
     overflow: visible;
 
@@ -165,7 +182,8 @@
             line-height: 22px;
             &.isactive{
                 background: $OffGreen;
-                color: $shamrock
+                color: $shamrock;
+                border-radius: 15px;
             }
             &.isinactive{
                 background: $FairPink;
@@ -174,7 +192,8 @@
         }
     }
 
-// kendo command button without text
+
+    // kendo command button without text
 .k-command-cell {
     
     a.k-button.k-button{
@@ -182,11 +201,13 @@
     }
     .k-button-icontext {
         font-size: 0;
-        margin: 0 0.4rem;
+        margin: 0 0 0 0.4rem;
         background: transparent;
         border: 0;
         &.k-grid-edit{
-            color: $Endeavour;
+            color: $Endeavour; 
+            width: 12.7px;
+            height: 12.4px;     
         }
         .k-button-icontext {
             font-size: 0;
@@ -199,6 +220,7 @@
             }
             &.k-grid-update{
                 color: $shamrock;
+
             }
             &.k-grid-cancel{
                 color:$seaPink;
@@ -256,27 +278,25 @@
 
             }
         }
+                .k-textbox{
+                    @extend.textbox-style;
+                
+                    &.k-invalid{
+                        padding-inline-end: 22px;
+                    }
+                }
         // Disable button in grid that opens popup in case of add/edit row
         .btn-open-popup {
-        pointer-events: none;
+            pointer-events: none;
         }
     }
 }
    
-   
+
     .k-pager-wrap{
-      
-        .k-pager-info{         
-        .k-textbox{
+        font-size: 10px;
+        .k-pager-info{
             font-size: 12px;
-            padding: 0.35rem 0.5rem;
-            height: calc( 0.35rem + 1.5em);
-            border-color: $alto;
-            &.k-invalid{
-                padding-inline-end: 22px;
-            }          
-        }
-   
     }
    
     // Disable button in grid that opens popup in case of add/edit row
@@ -296,9 +316,19 @@
 .k-state-selected,.k-state-selected:hover{
     background-color:$turquoise;
     border-color:$turquoise;
+    height: calc( 0.35rem + 1.5em);
+}
+li{
+    a{
+        height: calc( 0.35rem + 1.5em);
+    }
 }
 }
-.k-link, .k-pager-nav{
+.k-pager-nav{
+    height: calc( 0.35rem + 1.5em);
+
+}
+.k-link{
     color: $black;
 }
 
@@ -309,9 +339,9 @@
         color: $rollingStone;
         border-color: $alto;
         font-size: 12px;
-        padding: 2px 0;
+        
         & > .k-input , & > .k-select{
-            padding: 0px 5px;
+            padding: 0px 6px;
             height: calc( 0.35rem + 1.5em);
         }
     }
@@ -354,7 +384,7 @@
         }
     }
     .row-border{
-        box-shadow: 3px -2px 0 red !important;
+        box-shadow: 3px -2px 0 $MorningGlory !important;
         background-color: $AliceBlue;
     }
     ///////////////////////////////////////////////////////////////////////////
@@ -362,15 +392,11 @@
 
 .k-autocomplete ,.k-numeric-wrap{
     .k-input{
-        font-size: 12px;
-        padding: 0.35rem 0.5rem;
-        height: calc( 0.35rem + 1.5em);
-        border-color: $alto;
+        @extend.textbox-style;
     }
     .k-clear-value{
         top: 0;
         display: inline-flex;
     }
 }
-
   

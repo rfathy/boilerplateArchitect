@@ -51,21 +51,25 @@ export default {
         }
     },
     methods: {
-        addRowBorder(){  
-          //console.log(this);
-          $('tr.k-master-row').addClass('row-border')
+        addRowBorder(e){  
+          console.log(e.masterRow[0]);
+          let expandedRow = e.masterRow[0] ;
+          $(expandedRow).addClass('row-border');
+          //$('tr.k-master-row').addClass('row-border')
     },
-    
-    removeRowBorder(){
-         $('tr.k-master-row').removeClass('row-border')
+
+    removeRowBorder(e){
+          let collapsedRow = e.masterRow[0] ;
+          $(collapsedRow).removeClass('row-border');
+         //$('tr.k-master-row').removeClass('row-border')
     },
 
         customBoolEditor(container, options) {
             $('<input type="checkbox" name="' + options.field + '"/>')
                   .appendTo(container)
                   .kendoMobileSwitch({
-                  onLabel: "YES",
-                  offLabel: "NO"
+                  onLabel: "Active",//YES
+                  offLabel: "Inactive"//NO
             });
           },
         preventEditColumn(e) { 
@@ -238,6 +242,16 @@ export default {
               }
               ]
             })
+        },editRow:function (e){
+            e.sender.wrapper.find(".k-filter-row").hide();
+            e.sender.expandRow(e.container);
+            if(e.model.isNew()){
+            e.sender.content.find(".k-detail-row .k-grid-add").trigger("click");
+            e.container.find("input")[0].focus();
+            }
+        },
+        showFilterRow:function(e){
+             e.sender.wrapper.find(".k-filter-row").show();
         }
     },
     i18n: {

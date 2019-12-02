@@ -87,6 +87,9 @@ body{
   user-select: none;
   text-align: $start-direction;
 }
+.km-switch-on .km-switch-wrapper .km-switch-background , .km-switch-off .km-switch-wrapper .km-switch-background{
+    margin-left:30px !important;
+}
 .km-switch [type="checkbox"] {
   display: none;
 }
@@ -112,13 +115,13 @@ body{
 }
 .km-switch-handle {
   border-radius: 4.6em;
-  width: 2.4em;
-  height: 2.4em;
+  width: 1.7em;
+  height: 1.7em;
   border-width: 0;
   border-style: solid;
   display: inline-block;
   vertical-align: middle;
-  position: relative;
+  //position: relative;
   $start-direction: 0;
     transition: $start-direction 200ms ease-out 0s;
   }
@@ -127,6 +130,9 @@ body{
   }
   .km-switch-on .km-switch-handle {
     $start-direction: calc(100% - 2.4em);
+    position: absolute;
+    top: -1px;
+
   }
   .km-ie .km-switch-on .km-switch-handle, .km-edge .km-switch-on .km-switch-handle {
     $start-direction: 100%;
@@ -134,12 +140,15 @@ body{
   }
   .km-switch-off .km-switch-handle {
     $start-direction: 0;
+    position: absolute;
+    top: -1px;
   }
 .km-switch-label-on, .km-switch-label-off {
-  display: none;
-  width: calc(100% + -2.4em + -5px);
+  display: block;
+  //width: calc(100% + -2.4em + -5px);
   position: absolute;
-  top: 50%;
+  //top: 50%;
+  
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -159,33 +168,41 @@ body{
 }
 .km-switch-container {
   height: 1.5em;
+  width: 4em;
+  position: relative;
 }
 .km-switch-handle {
-  top: -0.45em;
+  top: -0.2em;
 }
 .km-switch-label-on, .km-switch-label-off {
   text-shadow: none;
+  right:50px;
+  top:6px;
 }
 .km-switch-on .km-switch-container {
+  border:1px solid $white;
   color: #fff;
-  background-color: #98a2db;
+  background-color: $PastelGreen;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.23);
+
+  //background-color: #98a2db;
 }
 .km-switch-on .km-switch-handle {
   color: #fff;
-  background-color: #3f51b5;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  background-color:$white;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.23);
 }
 .km-switch-on:focus .km-switch-container, .km-switch-on.km-state-focused .km-switch-container {
   color: #fff;
-  background-color: #7a87d1;
+  background-color:$PastelGreen;
 }
 .km-switch-on:hover .km-switch-container, .km-switch-on.km-state-hover .km-switch-container {
   color: #fff;
-  background-color: #7a87d1;
+  background-color: $PastelGreen;
 }
 .km-switch-on:hover .km-switch-handle, .km-switch-on.km-state-hover .km-switch-handle {
   color: #fff;
-  background-color: #3f51b5;
+  background-color: $white;
 }
 .km-switch-on .km-switch-label-off {
   color: transparent;

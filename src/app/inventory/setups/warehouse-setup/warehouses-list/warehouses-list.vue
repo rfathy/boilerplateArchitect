@@ -1,6 +1,5 @@
 <template>
     <div class="grids">
-
         <kendo-tooltip ref="kTooltip" 
                        :filter="'td a, tr:not(.k-grid-edit-row) td:not(.k-command-cell)'" 
                        :position="'top'"
@@ -53,46 +52,13 @@
                                                 <span class='statusHolder isinactive'>Inactive</span>
                                             #}#`"
                                 :width="100"></kendo-grid-column>
-                <kendo-grid-column :command="customGridCommand"
+                <!-- <kendo-grid-column :command="customGridCommand"
                                 :title="$t('Inventory.Action')"
-                                :width="100"></kendo-grid-column>
+                                :width="50"></kendo-grid-column>                                
+                <kendo-grid-column :width="30" :template="openPopupTemplate"></kendo-grid-column> -->
+                <kendo-grid-column :title="$t('Inventory.Action')" :columns="detailsColumnsDefinitions" ></kendo-grid-column>
             </kendo-grid>
         </kendo-tooltip>
-
-
-
-
-        <!-- <kendo-datasource ref="localDataSource"
-                        :transport-read-url="'../../../mock-data/warehouse.json'"
-                        :batch='true'
-                        :page-size='5'>
-        </kendo-datasource>
-        <kendo-grid :data-source-ref="'localDataSource'"
-                    :pageable='true'
-                    :editable="'inline'"
-                    :toolbar="['create']">
-        <kendo-grid-column :field="'Code'"
-                            :title="'Code'"
-                           :width="30"></kendo-grid-column>
-        <kendo-grid-column :field="'EnName'"
-                           :title="'English Name'"
-                           :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'ArName'"
-                           :title="'Arabic Name'"
-                           :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'Description'"
-                            :title="'Description'"
-                           :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'ParentCategory'"
-                            :title="'Parent Category'"
-                           :width="120"></kendo-grid-column>
-        <kendo-grid-column :field="'Status'"
-                            :title="'Status'"
-                           :width="50"></kendo-grid-column>
-        <kendo-grid-column :command="['edit', 'destroy']"
-                           :title="'&nbsp;'"
-                           :width="70"></kendo-grid-column>
-    </kendo-grid> -->
     </div>
 </template>
 
