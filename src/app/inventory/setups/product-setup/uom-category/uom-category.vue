@@ -10,8 +10,8 @@
                 :filterable-mode="'row'"
                 :pageable-always-visible="true"
                 @detailinit="detailInit" 
-                @detailcollapse="coloringRowBorder"
-                @detailexpand="RemoveColoringRowBorder"
+                @detailexpand="addRowBorder"
+                @detailcollapse="removeRowBorder"
                 :filterable-cell-operator="'contains'"
                 :pageable-page-sizes="[5, 10, 20, 30]">
             <kendo-grid-column :field="'Code'"

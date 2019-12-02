@@ -51,12 +51,12 @@ export default {
         }
     },
     methods: {
-        coloringRowBorder(){  
+        addRowBorder(){  
              //console.log(this);
-             $('tr.k-master-row').removeClass('row-border')
+             $('tr.k-master-row').addClass('row-border')
     },
-    RemoveColoringRowBorder(){
-        $('tr.k-master-row').addClass('row-border')
+    removeRowBorder(){
+        $('tr.k-master-row').removeClass('row-border')
     },
        
         customBoolEditor(container, options) {

@@ -228,24 +228,9 @@
         pointer-events: none;
         }
     }
-
-    ////////////////////////////////////////coloring expanded row border 
-    tr.k-master-row {
-       //outline: 2px solid $MorningGlory !important;
-        //box-shadow: 0 -2px 0 #000 !important;
-        //box-shadow: 3px -2px 0 red !important;
-
-        &+ tr.k-detail-row {
-            background-color: #eff7ff;
-            //  outline: 2px solid #91b8dc !important;
-            //box-shadow: 3px -2px 0 red !important;
-        }
-    }
-    .row-border{
-        box-shadow: 3px -2px 0 red !important;
-    }
-    ///////////////////////////////////////////////////////////////////////////
-    }
+}
+   
+   
     .k-pager-wrap{
         font-size: 10px;
         .k-pager-info{
@@ -295,33 +280,50 @@
             height: calc( 0.35rem + 1.5em);
         }
     }
-    .bg-inactive-status{
-        background-color: $FairPink;
-        color:$Bittersweet;
-        @extend .bg-activation-status;
+}
+
+.bg-inactive-status{
+    background-color: $FairPink;
+    color:$Bittersweet;
+    @extend .bg-activation-status;
+}
+
+.bg-active-status{
+    background-color: $OffGreen;
+    color:$shamrock;
+    @extend .bg-activation-status;
     }
-    
-    .bg-active-status{
-        background-color: $OffGreen;
-        color:$shamrock;
-        @extend .bg-activation-status;
-        }
-    
-    .bg-activation-status{
-        text-align:center;
-        padding:6px;
-        border-radius: 18px;
-        font-weight:bold;
-    
-    }
-   
-     .k-hierarchy-cell > .k-icon{
+
+.bg-activation-status{
+    text-align:center;
+    padding:6px;
+    border-radius: 18px;
+    font-weight:bold;
+
+}
+    .k-hierarchy-cell > .k-icon{
         padding: 0px ;//nested grid collapse || expand arrow 
         color:$Madison;
         }
 
+         ////////////////////////////////////////coloring expanded row border 
+    tr.k-master-row {
+       //outline: 2px solid $MorningGlory !important;
+        //box-shadow: 0 -2px 0 #000 !important;
+        //box-shadow: 3px -2px 0 red !important;
+
+        &+ tr.k-detail-row {
+            background-color: blue;
+            //  outline: 2px solid #91b8dc !important;
+            //box-shadow: 3px -2px 0 red !important;
+        }
     }
-}
+    .row-border{
+        box-shadow: 3px -2px 0 red !important;
+    }
+    ///////////////////////////////////////////////////////////////////////////
+    }
+
 .k-autocomplete ,.k-numeric-wrap{
     .k-input{
         font-size: 12px;
@@ -334,5 +336,5 @@
         display: inline-flex;
     }
 }
-}
+
   
