@@ -1,0 +1,13 @@
+@import '../../../../../theme/partials/variables';
+
+.popup{
+    display: contents;    
+    .no-style{
+        color: $rollingStone;
+        &:hover,
+        &:active,
+        &:focus{
+            color: $Sunglo
+        }
+    }
+}

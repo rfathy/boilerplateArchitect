@@ -1,6 +1,9 @@
 import json from '../../../../../../public/mock-data/warehouses-list.json'
 import $ from 'jquery';
 
+import { EventBus } from '@/app/shared/services/event-bus.js';
+import ConfirmPopup from '../../../../shared/components/confirm-popup/confirm-popup.vue';
+
 localStorage.getItem('selectedLang') == 'en' ? import('../../../theme/inventory.scss') : import('../../../theme/inventory-rtl.scss');
 
 //Module localization 
@@ -10,22 +13,22 @@ export default {
     name: "warehouses-list",
     data () {
         return {
-            customGridCommand: [
-                {
-                    name: 'edit',
-                    text: { edit: this.$i18n.t('Common.Edit'), cancel: this.$i18n.t('Common.Cancel'), update: this.$i18n.t('Common.Update') },
-                    iconClass: {
-                        edit: "fas fa-edit",
-                        update: "fas fa-check-circle",
-                        cancel: "far fa-times-circle"
-                    }
-                },
-                {
-                    name: 'destroy',
-                    text:this.$i18n.t('Common.Delete'),
-                    iconClass: 'fas fa-trash-alt'
-                }
-            ],            
+            dataText: `Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.`,
+            // customGridCommand: [
+            //     {
+            //         name: 'edit',
+            //         text: { 
+            //             edit: this.$i18n.t('Common.Edit'), 
+            //             cancel: this.$i18n.t('Common.Cancel'), 
+            //             update: this.$i18n.t('Common.Update') },
+            //         iconClass: {
+            //             edit: "fas fa-edit",
+            //             update: "fas fa-check-circle",
+            //             cancel: "far fa-times-circle"
+            //         }
+            //     }
+            // ],            
             warehousesDataSource: {
                 data: json,
                 schema: {
@@ -43,7 +46,30 @@ export default {
                     }
                 },
                 pageSize: 10
-            }
+            },
+            detailsColumnsDefinitions: [
+                {
+                    command:[
+                        {
+                            name: 'edit',
+                            text: { 
+                                edit: this.$i18n.t('Common.Edit'), 
+                                cancel: this.$i18n.t('Common.Cancel'), 
+                                update: this.$i18n.t('Common.Update') },
+                            iconClass: {
+                                edit: "fas fa-edit",
+                                update: "fas fa-check-circle",
+                                cancel: "far fa-times-circle"
+                            }
+                        }
+                    ],
+                    width: "25px"
+                },
+                {
+                    template: "#=this.openPopupTemplate#",
+                    width: "50px"
+                }
+            ]
         }
     },
     methods: {
@@ -54,7 +80,7 @@ export default {
                   onLabel: this.$i18n.t('Common.Yes'),
                   offLabel: this.$i18n.t('Common.No')
             });
-          },
+        },
         preventEditColumn(e) { 
             console.log(e.isNew());
             if (e.isNew()) {
@@ -80,7 +106,25 @@ export default {
         },
         getTooltipTilte: function(e) {
             return e.target.text() 
+        },
+        openPopupTemplate: function (e) {
+            return {
+                template: ConfirmPopup,
+                templateArgs: Object.assign({}, e, {
+                    triggerTag: `<span class="fas fa-trash-alt"></span>`,
+                    // parentComponent: this.$refs.datasource1,
+                    // dataText: e.EnName, // this.dataText
+                    confirmBtnText: 'Ok',
+                    cancelBtnText: 'Close',
+                    headerTitle: 'Popup Title'
+                })
+            };
         }
+    },
+    mounted() {
+        EventBus.$on('confirmed-action', (e) => {
+          console.log(e);
+        });
     },
     i18n: {
         messages: {
