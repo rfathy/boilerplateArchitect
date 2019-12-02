@@ -228,6 +228,13 @@
 
             }
         }
+                .k-textbox{
+                    @extend.textbox-style;
+                
+                    &.k-invalid{
+                        padding-inline-end: 22px;
+                    }
+                }
         // Disable button in grid that opens popup in case of add/edit row
         .btn-open-popup {
         pointer-events: none;
@@ -235,19 +242,11 @@
     }
 }
    
-   
+
     .k-pager-wrap{
         font-size: 10px;
         .k-pager-info{
-        .k-textbox{
             font-size: 12px;
-            padding: 0.35rem 0.5rem;
-            height: calc( 0.35rem + 1.5em);
-            border-color: $alto;
-            &.k-invalid{
-                padding-inline-end: 22px;
-            }
-        }
     }
     // Disable button in grid that opens popup in case of add/edit row
     .btn-open-popup {
@@ -266,9 +265,19 @@
 .k-state-selected,.k-state-selected:hover{
     background-color:$turquoise;
     border-color:$turquoise;
+    height: calc( 0.35rem + 1.5em);
+}
+li{
+    a{
+        height: calc( 0.35rem + 1.5em);
+    }
 }
 }
-.k-link, .k-pager-nav{
+.k-pager-nav{
+    height: calc( 0.35rem + 1.5em);
+
+}
+.k-link{
     color: $black;
 }
 
@@ -332,10 +341,7 @@
 
 .k-autocomplete ,.k-numeric-wrap{
     .k-input{
-        font-size: 12px;
-        padding: 0.35rem 0.5rem;
-        height: calc( 0.35rem + 1.5em);
-        border-color: $alto;
+        @extend.textbox-style;
     }
     .k-clear-value{
         top: 0;

@@ -53,3 +53,10 @@ color:$Sunglo;
         opacity: 0.5;
     }
 }
+
+.textbox-style{
+    font-size: 12px;
+        padding: 0.35rem 0.5rem;
+        height: calc( 0.35rem + 1.5em);
+        border-color: $alto;
+}
