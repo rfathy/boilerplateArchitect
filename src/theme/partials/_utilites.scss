@@ -17,12 +17,25 @@
 .fa-times-circle{
 background-color: white;
 border-radius: 9px;
+color:$Sunglo;
+}
+.fa-trash-alt{
+    color:$Sunglo;
+    font-size: 13px !important;
+}
+.fa-edit{
+    font-size: 13px !important;  
+}
+.fa-check-circle{
+    color:$shamrock;
+    background-color: white;
+    border-radius: 10px;
 }
 
-.fas{
-    background-color: white;
-    border-radius: 18px;
-}
+// .fas{
+//     background-color: white;
+//     border-radius: 18px;
+// }
 
 *:focus {
     outline: none !important;

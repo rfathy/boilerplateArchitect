@@ -10,8 +10,8 @@
                 :filterable-mode="'row'"
                 :pageable-always-visible="true"
                 @detailinit="detailInit" 
-                @detailcollapse="coloringRowBorder"
-                @detailexpand="RemoveColoringRowBorder"
+                @detailexpand="addRowBorder"
+                @detailcollapse="removeRowBorder"
                 :filterable-cell-operator="'contains'"
                 :pageable-page-sizes="[5, 10, 20, 30]">
             <kendo-grid-column :field="'Code'"
@@ -43,7 +43,7 @@
                             :filterable-cell-template="statusFilter"
                             :filterable-cell-show-operators="false"
                             :editor="customBoolEditor"
-                            :template="`#= Status ? '<div class= bg-active-status> Active </div>' : '<div class= bg-inactive-status> Inactive </div> '#`"
+                            :template="'# if(Status) {# <span class=\'statusHolder isactive\'>' + $t('Common.Active') + '</span>#} else{# <span class=\'statusHolder isinactive\'>' + $t('Common.InActive') + '</span> #} #'"
                             :width="100"></kendo-grid-column>
             <kendo-grid-column :command="customGridCommand"
                             :title= "this.$i18n.t('Inventory.Action')"
