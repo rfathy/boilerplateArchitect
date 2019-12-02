@@ -13,6 +13,7 @@ export default {
     data() {
         return {
             checked: true,    
+            inputHasValue: false,
             customGridCommand: [
                 {
                     name: 'edit',
@@ -43,15 +44,28 @@ export default {
                         Code: {  editable: false, validation: { min: 1 } },
                         EnName: { 
                             validation: { 
-                                required: {message: this.$i18n.t("Common.Required")},
-                                uniqueness: function (e) {
-                                    console.log(e);
-                                    debugger
+                                required: {message: this.$i18n.t('Common.Required')},
+                                uniqueness: (input) => { 
+                                    if ((input.is("[name='EnName'") || input.is("[name='ArName'")) && input.val() != "") {
+                                        // set the custom message
+                                        input.attr("data-uniqueness-msg", this.$i18n.t('Common.Duplicated'));
+                                        // return false // Must Uncomment
+                                    }
+                                    return true;
                                 }
                             } 
                         },
-                        ArName: { validation: { required: {message: this.$i18n.t("Common.Required")} } },
-                        ProductClassification: { },
+                        ArName: { validation: { required: {message: this.$i18n.t('Common.Required')} } },
+                        ProductClassification: {
+                            validation: {
+                                checkValue: (input) => { debugger
+                                    if (input.is("[name='ProductClassification'")) {
+                                        input.val() != "" ? this.inputHasValue = true : this.inputHasValue = false;
+                                    }
+                                    return true;
+                                }
+                            }
+                         },
                         Description: {  },
                         ParentCategory: { },
                         TaxableBonus: { type: 'boolean', defaultValue: true },
@@ -89,21 +103,21 @@ export default {
                 .kendoDropDownList({
                     autoBind: false,
                     dataTextField: "text",
-                    dataValueField: "value",
+                    dataValueField: "text",
                     valuePrimitive: true,
-                    autoClose: true,
                     filter: 'contains',
-                    dataSource: {
-                        data: [
-                            {text: 'option 1', value: 1},
-                            {text: 'option 2', value: 2}
-                        ]
-                    },
+                    dataSource: [
+                        { text: 'Small', value: '1' },
+                        { text: 'Medium', value: '2' },
+                        { text: 'Large', value: '3' },
+                        { text: 'X-Large', value: '4' },
+                        { text: '2X-Large', value: '5' }
+                    ]
                     // value: options.model.Category.CategoryID,
-                    change: function(e) {
-                        let names = e.sender._tags.map(item => item.text).join(', ')
-                        options.model.text = names
-                    }
+                    // change: function(e) {
+                    //     let names = e.sender._tags.map(item => item.text).join(', ')
+                    //     options.model.text = names
+                    // }
                 });
         },
         // Parent Category ddl tree Single Select
@@ -113,27 +127,42 @@ export default {
                 .kendoDropDownTree({
                     autoBind: false,
                     dataTextField: "text",
-                    dataValueField: "value",
+                    dataValueField: "text",
                     valuePrimitive: true,
-                    autoClose: true,
                     filter: 'startswith',
-                    dataSource: {
-                        data: [
-                            {
-                                text: 'option 1', 
-                                items: [{text: 'option 1', value: 1}]
-                            },
-                            {
-                                text: 'option 2', 
-                                items: [{text: 'option 2', value: 2}]
-                            }
-                        ]
-                    },
-                    // value: options.model.Category.CategoryID,
-                    change: function(e) {
-                        let names = e.sender._tags.map(item => item.text).join(', ')
-                        options.model.text = names
+                    // enable: this.inputHasValue,
+                    dataSource: [
+                        {
+                            text: 'option 1', enabled: false,
+                            items: [{text: 'option 1', value: 1 }]
+                        },
+                        {
+                            text: 'option 2', 
+                            items: [{text: 'option 2', value: 2}]
+                        }
+                    ],
+                    open(e) { debugger
+                        console.log(e.dataSource.kendoWidget());
+                        
+                        // let treeSelector = ev.sender.ns;
+                        // $(".k-treeview .k-icon").click(function(e) {
+                        //     if($(e.target).next().hasClass("k-state-disabled")) { debugger
+                        //       var treeview = $(treeSelector).data("kendoDropDownTree");
+                              
+                        //       if($(e.target).hasClass("k-i-expand")) {
+                        //           treeview.expand($(e.target).parent().parent());
+                        //         }
+                        //       else {
+                        //         treeview.collapse($(e.target).parent().parent());
+                        //       }
+                        //     }
+                        // });
                     }
+                    // value: options.model.Category.CategoryID,
+                    // change: function(e) {
+                    //     let names = e.sender._tags.map(item => item.text).join(', ')
+                    //     options.model.text = names
+                    // }
                 });
         },
         // DropdownList Filter in Grid
@@ -174,7 +203,15 @@ export default {
             return e.target.text() 
         },
         onEditGrid: function() {
-            debugger
+            debugger  
+            // Array.from(e.container[0].childNodes, cell => {
+            //     if (cell.lastChild.lastChild && cell.lastChild.lastChild.name === 'ProductClassification') {
+            //         cell.lastChild.lastChild.value ? this.inputHasValue = true : this.inputHasValue = false;
+            //     } else if (cell.lastChild.lastChild && cell.lastChild.lastChild.name === 'ParentCategory') {
+            //         this.inputHasValue ? cell.lastChild.lastChild.disabled = false : cell.lastChild.lastChild.disabled = true;
+            //     }
+            // });
+            
         },
         onSave: function () {
             debugger
