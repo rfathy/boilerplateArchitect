@@ -130,33 +130,58 @@ export default {
                     dataValueField: "text",
                     valuePrimitive: true,
                     filter: 'startswith',
+                    autoWidth: true,
                     // enable: this.inputHasValue,
                     dataSource: [
                         {
                             text: 'option 1', enabled: false,
-                            items: [{text: 'option 1', value: 1 }]
+                            items: [{text: 'suboption 1', value: 1 }]
                         },
                         {
                             text: 'option 2', 
-                            items: [{text: 'option 2', value: 2}]
+                            items: [{text: 'suboption 2', value: 1 }]
                         }
                     ],
-                    open(e) { debugger
-                        console.log(e.dataSource.kendoWidget());
+                    select(e) { debugger
+                        console.log(e.node);
                         
-                        // let treeSelector = ev.sender.ns;
-                        // $(".k-treeview .k-icon").click(function(e) {
-                        //     if($(e.target).next().hasClass("k-state-disabled")) { debugger
-                        //       var treeview = $(treeSelector).data("kendoDropDownTree");
+                    },
+                    open(ev) { debugger
+                        ev.sender.dataSource.transport.data.map(item => item.items.filter(subItem => {
+                            console.log(subItem.text === 'suboption 2');
+                            
+                            (subItem.text === 'suboption 2') ? subItem.enabled = false : false;
+                        }));
+                        // ev.sender.dataSource.options.data.map(item => item.items.filter(subItem => {
+                        //     console.log(subItem.text === 'suboption 2');
+                            
+                        //     (subItem.text === 'suboption 2') ? subItem.enabled = false : false;
+                        // }));
+                        // ev.sender.options.dataSource.map(item => item.items.filter(subItem => {
+                        //     console.log(subItem.text === 'suboption 2');
+                            
+                        //     (subItem.text === 'suboption 2') ? subItem.enabled = false : false;
+                        // }));
+                        
+                        $(".k-treeview .k-icon").click(function(e) {
+                            if(e.currentTarget.nextSibling.classList.contains('k-state-disabled')) { debugger
                               
-                        //       if($(e.target).hasClass("k-i-expand")) {
-                        //           treeview.expand($(e.target).parent().parent());
-                        //         }
-                        //       else {
-                        //         treeview.collapse($(e.target).parent().parent());
-                        //       }
-                        //     }
-                        // });
+                              if(e.currentTarget.classList.contains('k-i-expand')) {
+                                e.currentTarget.parentElement.parentElement.setAttribute('aria-expanded', 'true')
+                                e.currentTarget.parentElement.parentElement.setAttribute('data-expanded', 'true')
+                                e.currentTarget.parentElement.nextSibling.style.display = 'block'
+                                e.currentTarget.classList.add('k-i-collapse')
+                                e.currentTarget.classList.remove('k-i-expand')
+                                }
+                              else {
+                                e.currentTarget.parentElement.parentElement.setAttribute('aria-expanded', 'false')
+                                e.currentTarget.parentElement.parentElement.setAttribute('data-expanded', 'false')
+                                e.currentTarget.parentElement.nextSibling.style.display = 'none'
+                                e.currentTarget.classList.add('k-i-expand')
+                                e.currentTarget.classList.remove('k-i-collapse')
+                              }
+                            }
+                        });
                     }
                     // value: options.model.Category.CategoryID,
                     // change: function(e) {
@@ -211,19 +236,25 @@ export default {
             //         this.inputHasValue ? cell.lastChild.lastChild.disabled = false : cell.lastChild.lastChild.disabled = true;
             //     }
             // });
+
+            // var numeric = e.container.find("input[name=id]").data("kendoNumericTextBox");
+            // numeric.enable(false);
             
         },
         onSave: function () {
             debugger
+            alert("SAVE EVENT")
         },
         onRemoveRow: function () {
             debugger
+            alert("remove EVENT")
         },
         onBeforeedit: function () {
             debugger
         },
         onChange: function () {
             debugger
+            alert("change EVENT")
         }
     },
     i18n: {

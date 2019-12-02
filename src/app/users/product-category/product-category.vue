@@ -15,7 +15,7 @@
                 :pageable-always-visible="true"
                 :pageable-page-sizes="[5, 10, 20, 30]"
                 @edit="onEditGrid"
-                @savechanges="onSave"
+                @save="onSave"
                 @remove="onRemoveRow"
                 @beforeedit="onBeforeedit"
                 @change="onChange">
