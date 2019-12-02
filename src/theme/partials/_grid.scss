@@ -67,7 +67,8 @@
     }
     }
 
-.k-dropdown  .k-widget.k-tooltip.k-tooltip-validation{
+
+    .k-dropdown  .k-widget.k-tooltip.k-tooltip-validation{
     top: -33px !important;
     right: -7px !important;
 }
@@ -110,6 +111,7 @@
                     }
     }
 }
+
 .k-grid-content{
     overflow: visible;
 
@@ -145,14 +147,15 @@
         }
     }
 
-// kendo command button without text
+
+    // kendo command button without text
 .k-command-cell {
     a.k-button.k-button{
         padding: 0;
     }
     .k-button-icontext {
         font-size: 0;
-        margin: 0 0.4rem;
+        margin: 0 0 0 0.4rem;
         background: transparent;
         border: 0;
         &.k-grid-edit{
@@ -225,7 +228,7 @@
         }
         // Disable button in grid that opens popup in case of add/edit row
         .btn-open-popup {
-        pointer-events: none;
+            pointer-events: none;
         }
     }
 
@@ -245,7 +248,7 @@
         box-shadow: 3px -2px 0 red !important;
     }
     ///////////////////////////////////////////////////////////////////////////
-    }
+}
     .k-pager-wrap{
         font-size: 10px;
         .k-pager-info{
@@ -333,6 +336,5 @@
         top: 0;
         display: inline-flex;
     }
-}
 }
   

@@ -96,7 +96,7 @@ export default {
       return {
         template: ConfirmPopup,
         templateArgs: Object.assign({}, e, {
-          parentComponent: this.$refs.datasource1,
+          // parentComponent: this.$refs.datasource1,
           dataText: e.FirstName, // this.dataText
           confirmBtnText: 'Ok',
           cancelBtnText: 'Close',
