@@ -156,11 +156,12 @@
             box-shadow: none;
         }
         span.statusHolder{
-            width: 65px;
+            width: 90%;
             height: 22px;
             border-radius: 18px;
             display: block;
             text-align: center;
+            font-weight: 600;
             line-height: 22px;
             &.isactive{
                 background: $OffGreen;
@@ -175,6 +176,7 @@
 
 // kendo command button without text
 .k-command-cell {
+    
     a.k-button.k-button{
         padding: 0;
     }
@@ -226,6 +228,9 @@
 
             &.k-command-cell {
                 display: flex;
+                flex-direction: row-reverse;
+               align-items: flex-start;
+               justify-content: flex-end;
             }
 
         .k-widget.k-tooltip.k-tooltip-validation {
@@ -256,24 +261,9 @@
         pointer-events: none;
         }
     }
-
-    ////////////////////////////////////////coloring expanded row border 
-    tr.k-master-row {
-       //outline: 2px solid $MorningGlory !important;
-        //box-shadow: 0 -2px 0 #000 !important;
-        //box-shadow: 3px -2px 0 red !important;
-
-        &+ tr.k-detail-row {
-            background-color: #eff7ff;
-            //  outline: 2px solid #91b8dc !important;
-            //box-shadow: 3px -2px 0 red !important;
-        }
-    }
-    .row-border{
-        box-shadow: 3px -2px 0 red !important;
-    }
-    ///////////////////////////////////////////////////////////////////////////
-    }
+}
+   
+   
     .k-pager-wrap{
       
         .k-pager-info{         
@@ -325,33 +315,51 @@
             height: calc( 0.35rem + 1.5em);
         }
     }
-    .bg-inactive-status{
-        background-color: $FairPink;
-        color:$Bittersweet;
-        @extend .bg-activation-status;
-    }
-    
-    .bg-active-status{
-        background-color: $OffGreen;
-        color:$shamrock;
-        @extend .bg-activation-status;
-        }
-    
-    .bg-activation-status{
-        text-align:center;
-        padding:6px;
-        border-radius: 18px;
-        font-weight:bold;
-    
-    }
-   
-     .k-hierarchy-cell > .k-icon{
+}
+
+// .bg-inactive-status{
+//     background-color: $FairPink;
+//     color:$Bittersweet;
+//     @extend .bg-activation-status;
+// }
+
+// .bg-active-status{
+//     background-color: $OffGreen;
+//     color:$shamrock;
+//     @extend .bg-activation-status;
+//     }
+
+// .bg-activation-status{
+//     text-align:center;
+//     padding:6px;
+//     border-radius: 18px;
+//     font-weight:bold;
+
+// }
+    .k-hierarchy-cell > .k-icon{
         padding: 0px ;//nested grid collapse || expand arrow 
         color:$Madison;
         }
 
+         ////////////////////////////////////////coloring expanded row border 
+    tr.k-master-row {
+       //outline: 2px solid $MorningGlory !important;
+        //box-shadow: 0 -2px 0 #000 !important;
+        //box-shadow: 3px -2px 0 red !important;
+
+        &+ tr.k-detail-row {
+            background-color: $AliceBlue;
+            //  outline: 2px solid #91b8dc !important;
+            //box-shadow: 3px -2px 0 red !important;
+        }
     }
-}
+    .row-border{
+        box-shadow: 3px -2px 0 red !important;
+        background-color: $AliceBlue;
+    }
+    ///////////////////////////////////////////////////////////////////////////
+    }
+
 .k-autocomplete ,.k-numeric-wrap{
     .k-input{
         font-size: 12px;

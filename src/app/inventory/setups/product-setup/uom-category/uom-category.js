@@ -51,14 +51,15 @@ export default {
         }
     },
     methods: {
-        coloringRowBorder(){  
-             //console.log(this);
-             $('tr.k-master-row').removeClass('row-border')
+        addRowBorder(){  
+          //console.log(this);
+          $('tr.k-master-row').addClass('row-border')
     },
-    RemoveColoringRowBorder(){
-        $('tr.k-master-row').addClass('row-border')
+    
+    removeRowBorder(){
+         $('tr.k-master-row').removeClass('row-border')
     },
-       
+
         customBoolEditor(container, options) {
             $('<input type="checkbox" name="' + options.field + '"/>')
                   .appendTo(container)
