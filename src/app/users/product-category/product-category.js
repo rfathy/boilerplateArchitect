@@ -241,9 +241,17 @@ export default {
             // numeric.enable(false);
             
         },
-        onSave: function () {
-            debugger
-            alert("SAVE EVENT")
+        onSave: function (e) { debugger
+            // Save New Record
+            if (e.model.isNew()) {
+                this.showSavePopupNotification()
+                e.model.isNew(false)
+            } 
+            else { // Save Exsit Record
+                this.showUpdatePopupNotification()
+            }
+            
+            
         },
         onRemoveRow: function () {
             debugger
@@ -252,10 +260,15 @@ export default {
         onBeforeedit: function () {
             debugger
         },
-        onChange: function () {
-            debugger
-            alert("change EVENT")
+        showSavePopupNotification: function (e) {
+            this.popupNotificationWidget.show(this.$i18n.t('Common.SavedSuccessfully'));
+        },
+        showUpdatePopupNotification: function (e) {
+            this.popupNotificationWidget.show(this.$i18n.t('Common.UpdatedSuccessfully'));
         }
+    },
+    mounted: function () {
+        this.popupNotificationWidget = this.$refs.popupNotificationSave.kendoWidget();
     },
     i18n: {
         messages: {

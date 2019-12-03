@@ -17,8 +17,7 @@
                 @edit="onEditGrid"
                 @save="onSave"
                 @remove="onRemoveRow"
-                @beforeedit="onBeforeedit"
-                @change="onChange">
+                @beforeedit="onBeforeedit">
                 <kendo-grid-column :field="'Code'"
                                 :title="$t('Users.CategoryCode')"
                                 :editable="preventEditColumn"
@@ -74,6 +73,8 @@
                                 :width="100"></kendo-grid-column>
             </kendo-grid>
         </kendo-tooltip>
+
+        <kendo-notification ref="popupNotificationSave"></kendo-notification>
     </div>
 </template>
 
