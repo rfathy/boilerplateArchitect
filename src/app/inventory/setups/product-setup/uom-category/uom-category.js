@@ -67,10 +67,13 @@ export default {
           e.masterRow.removeClass('row-border');
     },
     startDetailsGridFromLeft:function  (e){
-    e.detailRow.find(".k-hierarchy-cell").hide();
-    
-    let subgrid =e.detailRow.find(".k-detail-cell");
-    subgrid.attr("colspan",+subgrid.attr("colspan")+1);
+        let detailRow=e.detailRow.find(".k-hierarchy-cell");
+        let visible=detailRow.is(':visible');
+        detailRow.hide();
+        if(visible){
+            let subgrid =e.detailRow.find(".k-detail-cell");
+            subgrid.attr("colspan",+subgrid.attr("colspan")+1);
+        }
 },
         customBoolEditor(container, options) {
             $('<input type="checkbox" name="' + options.field + '"/>')
