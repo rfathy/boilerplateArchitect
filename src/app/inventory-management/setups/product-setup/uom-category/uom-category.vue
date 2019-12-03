@@ -58,5 +58,5 @@
 <script src="./uom-category.js"></script>
 
 <style lang="scss" scoped>
-@import '../../../theme/inventory.scss';
+@import '../../../theme/inventory-management.scss';
 </style>

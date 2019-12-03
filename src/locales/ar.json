@@ -15,6 +15,8 @@
     "Required": "مطلوب",
     "Duplicated": "مكرر",
     "SavedSuccessfully": "تم الحفظ بنجاح",
-    "UpdatedSuccessfully": "تم التحديث بنجاح"
+    "UpdatedSuccessfully": "تم التحديث بنجاح",
+    "Confirmation": "تأكيد",
+    "DeleteConfirmation": "هل أنت متأكد أنك تريد حذف"
   }
 }

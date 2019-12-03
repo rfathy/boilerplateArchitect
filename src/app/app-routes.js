@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import { usersRoutes } from './users';
-import { inventoryRoutes } from './inventory';
+import { inventoryManagementRoutes } from './inventory-management';
 
 import { AppPageNotFound } from './shared/components';
 
@@ -20,7 +20,7 @@ const appRoutes = [
   }
 ];
 
-const routes = [...usersRoutes, ...appRoutes, ...inventoryRoutes];
+const routes = [...usersRoutes, ...appRoutes, ...inventoryManagementRoutes];
 
 export default new Router({
   mode: 'history',

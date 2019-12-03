@@ -2,7 +2,7 @@ import json from '../../../../../../public/mock-data/uom-category.json'
 
 import $ from 'jquery';
 
-localStorage.getItem('selectedLang') == 'en' ? import('../../../theme/inventory.scss') : import('../../../theme/inventory-rtl.scss');
+localStorage.getItem('selectedLang') == 'en' ? import('../../../theme/inventory-management.scss') : import('../../../theme/inventory-management-rtl.scss');
 
 //Module localization 
  import localeEn from '../../../locales/en'
@@ -67,10 +67,13 @@ export default {
           e.masterRow.removeClass('row-border');
     },
     startDetailsGridFromLeft:function  (e){
-    e.detailRow.find(".k-hierarchy-cell").hide();
-    
-    let subgrid =e.detailRow.find(".k-detail-cell");
-    subgrid.attr("colspan",+subgrid.attr("colspan")+1);
+        let detailRow=e.detailRow.find(".k-hierarchy-cell");
+        let visible=detailRow.is(':visible');
+        detailRow.hide();
+        if(visible){//if the row not expanded before
+            let subgrid =e.detailRow.find(".k-detail-cell");
+            subgrid.attr("colspan",+subgrid.attr("colspan")+1);
+        }
 },
         customBoolEditor(container, options) {
             $('<input type="checkbox" name="' + options.field + '"/>')

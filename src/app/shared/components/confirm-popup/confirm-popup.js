@@ -2,27 +2,16 @@ import { EventBus } from '@/app/shared/services/event-bus.js';
 
 export default {
     name: "popup",
-    data() {
-        return {
-            templateArgs: {
-                dataText: '',
-                confirmBtnText: '',
-                cancelBtnText: '',
-                headerTitle: '',
-                triggerTag:''
-            }
-        }
-    },
+   
     props: [
-        'dataText',
-        'confirmBtnText',
-        'cancelBtnText',
-        'headerTitle',
-        'triggerTag'
+        'confirmdata'
     ],
     methods: {
         confirmAction(e) {
             EventBus.$emit('confirmed-action', e);
         }
-    }
+    },
+    created: function () {
+        console.log(this.confirmdata) //prints out an empty string
+    },
 }
