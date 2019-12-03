@@ -13,22 +13,6 @@ export default {
     name: "warehouses-list",
     data () {
         return {
-            dataText: `Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.`,
-            // customGridCommand: [
-            //     {
-            //         name: 'edit',
-            //         text: { 
-            //             edit: this.$i18n.t('Common.Edit'), 
-            //             cancel: this.$i18n.t('Common.Cancel'), 
-            //             update: this.$i18n.t('Common.Update') },
-            //         iconClass: {
-            //             edit: "fas fa-edit",
-            //             update: "fas fa-check-circle",
-            //             cancel: "far fa-times-circle"
-            //         }
-            //     }
-            // ],            
             warehousesDataSource: {
                 data: json,
                 schema: {
@@ -47,32 +31,39 @@ export default {
                 },
                 pageSize: 10
             },
-            detailsColumnsDefinitions: [
+            commandDefinitions: [
                 {
-                    command:[
-                        {
-                            name: 'edit',
-                            text: { 
-                                edit: this.$i18n.t('Common.Edit'), 
-                                cancel: this.$i18n.t('Common.Cancel'), 
-                                update: this.$i18n.t('Common.Update') },
-                            iconClass: {
-                                edit: "fas fa-edit",
-                                update: "fas fa-check-circle",
-                                cancel: "far fa-times-circle"
-                            }
-                        }
-                    ],
-                    width: "25px"
+                    name: 'edit',
+                    text: { 
+                        edit: this.$i18n.t('Common.Edit'), 
+                        cancel: this.$i18n.t('Common.Cancel'), 
+                        update: this.$i18n.t('Common.Update') },
+                    iconClass: {
+                        edit: "fas fa-edit",
+                        update: "fas fa-check-circle",
+                        cancel: "far fa-times-circle"
+                    }
                 },
-                {
-                    template: "#=this.openPopupTemplate#",
-                    width: "50px"
-                }
-            ]
+                { 
+                    name: "decreaseIndent",
+                    click: this.showDD, 
+                    template: " <a class='k-grid-decreaseIndent k-button'><span class='k-icon k-i-arrow-w'></span></a>" 
+                },
+                   
+            ],
+            dataText: 's',
+            confirmBtnText: 'w',
+            cancelBtnText: 'ew',
+            headertitle: 'fd',
+            triggerTag:'fsd'
         }
     },
     methods: {
+        showDD(e){
+            this._bv__modal.show('modal-scoped')
+            // this.headertitle = "DDDDD"
+        },
+
         customBoolEditor(container, options) {
             $('<input type="checkbox" name="' + options.field + '"/>')
                   .appendTo(container)
@@ -107,19 +98,6 @@ export default {
         getTooltipTilte: function(e) {
             return e.target.text() 
         },
-        openPopupTemplate: function (e) {
-            return {
-                template: ConfirmPopup,
-                templateArgs: Object.assign({}, e, {
-                    triggerTag: `<span class="fas fa-trash-alt"></span>`,
-                    // parentComponent: this.$refs.datasource1,
-                    // dataText: e.EnName, // this.dataText
-                    confirmBtnText: 'Ok',
-                    cancelBtnText: 'Close',
-                    headerTitle: 'Popup Title'
-                })
-            };
-        }
     },
     mounted() {
         EventBus.$on('confirmed-action', (e) => {
@@ -135,5 +113,8 @@ export default {
                 ...localeAr
             }
         },
+    },
+    components: {
+        ConfirmPopup
     }
   };
