@@ -64,7 +64,7 @@ export default {
     },
 
     removeRowBorder(e){
-          e.masterRow.removeClass('row-border'); ;
+          e.masterRow.removeClass('row-border');
     },
     startDetailsGridFromLeft:function  (e){
     e.detailRow.find(".k-hierarchy-cell").hide();
