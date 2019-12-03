@@ -7,12 +7,12 @@
     
     span.k-pager-sizes.k-label{
         flex: 6;
-        text-align: right;
+        text-align: $end-direction;
         font-size: 12px;
         color:$DoveGray;
         display: flex;
         flex-direction: row-reverse;
-        margin-right: -30px;
+        margin-#{$end-direction}: -30px;
         font-weight: 300;
     }
     span.k-pager-info.k-label{
@@ -58,19 +58,19 @@
         overflow:hidden;
        .k-state-default{  
         border: solid 0.5px $alto;
-       margin-left: 8px;
+       margin-#{$start-direction}: 8px;
        width: 33px;
        height: 18px;
       border-radius: 2px;
         
         span{
-            margin-top: 1px;
+            margin-top: -2px;
             font-size: 10px;
         }
         
         .k-i-arrow-60-down{
             margin-top: 1px;
-            margin-left: -7px;        
+            margin-#{$start-direction}: -7px;        
         }
        }
     }
@@ -83,7 +83,7 @@
                     &:after {
                         content: "\F002";
                         font-family: "Font Awesome 5 Free";
-                        left: 23px;
+                        $start-direction: 23px;
                         top: 3px;
                         position: relative;
                         color: $TowerGray;
@@ -97,7 +97,7 @@
     }
     .k-dropdowntree {
         .k-dropdown-wrap{
-            border-color: white;
+            border-color: $white;
             color: $SlateGray;
             background-color: $white;      
             border-radius: 0.25rem;
@@ -111,13 +111,13 @@
 
     .k-dropdown  .k-widget.k-tooltip.k-tooltip-validation{
     top: -33px !important;
-    right: -7px !important;
+    $end-direction: -7px !important;
 }
 
 .k-grid-header{
-    padding-right:0 !important;
+    padding-#{$end-direction}:0 !important;
     border-radius:4px 4px 0 0;
-    padding-left: 0 !important;
+    padding-#{$start-direction}: 0 !important;
     .k-header:first-child{
         border-radius:4px 0 0 0;
     }
@@ -128,7 +128,7 @@
         color:$tundora;
         font-weight: 600;
         padding: 10px 10px 10px 28px;
-        text-align: left;
+        text-align: $start-direction;
 
         & > a.k-link{
             padding: 0;
@@ -167,7 +167,7 @@
         font-size: 12px;
         color: $rollingStone;
         padding: 10px 10px 10px 28px;
-        text-align: left;
+        text-align: $start-direction;
 
         &.k-state-focused{
             box-shadow: none;
@@ -214,7 +214,7 @@
             margin: 0 0.2rem;
             background: transparent;
             border: 0;
-            padding-left:0;
+            padding-#{$start-direction}:0;
             &.k-grid-edit{
                 color: $Endeavour;
             }
@@ -257,7 +257,7 @@
 
         .k-widget.k-tooltip.k-tooltip-validation {
             top: -19px;
-            right: -18px;
+            $end-direction: -18px;
             padding: 0.25rem 0.5rem;
             background-color: $Madison;
             font-size: 12px;
@@ -265,7 +265,7 @@
             border-radius: 0;
             .k-icon.k-i-warning {
                 position: absolute;
-                right: 15px;
+                $end-direction: 15px;
                 bottom: -24px;
                 color: red;
                 font-size: 1.3rem;
@@ -294,6 +294,7 @@
    
 
     .k-pager-wrap{
+    
         font-size: 10px;
         .k-pager-info{
             font-size: 12px;

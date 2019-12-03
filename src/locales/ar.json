@@ -13,6 +13,8 @@
     "All":"الكل",
     "Delete":"حذف",
     "Required": "مطلوب",
-    "Duplicated": "مكرر" 
+    "Duplicated": "مكرر",
+    "SavedSuccessfully": "تم الحفظ بنجاح",
+    "UpdatedSuccessfully": "تم التحديث بنجاح"
   }
 }
