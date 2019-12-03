@@ -2,7 +2,7 @@ import json from '../../../../../../public/mock-data/uom-category.json'
 
 import $ from 'jquery';
 
-localStorage.getItem('selectedLang') == 'en' ? import('../../../theme/inventory.scss') : import('../../../theme/inventory-rtl.scss');
+localStorage.getItem('selectedLang') == 'en' ? import('../../../theme/inventory-management.scss') : import('../../../theme/inventory-management-rtl.scss');
 
 //Module localization 
  import localeEn from '../../../locales/en'

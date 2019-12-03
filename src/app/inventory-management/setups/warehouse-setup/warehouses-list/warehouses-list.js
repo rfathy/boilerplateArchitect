@@ -4,7 +4,7 @@ import $ from 'jquery';
 import { EventBus } from '@/app/shared/services/event-bus.js';
 import ConfirmPopup from '../../../../shared/components/confirm-popup/confirm-popup.vue';
 
-localStorage.getItem('selectedLang') == 'en' ? import('../../../theme/inventory.scss') : import('../../../theme/inventory-rtl.scss');
+localStorage.getItem('selectedLang') == 'en' ? import('../../../theme/inventory-management.scss') : import('../../../theme/inventory-management-rtl.scss');
 
 //Module localization 
 import localeEn from '../../../locales/en'
