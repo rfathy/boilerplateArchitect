@@ -70,7 +70,7 @@ export default {
         let detailRow=e.detailRow.find(".k-hierarchy-cell");
         let visible=detailRow.is(':visible');
         detailRow.hide();
-        if(visible){
+        if(visible){//if the row not expanded before
             let subgrid =e.detailRow.find(".k-detail-cell");
             subgrid.attr("colspan",+subgrid.attr("colspan")+1);
         }
