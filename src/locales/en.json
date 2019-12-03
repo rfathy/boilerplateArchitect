@@ -13,6 +13,10 @@
     "All":"All",
     "Delete":"Delete",
     "Required": "Required",
-    "Duplicated": "Duplicated" 
+    "Duplicated": "Duplicated",
+    "SavedSuccessfully": "Saved Successfully",
+    "UpdatedSuccessfully": "Updated Successfully",
+    "Confirmation": "Confirmation",
+    "DeleteConfirmation": "Are you sure you want to delete"
   }
 }

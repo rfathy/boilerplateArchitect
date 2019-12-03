@@ -1,5 +1,7 @@
 <template>
+
     <div class="grids">
+    <ConfirmPopup v-bind:confirmdata="confirmdata"/>
         <kendo-tooltip ref="kTooltip" 
                        :filter="'td a, tr:not(.k-grid-edit-row) td:not(.k-command-cell)'" 
                        :position="'top'"
@@ -8,7 +10,7 @@
                         :sortable="true"
                         :no-records="true"
                         :navigatable='true'
-                        :editable="[{mode: 'inline', confirmation: false}]"
+                        :editable="{mode:'inline',confirmation:false}"
                         :toolbar="[{name: 'create', text: $t('Inventory.Warehouse.NewWarehouse')}]"
                         :filterable-extra="false"
                         :filterable-mode="'row'"
@@ -52,10 +54,7 @@
                                                 <span class='statusHolder isinactive'>Inactive</span>
                                             #}#`"
                                 :width="100"></kendo-grid-column>
-                <kendo-grid-column :command="customGridCommand"
-                                :title="$t('Inventory.Action')"
-                                :width="50"></kendo-grid-column>                                
-                <kendo-grid-column :width="30" :template="openPopupTemplate"></kendo-grid-column>
+                <kendo-grid-column :title="$t('Inventory.Action')" :command="commandDefinitions" :width="50"></kendo-grid-column>
             </kendo-grid>
         </kendo-tooltip>
     </div>

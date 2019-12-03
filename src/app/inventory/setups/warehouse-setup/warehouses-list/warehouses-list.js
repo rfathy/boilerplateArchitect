@@ -13,30 +13,6 @@ export default {
     name: "warehouses-list",
     data () {
         return {
-            dataText: `Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
-            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.`,
-            customGridCommand: [
-                {
-                    name: 'edit',
-                    text: { 
-                        edit: this.$i18n.t('Common.Edit'), 
-                        cancel: this.$i18n.t('Common.Cancel'), 
-                        update: this.$i18n.t('Common.Update') },
-                    iconClass: {
-                        edit: "fas fa-edit",
-                        update: "fas fa-check-circle",
-                        cancel: "far fa-times-circle"
-                    }
-                },
-                // {
-                //     name: 'delete',
-                //     text:this.$i18n.t('Common.Delete'),
-                //     iconClass: 'fas fa-trash-alt',
-                //     click: function(e) {
-                //         console.log(e);
-                //     }
-                // }
-            ],            
             warehousesDataSource: {
                 data: json,
                 schema: {
@@ -54,10 +30,48 @@ export default {
                     }
                 },
                 pageSize: 10
-            }
+            },
+            commandDefinitions: [
+                {
+                    name: 'edit',
+                    text: { 
+                        edit: this.$i18n.t('Common.Edit'), 
+                        cancel: this.$i18n.t('Common.Cancel'), 
+                        update: this.$i18n.t('Common.Update') },
+                    iconClass: {
+                        edit: "fas fa-edit",
+                        update: "fas fa-check-circle",
+                        cancel: "far fa-times-circle"
+                    }
+                },
+                { 
+                    name: "showDConfirm",
+                    click: this.showDConfirm, 
+                    template: " <a class='k-grid-showDConfirm k-button k-button-icontext'><span class='fas fa-trash-alt'></span></a>" 
+                },
+                   
+            ],
+            confirmdata: [
+                {
+                    confirmText: '',
+                    confirmBtnBtnText: '',
+                    cancelBtnText: '',
+                    headerTitle: '',
+                    messageText: ''
+                }
+            ]
         }
     },
     methods: {
+        showDConfirm(e){
+            debugger
+            this._bv__modal.show('modal-scoped')
+            this.confirmdata.headerTitle = this.$i18n.t('Common.Confirmation');
+            this.confirmdata.confirmBtnText = "";
+            this.confirmdata.cancelBtnText = "DDDDD";
+            this.confirmdata.messageText = `${this.$i18n.t('Common.Confirmation')} ${e.EnName}`;
+        },
+
         customBoolEditor(container, options) {
             $('<input type="checkbox" name="' + options.field + '"/>')
                   .appendTo(container)
@@ -92,19 +106,6 @@ export default {
         getTooltipTilte: function(e) {
             return e.target.text() 
         },
-        openPopupTemplate: function (e) {
-            return {
-                template: ConfirmPopup,
-                templateArgs: Object.assign({}, e, {
-                    triggerTag: `<span class="fas fa-trash-alt"></span>`,
-                    // parentComponent: this.$refs.datasource1,
-                    // dataText: e.EnName, // this.dataText
-                    confirmBtnText: 'Ok',
-                    cancelBtnText: 'Close',
-                    headerTitle: 'Popup Title'
-                })
-            };
-        }
     },
     mounted() {
         EventBus.$on('confirmed-action', (e) => {
@@ -120,5 +121,8 @@ export default {
                 ...localeAr
             }
         },
+    },
+    components: {
+        ConfirmPopup
     }
   };
