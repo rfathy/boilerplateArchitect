@@ -10,8 +10,7 @@
                 :navigatable='true'
                 :editable="'inline'"
                 :toolbar="[{name: 'create', text: $t('Users.NewCategory')}]"
-                :filterable-extra="false"
-                :filterable-mode="'row'"
+                :filterable="filterableObject"
                 :pageable-always-visible="true"
                 :pageable-page-sizes="[5, 10, 20, 30]"
                 @edit="onEditGrid"
@@ -29,11 +28,13 @@
                                 :title="$t('Users.CategoryEnName')"
                                 :filterable-cell-show-operators="false"
                                 :filterable-cell-operator="'contains'"
+                                :editor="AddPlaceholder"
                                 :width="130"></kendo-grid-column>
                 <kendo-grid-column :field="'ArName'"
                                 :title="$t('Users.CategryArName')"
                                 :filterable-cell-show-operators="false"
                                 :filterable-cell-operator="'contains'"
+                                :editor="AddPlaceholder"
                                 :width="130"></kendo-grid-column>
                 <kendo-grid-column :field="'ProductClassification'"
                                 :title="$t('Users.ProductClassification')"
@@ -46,6 +47,7 @@
                                 :title="$t('Users.Description')"
                                 :filterable-cell-show-operators="false"                        
                                 :filterable-cell-operator="'contains'"
+                                :editor="AddPlaceholder"
                                 :width="130"
                                 ></kendo-grid-column> 
                 <kendo-grid-column :field="'ParentCategory'"
