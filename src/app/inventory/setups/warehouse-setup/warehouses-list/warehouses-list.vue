@@ -8,7 +8,7 @@
                         :sortable="true"
                         :no-records="true"
                         :navigatable='true'
-                        :editable="'inline'"
+                        :editable="[{mode: 'inline', confirmation: false}]"
                         :toolbar="[{name: 'create', text: $t('Inventory.Warehouse.NewWarehouse')}]"
                         :filterable-extra="false"
                         :filterable-mode="'row'"
@@ -52,11 +52,10 @@
                                                 <span class='statusHolder isinactive'>Inactive</span>
                                             #}#`"
                                 :width="100"></kendo-grid-column>
-                <!-- <kendo-grid-column :command="customGridCommand"
+                <kendo-grid-column :command="customGridCommand"
                                 :title="$t('Inventory.Action')"
                                 :width="50"></kendo-grid-column>                                
-                <kendo-grid-column :width="30" :template="openPopupTemplate"></kendo-grid-column> -->
-                <kendo-grid-column :title="$t('Inventory.Action')" :columns="detailsColumnsDefinitions" ></kendo-grid-column>
+                <kendo-grid-column :width="30" :template="openPopupTemplate"></kendo-grid-column>
             </kendo-grid>
         </kendo-tooltip>
     </div>

@@ -15,20 +15,28 @@ export default {
         return {
             dataText: `Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
             in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.`,
-            // customGridCommand: [
-            //     {
-            //         name: 'edit',
-            //         text: { 
-            //             edit: this.$i18n.t('Common.Edit'), 
-            //             cancel: this.$i18n.t('Common.Cancel'), 
-            //             update: this.$i18n.t('Common.Update') },
-            //         iconClass: {
-            //             edit: "fas fa-edit",
-            //             update: "fas fa-check-circle",
-            //             cancel: "far fa-times-circle"
-            //         }
-            //     }
-            // ],            
+            customGridCommand: [
+                {
+                    name: 'edit',
+                    text: { 
+                        edit: this.$i18n.t('Common.Edit'), 
+                        cancel: this.$i18n.t('Common.Cancel'), 
+                        update: this.$i18n.t('Common.Update') },
+                    iconClass: {
+                        edit: "fas fa-edit",
+                        update: "fas fa-check-circle",
+                        cancel: "far fa-times-circle"
+                    }
+                },
+                // {
+                //     name: 'delete',
+                //     text:this.$i18n.t('Common.Delete'),
+                //     iconClass: 'fas fa-trash-alt',
+                //     click: function(e) {
+                //         console.log(e);
+                //     }
+                // }
+            ],            
             warehousesDataSource: {
                 data: json,
                 schema: {
@@ -46,30 +54,7 @@ export default {
                     }
                 },
                 pageSize: 10
-            },
-            detailsColumnsDefinitions: [
-                {
-                    command:[
-                        {
-                            name: 'edit',
-                            text: { 
-                                edit: this.$i18n.t('Common.Edit'), 
-                                cancel: this.$i18n.t('Common.Cancel'), 
-                                update: this.$i18n.t('Common.Update') },
-                            iconClass: {
-                                edit: "fas fa-edit",
-                                update: "fas fa-check-circle",
-                                cancel: "far fa-times-circle"
-                            }
-                        }
-                    ],
-                    width: "25px"
-                },
-                {
-                    template: "#=this.openPopupTemplate#",
-                    width: "50px"
-                }
-            ]
+            }
         }
     },
     methods: {
