@@ -48,6 +48,7 @@
             }
         }
     }
+   
     }
     .k-grouping-header{
         border-radius:4px 4px 0 0;
@@ -106,7 +107,6 @@
         }  
     }
     }
-
 
     .k-dropdown  .k-widget.k-tooltip.k-tooltip-validation{
     top: -33px !important;
@@ -172,7 +172,7 @@
             box-shadow: none;
         }
         span.statusHolder{
-            width: 90%;
+            width: 65px;
             height: 22px;
             border-radius: 18px;
             display: block;
@@ -208,6 +208,24 @@
             width: 12.7px;
             height: 12.4px;     
         }
+        &.k-grid-update{
+            color:$shamrock;
+            background-color: $white;
+             border-radius: 10px;
+             margin-left:12px;
+        }
+        &.k-grid-cancel{
+            color:$Sunglo;
+            background-color:$white;
+            border-radius: 10px;
+            margin-left:4px ;
+
+        }
+        &.k-grid-delete{
+            color:$Sunglo;
+            margin-left:16px;
+        }
+       
         .k-button-icontext {
             font-size: 0;
             margin: 0 0.2rem;
@@ -219,6 +237,7 @@
             }
             &.k-grid-update{
                 color: $shamrock;
+               
 
             }
             &.k-grid-cancel{
@@ -289,6 +308,7 @@
             pointer-events: none;
         }
     }
+    
 }
    
 
@@ -382,21 +402,15 @@ li{
         }
 
          ////////////////////////////////////////coloring expanded row border 
-    tr.k-master-row {
-       //outline: 2px solid $MorningGlory !important;
-        //box-shadow: 0 -2px 0 #000 !important;
-        //box-shadow: 3px -2px 0 red !important;
+   /* tr.k-master-row {
 
         &+ tr.k-detail-row {
             background-color: $AliceBlue;
-            //  outline: 2px solid #91b8dc !important;
-            //box-shadow: 3px -2px 0 red !important;
         }
-    }
+    }*/
     .row-border{
-        // box-shadow: 3px -2px 0 $MorningGlory !important;
         box-shadow: inset 0px 2px 0px 1px $MorningGlory;
-        background-color: $AliceBlue;
+        //background-color: $AliceBlue;
         & + .k-detail-row{
             box-shadow: inset 0px -1px 0px 1px $MorningGlory;
         }
@@ -406,7 +420,22 @@ li{
             }
         }
     }
-    ///////////////////////////////////////////////////////////////////////////
+    //sub grid
+    .k-grid{
+        .k-grid-toolbar{
+            .k-grid-add{
+                background-color:$HavelockBlue;
+            }
+        }
+        .k-grid-header{
+            tr:not(.k-filter-row){
+                background-color: $linkWater;
+            }
+        }
+        tr.k-grid-edit-row {
+            background-color:$tropicalBlue ;
+        }
+    }
     }
 
 .k-autocomplete ,.k-numeric-wrap{
