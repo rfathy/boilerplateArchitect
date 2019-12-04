@@ -1,6 +1,6 @@
 import { reflectKeys } from '@/app/shared/services';
 
-import { fetchInventory } from '../services/inventory/inventory.js';
+import { fetchInventory } from '../services/inventory-management/inventory-management.js';
 import Axios from 'axios';
 
 /** Initial state */

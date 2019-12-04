@@ -10,15 +10,13 @@
                 :navigatable='true'
                 :editable="'inline'"
                 :toolbar="[{name: 'create', text: $t('Users.NewCategory')}]"
-                :filterable-extra="false"
-                :filterable-mode="'row'"
+                :filterable="filterableObject"
                 :pageable-always-visible="true"
                 :pageable-page-sizes="[5, 10, 20, 30]"
                 @edit="onEditGrid"
                 @save="onSave"
                 @remove="onRemoveRow"
-                @beforeedit="onBeforeedit"
-                @change="onChange">
+                @beforeedit="onBeforeedit">
                 <kendo-grid-column :field="'Code'"
                                 :title="$t('Users.CategoryCode')"
                                 :editable="preventEditColumn"
@@ -30,11 +28,13 @@
                                 :title="$t('Users.CategoryEnName')"
                                 :filterable-cell-show-operators="false"
                                 :filterable-cell-operator="'contains'"
+                                :editor="AddPlaceholder"
                                 :width="130"></kendo-grid-column>
                 <kendo-grid-column :field="'ArName'"
                                 :title="$t('Users.CategryArName')"
                                 :filterable-cell-show-operators="false"
                                 :filterable-cell-operator="'contains'"
+                                :editor="AddPlaceholder"
                                 :width="130"></kendo-grid-column>
                 <kendo-grid-column :field="'ProductClassification'"
                                 :title="$t('Users.ProductClassification')"
@@ -47,6 +47,7 @@
                                 :title="$t('Users.Description')"
                                 :filterable-cell-show-operators="false"                        
                                 :filterable-cell-operator="'contains'"
+                                :editor="AddPlaceholder"
                                 :width="130"
                                 ></kendo-grid-column> 
                 <kendo-grid-column :field="'ParentCategory'"
@@ -74,6 +75,8 @@
                                 :width="100"></kendo-grid-column>
             </kendo-grid>
         </kendo-tooltip>
+
+        <kendo-notification ref="popupNotificationSave"></kendo-notification>
     </div>
 </template>
 

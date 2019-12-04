@@ -14,6 +14,13 @@ export default {
         return {
             checked: true,    
             inputHasValue: false,
+            filterableObject: {
+                mode: 'row',
+                extra: 'false',
+                operators: {
+                    string: 'contains'
+                }
+            },
             customGridCommand: [
                 {
                     name: 'edit',
@@ -78,6 +85,12 @@ export default {
         }
     },
     methods: {
+        AddPlaceholder(container, options) { debugger
+            let input = $(`<input required class='k-textbox' name='${options.field}'
+                                    data-required-msg="${this.$i18n.t('Common.Required')}" autocomplete='disabled'
+                                    placeholder='Add ${options.title}'/>`);
+            input.appendTo(container);
+        },
         // Taxable Bonus and Status Switch
         customBoolEditor(container, options) {
             $('<input type="checkbox" name="' + options.field + '" />')
@@ -106,6 +119,7 @@ export default {
                     dataValueField: "text",
                     valuePrimitive: true,
                     filter: 'contains',
+                    optionLabel: 'Select Product Classification',
                     dataSource: [
                         { text: 'Small', value: '1' },
                         { text: 'Medium', value: '2' },
@@ -131,6 +145,7 @@ export default {
                     valuePrimitive: true,
                     filter: 'startswith',
                     autoWidth: true,
+                    placeholder: 'Select Parent category',
                     // enable: this.inputHasValue,
                     dataSource: [
                         {
@@ -241,9 +256,17 @@ export default {
             // numeric.enable(false);
             
         },
-        onSave: function () {
-            debugger
-            alert("SAVE EVENT")
+        onSave: function (e) { debugger
+            // Save New Record
+            if (e.model.isNew()) {
+                this.showSavePopupNotification()
+                e.model.isNew(false)
+            } 
+            else { // Save Exsit Record
+                this.showUpdatePopupNotification()
+            }
+            
+            
         },
         onRemoveRow: function () {
             debugger
@@ -252,10 +275,17 @@ export default {
         onBeforeedit: function () {
             debugger
         },
-        onChange: function () {
-            debugger
-            alert("change EVENT")
+        showSavePopupNotification: function () {
+            this.popupNotificationWidget.show(this.$i18n.t('Common.SavedSuccessfully'));
+        },
+        showUpdatePopupNotification: function () {
+            this.popupNotificationWidget.show(this.$i18n.t('Common.UpdatedSuccessfully'));
         }
+    },
+    mounted: function () {
+        this.popupNotificationWidget = this.$refs.popupNotificationSave.kendoWidget();
+
+        $('.k-filtercell [data-role="autocomplete"]').attr('placeholder', 'Search')
     },
     i18n: {
         messages: {
