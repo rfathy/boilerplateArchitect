@@ -135,6 +135,7 @@ export default {
                     valuePrimitive: true,
                     filter: 'contains',
                     optionLabel: 'Select Classification',
+                    noDataTemplate: this.$i18n.t('Common.NoDataToDisplay'),
                     dataSource: [
                         { text: 'Small', value: '1' },
                         { text: 'Medium', value: '2' },
@@ -156,9 +157,10 @@ export default {
                     dataTextField: "text",
                     dataValueField: "text",
                     valuePrimitive: true,
-                    filter: 'startswith',
+                    filter: 'contains',
                     autoWidth: true,
                     placeholder: 'Select Parent category',
+                    noDataTemplate: this.$i18n.t('Common.NoDataToDisplay'),
                     // enable: this.inputHasValue,
                     dataSource: [
                         {
