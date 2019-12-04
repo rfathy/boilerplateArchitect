@@ -24,6 +24,9 @@ export default {
                     string: 'contains'
                 }
             },
+            arColAttrs: {
+                'class': 'text-right'
+            },
             customGridCommand: [
                 {
                     name: 'edit',

@@ -36,6 +36,7 @@
                                         :filterable-cell-show-operators="false"
                                         :filterable-cell-operator="'contains'"
                                         :editor="AddPlaceholder"
+                                        :attributes="arColAttrs"
                                         :width="130"></kendo-grid-column>
                         <kendo-grid-column :field="'ProductClassification'"
                                         :title="$t('Users.ProductClassification')"

@@ -29,8 +29,10 @@
     "UOMArName":"اسم وحدة القياس بالعربية",
     "AddUOM":"اضافة وحدة قياس",
     "Reference":" المرجع",
-    "Ratio":"النسبة"
-    
+    "Ratio":"النسبة",
+    "AddCategoryName": " ادخل اسم الفئة بالانجليزية",
+    "AddCategoryNameArabic": "ادخل اسم الفئة بالعربية",
+    "WriteDescription": "اكتب وصف"
 
   }
 }
