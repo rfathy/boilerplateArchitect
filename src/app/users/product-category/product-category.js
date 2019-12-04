@@ -86,9 +86,18 @@ export default {
     },
     methods: {
         AddPlaceholder(container, options) { debugger
-            let input = $(`<input required class='k-textbox' name='${options.field}'
-                                    data-required-msg="${this.$i18n.t('Common.Required')}" autocomplete='disabled'
-                                    placeholder='Add ${options.title}'/>`);
+            let input = $(`<input class='k-textbox' name='${options.field}' autocomplete='disabled' />`);
+            if (options.field === 'EnName' || options.field === 'ArName') {
+                input.attr('required', 'required')
+                input.attr('data-required-msg', this.$i18n.t('Common.Required'))
+            }
+            if (options.field === 'EnName') {
+                input.attr('placeholder', 'Add Category Name')
+            } else if (options.field === 'ArName') {
+                input.attr('placeholder', 'أدخل اسم التصنيف')
+            } else if (options.field === 'Description') {
+                input.attr('placeholder', 'Write a Description')
+            }
             input.appendTo(container);
         },
         // Taxable Bonus and Status Switch
@@ -119,13 +128,11 @@ export default {
                     dataValueField: "text",
                     valuePrimitive: true,
                     filter: 'contains',
-                    optionLabel: 'Select Product Classification',
+                    optionLabel: 'Select Classification',
                     dataSource: [
                         { text: 'Small', value: '1' },
                         { text: 'Medium', value: '2' },
-                        { text: 'Large', value: '3' },
-                        { text: 'X-Large', value: '4' },
-                        { text: '2X-Large', value: '5' }
+                        { text: 'Large', value: '3' }
                     ]
                     // value: options.model.Category.CategoryID,
                     // change: function(e) {
@@ -242,8 +249,9 @@ export default {
         getTooltipTilte: function(e) {
             return e.target.text() 
         },
-        onEditGrid: function() {
+        onEditGrid: function(e) {
             debugger  
+            e.sender.wrapper.find(".k-filter-row").hide();
             // Array.from(e.container[0].childNodes, cell => {
             //     if (cell.lastChild.lastChild && cell.lastChild.lastChild.name === 'ProductClassification') {
             //         cell.lastChild.lastChild.value ? this.inputHasValue = true : this.inputHasValue = false;
@@ -257,6 +265,7 @@ export default {
             
         },
         onSave: function (e) { debugger
+            this.showFilterRow(e)
             // Save New Record
             if (e.model.isNew()) {
                 this.showSavePopupNotification()
@@ -267,6 +276,12 @@ export default {
             }
             
             
+        },
+        onCancel:function(e) {
+            this.showFilterRow(e)
+        },
+        showFilterRow: function(e) {
+            e.sender.wrapper.find(".k-filter-row").show();
         },
         onRemoveRow: function () {
             debugger

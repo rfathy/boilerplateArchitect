@@ -16,6 +16,7 @@
                 @edit="onEditGrid"
                 @save="onSave"
                 @remove="onRemoveRow"
+                @cancel="onCancel"
                 @beforeedit="onBeforeedit">
                 <kendo-grid-column :field="'Code'"
                                 :title="$t('Users.CategoryCode')"
