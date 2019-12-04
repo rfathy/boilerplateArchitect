@@ -79,17 +79,16 @@
             .k-filtercell{     
                  height: 24px;
                   border-radius: 3px; 
+
                 .k-autocomplete{
-                    &:after {
-                        content: "\F002";
+                    padding-#{$end-direction}: 0;
+
+                    input::placeholder {
                         font-family: "Font Awesome 5 Free";
-                        $start-direction: 23px;
-                        top: 3px;
-                        position: relative;
-                        color: $TowerGray;
+                        color: $TowerGray; 
+                        text-align: $end-direction;
                         font-size: 13px;
                     }
-                    
                 }
                  
         }

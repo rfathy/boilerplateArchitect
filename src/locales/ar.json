@@ -13,10 +13,11 @@
     "All":"الكل",
     "Delete":"حذف",
     "Required": "مطلوب",
-    "Duplicated": "مكرر",
+    "Duplicated": "مستخدم",
     "SavedSuccessfully": "تم الحفظ بنجاح",
     "UpdatedSuccessfully": "تم التحديث بنجاح",
     "Confirmation": "تأكيد",
-    "DeleteConfirmation": "هل أنت متأكد أنك تريد حذف"
+    "DeleteConfirmation": "هل أنت متأكد أنك تريد حذف",
+    "NoDataToDisplay": "لا يوجد بيانات للعرض"
   }
 }

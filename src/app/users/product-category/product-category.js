@@ -17,6 +17,9 @@ export default {
             filterableObject: {
                 mode: 'row',
                 extra: 'false',
+                messages: {
+                    search: true
+                },
                 operators: {
                     string: 'contains'
                 }
@@ -85,18 +88,20 @@ export default {
         }
     },
     methods: {
+        // Custom Inline grid fields template 
         AddPlaceholder(container, options) { debugger
             let input = $(`<input class='k-textbox' name='${options.field}' autocomplete='disabled' />`);
+
             if (options.field === 'EnName' || options.field === 'ArName') {
                 input.attr('required', 'required')
                 input.attr('data-required-msg', this.$i18n.t('Common.Required'))
             }
             if (options.field === 'EnName') {
-                input.attr('placeholder', 'Add Category Name')
+                input.attr('placeholder', this.$i18n.t('Users.AddCategoryName'))
             } else if (options.field === 'ArName') {
-                input.attr('placeholder', 'أدخل اسم التصنيف')
+                input.attr('placeholder', this.$i18n.t('Users.AddCategoryNameArabic'))
             } else if (options.field === 'Description') {
-                input.attr('placeholder', 'Write a Description')
+                input.attr('placeholder', this.$i18n.t('Users.WriteDescription'))
             }
             input.appendTo(container);
         },
@@ -110,6 +115,7 @@ export default {
                     checked: true
             });
           },
+          // Make field editable if in add mode and disable it if in edit mode
         preventEditColumn(e) { 
             console.log(e.isNew());
             if (e.isNew()) {
@@ -168,43 +174,43 @@ export default {
                         console.log(e.node);
                         
                     },
-                    open(ev) { debugger
-                        ev.sender.dataSource.transport.data.map(item => item.items.filter(subItem => {
-                            console.log(subItem.text === 'suboption 2');
+                    // open(ev) { debugger
+                    //     ev.sender.dataSource.transport.data.map(item => item.items.filter(subItem => {
+                    //         console.log(subItem.text === 'suboption 2');
                             
-                            (subItem.text === 'suboption 2') ? subItem.enabled = false : false;
-                        }));
-                        // ev.sender.dataSource.options.data.map(item => item.items.filter(subItem => {
-                        //     console.log(subItem.text === 'suboption 2');
+                    //         (subItem.text === 'suboption 2') ? subItem.enabled = false : false;
+                    //     }));
+                    //     // ev.sender.dataSource.options.data.map(item => item.items.filter(subItem => {
+                    //     //     console.log(subItem.text === 'suboption 2');
                             
-                        //     (subItem.text === 'suboption 2') ? subItem.enabled = false : false;
-                        // }));
-                        // ev.sender.options.dataSource.map(item => item.items.filter(subItem => {
-                        //     console.log(subItem.text === 'suboption 2');
+                    //     //     (subItem.text === 'suboption 2') ? subItem.enabled = false : false;
+                    //     // }));
+                    //     // ev.sender.options.dataSource.map(item => item.items.filter(subItem => {
+                    //     //     console.log(subItem.text === 'suboption 2');
                             
-                        //     (subItem.text === 'suboption 2') ? subItem.enabled = false : false;
-                        // }));
+                    //     //     (subItem.text === 'suboption 2') ? subItem.enabled = false : false;
+                    //     // }));
                         
-                        $(".k-treeview .k-icon").click(function(e) {
-                            if(e.currentTarget.nextSibling.classList.contains('k-state-disabled')) { debugger
+                    //     $(".k-treeview .k-icon").click(function(e) {
+                    //         if(e.currentTarget.nextSibling.classList.contains('k-state-disabled')) { debugger
                               
-                              if(e.currentTarget.classList.contains('k-i-expand')) {
-                                e.currentTarget.parentElement.parentElement.setAttribute('aria-expanded', 'true')
-                                e.currentTarget.parentElement.parentElement.setAttribute('data-expanded', 'true')
-                                e.currentTarget.parentElement.nextSibling.style.display = 'block'
-                                e.currentTarget.classList.add('k-i-collapse')
-                                e.currentTarget.classList.remove('k-i-expand')
-                                }
-                              else {
-                                e.currentTarget.parentElement.parentElement.setAttribute('aria-expanded', 'false')
-                                e.currentTarget.parentElement.parentElement.setAttribute('data-expanded', 'false')
-                                e.currentTarget.parentElement.nextSibling.style.display = 'none'
-                                e.currentTarget.classList.add('k-i-expand')
-                                e.currentTarget.classList.remove('k-i-collapse')
-                              }
-                            }
-                        });
-                    }
+                    //           if(e.currentTarget.classList.contains('k-i-expand')) {
+                    //             e.currentTarget.parentElement.parentElement.setAttribute('aria-expanded', 'true')
+                    //             e.currentTarget.parentElement.parentElement.setAttribute('data-expanded', 'true')
+                    //             e.currentTarget.parentElement.nextSibling.style.display = 'block'
+                    //             e.currentTarget.classList.add('k-i-collapse')
+                    //             e.currentTarget.classList.remove('k-i-expand')
+                    //             }
+                    //           else {
+                    //             e.currentTarget.parentElement.parentElement.setAttribute('aria-expanded', 'false')
+                    //             e.currentTarget.parentElement.parentElement.setAttribute('data-expanded', 'false')
+                    //             e.currentTarget.parentElement.nextSibling.style.display = 'none'
+                    //             e.currentTarget.classList.add('k-i-expand')
+                    //             e.currentTarget.classList.remove('k-i-collapse')
+                    //           }
+                    //         }
+                    //     });
+                    // }
                     // value: options.model.Category.CategoryID,
                     // change: function(e) {
                     //     let names = e.sender._tags.map(item => item.text).join(', ')
@@ -300,7 +306,7 @@ export default {
     mounted: function () {
         this.popupNotificationWidget = this.$refs.popupNotificationSave.kendoWidget();
 
-        $('.k-filtercell [data-role="autocomplete"]').attr('placeholder', 'Search')
+        $('.k-filtercell [data-role="autocomplete"]').attr('placeholder', '')
     },
     i18n: {
         messages: {

@@ -17,6 +17,7 @@
     "SavedSuccessfully": "Saved Successfully",
     "UpdatedSuccessfully": "Updated Successfully",
     "Confirmation": "Confirmation",
-    "DeleteConfirmation": "Are you sure you want to delete"
+    "DeleteConfirmation": "Are you sure you want to delete",
+    "NoDataToDisplay": "No data to display"
   }
 }
