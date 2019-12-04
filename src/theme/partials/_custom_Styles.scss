@@ -131,8 +131,8 @@ body{
   .km-switch-on .km-switch-handle {
     $start-direction: calc(100% - 2.4em);
     position: absolute;
-    top: -1px;
-
+    right:17px;
+    bottom:0;
   }
   .km-ie .km-switch-on .km-switch-handle, .km-edge .km-switch-on .km-switch-handle {
     $start-direction: 100%;
@@ -141,7 +141,8 @@ body{
   .km-switch-off .km-switch-handle {
     $start-direction: 0;
     position: absolute;
-    top: -1px;
+    right:17px;
+    bottom:0;
   }
 .km-switch-label-on, .km-switch-label-off {
   display: block;
@@ -168,7 +169,7 @@ body{
 }
 .km-switch-container {
   height: 1.5em;
-  width: 4em;
+  width: 26px;
   position: relative;
 }
 .km-switch-handle {

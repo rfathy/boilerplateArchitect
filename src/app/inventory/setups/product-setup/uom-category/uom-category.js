@@ -113,7 +113,7 @@ export default {
                         fields: {
                             // 'UOM[dataItem]UOMID': {},
                             'UOM.UOMID': {},
-                            'UOM.UOMCode': { type: 'number', validation: { min: 1 } },
+                            'UOM.UOMCode': {  validation: { min: 1 } },
                             'UOM.UOMEnName': { validation: { required: { message: this.$i18n.t('Common.Required') } } },
                             'UOM.UOMArName': {  validation: { required: { message: this.$i18n.t('Common.Required') } } },
                             'UOM.UOMDescription': { type: 'string' },
@@ -149,7 +149,7 @@ export default {
                 field: 'UOM.UOMCode',
                 title: this.$i18n.t('Inventory.UOMCode'),
                 // editable: this.preventEditColumn,
-                width: '120px',
+                width: '7%',
                 filterable: {
                     cell: {
                         showOperators: false,
@@ -163,7 +163,7 @@ export default {
               {
                 field: 'UOM.UOMEnName',
                 title: this.$i18n.t('Inventory.UOMEnName'),
-                width: '180px',
+                width: '18%',
                 filterable: {
                     cell: {
                         showOperators: false,
@@ -174,7 +174,7 @@ export default {
               {
                 field: 'UOM.UOMArName',
                 title: this.$i18n.t('Inventory.UOMArName'),
-                width: '180px',
+                width: '18%',
                 filterable: {
                     cell: {
                         showOperators: false,
@@ -185,7 +185,7 @@ export default {
               {
                 field: 'UOM.UOMDescription',
                 title: this.$i18n.t('Inventory.Description'),
-                width: '220px',
+                width: '18%',
                 filterable: {
                     cell: {
                         showOperators: false,
@@ -196,7 +196,7 @@ export default {
               {
                 field: 'UOM.UOMReference',
                 title: this.$i18n.t('Inventory.Reference'),
-                width: '170px',
+                width: '13%',
                 filterable: {
                     cell: {
                         showOperators: false,
@@ -207,7 +207,7 @@ export default {
               {
                 field: 'UOM.UOMRatio',
                 title: this.$i18n.t('Inventory.Ratio'),
-                width: '140px',
+                width: '13%',
                 filterable: {
                     cell: {
                         showOperators: false,
@@ -215,19 +215,7 @@ export default {
                     }
                 }
               },
-            //   {
-            //     field: 'UOM.UOMStatus',
-            //     title: this.$i18n.t('Inventory.Status'),
-            //     editor: this.customBoolEditor,
-            //     width: '130px',
-            //     template: "#= UOM.UOMStatus ? '<div class= bg-active-status> Active </div>' : '<div class= bg-inactive-status> Inactive </div> '#",
-            //     filterable: {
-            //         cell: {
-            //             showOperators: false,
-            //             operator: 'contains'
-            //         }
-            //     }
-            //   },
+            
               {
                 command: [
                     {
@@ -246,7 +234,7 @@ export default {
                     }
                 ],
                 title: this.$i18n.t('Inventory.Action'),
-                width: '200x'
+                width:"7%"
               }
               ]
             })
