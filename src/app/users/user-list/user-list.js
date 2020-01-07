@@ -1,39 +1,39 @@
-// import kendo from '@progress/kendo-ui';
-
-import Vue from 'vue';
-import { actionsTypes } from "../shared/state";
-import { ErrorBoundary } from "../../shared/components";
-
-import AppUserItem from "../user-item/user-item.vue";
-
-import '@progress/kendo-ui/js/kendo.grid';
-import { Grid, GridInstaller } from '@progress/kendo-grid-vue-wrapper';
-import { DataSource, DataSourceInstaller } from '@progress/kendo-datasource-vue-wrapper'
-
-
-Vue.use(GridInstaller);
-Vue.use(DataSourceInstaller);
-Vue.use(DataSource)
-
+import $ from 'jquery'
 export default {
   name: "user-list",
-  data() {
-    return {
-      
+  data(){
+    return{
+      testdata: 'test data',
+      text: 'init text'
     }
   },
-  components: {
-    ErrorBoundary,
-    AppUserItem,
-    Grid,
-    DataSource
+  beforeCreate(){
+    alert("beforeCreated: " + this.testdata);
   },
-  created() {
-    this.$store.dispatch(actionsTypes.FETCH_USER_DATA);
+  created() {  
+    alert("created: " + this.testdata);
+  },
+  beforeMount(){
+    alert("beforeMount");
   },
   mounted() {
+    alert("mounted");
+  },
+  beforeUpdate(){
+    alert("beforeUpdate");
+  },
+  updated(){
+    alert("updated");
+  },
+  beforeDestroy(){
+    alert("beforeDestroy");
+  },
+  destroyed(){
+    alert("destroyed");
   },
   methods: {
-    
+    updateText: function(){
+      this.text = 'updated text'
+    }
   }
 };

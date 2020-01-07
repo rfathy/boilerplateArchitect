@@ -74,7 +74,10 @@ export default {
         confirm: '',
         binding:'',
         parentData:'',
-        name:''
+        name:'',
+        website: 'www.google.com',
+        test: false,
+        htmlTag: '<a data-v-97b90552="" href="javascript:;" class="pr-2 start-nav pl-1">rendered link</a>'
     }),
     directives: {
         onlyEn,

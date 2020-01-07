@@ -68,6 +68,14 @@
                 <span>{{parentData}}</span>
                 <Child :inputData.sync="parentData" />
             </div>
+            <div class="col col-md-4 mt10">
+                <h3>attributes' binding</h3>
+                <a :href="website" :class="test? 'tr': 'fa'"> test </a>
+            </div>
+            <div class="col col-md-4 mt10">
+                <h3>html render with binding</h3>
+                <p v-html="htmlTag"></p>
+            </div>
         </div>
 
 

@@ -3,7 +3,7 @@ import AppUsers from './users.vue';
 import UserList from './user-list/user-list.vue';
 import UserItem from './user-item/user-item.vue';
 import FormValid from './user-list/form-valid.vue';
-import Grids from './user-list/grids.vue';
+import Grids from './user-list/grids';
 import ProductCategory from './product-category/product-category.vue'
 import UomCategory from './uom-category/uom-category.vue'
 
