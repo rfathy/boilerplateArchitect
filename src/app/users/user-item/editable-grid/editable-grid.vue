@@ -16,7 +16,6 @@
                 @edit="editAction"
                 @remove="removeAction"
                 @savechanges="saveAction">
-                
         <kendo-grid-column :field="'ProductName'"></kendo-grid-column>
         <kendo-grid-column :field="'UnitPrice'"
                            :title="'Unit Price'"
@@ -31,6 +30,7 @@
         <kendo-grid-column :field="'Discontinued'" 
                            :width="120"
                            :editor="customBoolEditor"></kendo-grid-column>
+                           
         <kendo-grid-column :command="customGridCommand"
                            :title="'&nbsp;'"
                            :width="220"></kendo-grid-column>

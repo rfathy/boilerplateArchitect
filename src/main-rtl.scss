@@ -1,6 +1,6 @@
 @import './theme/bootstrap-4-rtl/scss/bootstrap-rtl.scss';
-@import 'node_modules/bootstrap-vue/src/index.scss';
-@import 'node_modules/@progress/kendo-theme-bootstrap/scss/all';
+@import 'node_modules/bootstrap-vue/dist/bootstrap-vue';
+@import 'node_modules/@progress/kendo-theme-bootstrap/dist/all.scss'; 
 
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts'; 
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';

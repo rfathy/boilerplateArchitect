@@ -1,16 +1,18 @@
-import AppInventory from './inventory.vue';
+import AppInventoryManagement from './inventory-management.vue';
+// import UOMCategory from '../users/uom-category/uom-category';
+
 import WarehousesList from './setups/warehouse-setup/warehouses-list/warehouses-list.vue';
 import WarehouseCategory from './setups/warehouse-setup/warehouse-category/warehouse-category.vue'
 import ProductCategory from './setups/product-setup/product-category/product-category.vue'
 import ProductsList from './setups/product-setup/products-list/products-list.vue'
 import UOMCategory from './setups/product-setup/uom-category/uom-category.vue'
 
-const inventoryRoutes = [
+const inventoryManagementRoutes = [
   {
-    path: '/inventory',
-    component: AppInventory,
+    path: '/inventory-management',
+    component: AppInventoryManagement,
     meta: {
-      title: 'Inventory',
+      title: 'Inventory Management',
       breadcrumb: 'Inventory Management'
     },
     children: [
@@ -58,4 +60,4 @@ const inventoryRoutes = [
   },      
 ];
 
-export default inventoryRoutes;
+export default inventoryManagementRoutes;

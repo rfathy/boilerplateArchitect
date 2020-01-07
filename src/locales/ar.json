@@ -12,7 +12,12 @@
     "InActive": "غير مفعل",
     "All":"الكل",
     "Delete":"حذف",
-    "Required":"مطلوب"
-   
+    "Required": "مطلوب",
+    "Duplicated": "مستخدم",
+    "SavedSuccessfully": "تم الحفظ بنجاح",
+    "UpdatedSuccessfully": "تم التحديث بنجاح",
+    "Confirmation": "تأكيد",
+    "DeleteConfirmation": "هل أنت متأكد أنك تريد حذف",
+    "NoDataToDisplay": "لا يوجد بيانات للعرض"
   }
 }

@@ -29,7 +29,9 @@
     "UOMArName":"UOM Ar Name",
     "AddUOM":"Add UOM",
     "Reference":"Reference",
-    "Ratio":"Ratio"
-    
+    "Ratio":"Ratio",
+    "AddCategoryName": "Add Category Name",
+    "AddCategoryNameArabic": "أدخل اسم الفئة",
+    "WriteDescription": "Write a Description"
   }
 }

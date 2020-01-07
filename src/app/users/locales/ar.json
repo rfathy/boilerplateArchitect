@@ -15,22 +15,24 @@
     "OnlyNum": "أرقام فقط",
     "AllowDecimal": "السماح بالعلامة العشرية",
     "NewCategory": "فئة جديدة",
-    "CategoryCode": "كود الفئة",
-    "CategoryEnName":"اسم الفئة الانجليزي",
-    "CategryArName":"اسم الفئة العربي",
-    "ProductClassification":"تصنيف المنتج",
+    "CategoryCode": "كود التصنيف",
+    "CategoryEnName":"اسم الفئة بالانجليزية",
+    "CategryArName":"اسم الفئة بالعربية",
+    "ProductClassification":"التصنيف",
     "Description":"الوصف",
     "ParentCategory":"الفئة الرئيسية",
-    "TaxableBonus":"ضريبة الحوافز",
-    "Status":"الحالة",
+    "TaxableBonus":"الضريبة المضافة ",
+    "Status":"حالة التفعيل ",
     "Action":"أفعال",
     "UOMCode":"كود وحدة القياس",
     "UOMEnName":"اسم وحدة القياس بالانجليزية",
     "UOMArName":"اسم وحدة القياس بالعربية",
     "AddUOM":"اضافة وحدة قياس",
     "Reference":" المرجع",
-    "Ratio":"النسبة"
-    
+    "Ratio":"النسبة",
+    "AddCategoryName": " ادخل اسم الفئة بالانجليزية",
+    "AddCategoryNameArabic": "ادخل اسم الفئة بالعربية",
+    "WriteDescription": "اكتب وصف"
 
   }
 }
