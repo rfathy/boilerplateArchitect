@@ -8,31 +8,43 @@ export default {
     }
   },
   beforeCreate(){
-    alert("beforeCreated: " + this.testdata);
+    // alert("beforeCreated: " + this.testdata);
   },
   created() {  
-    alert("created: " + this.testdata);
+    // alert("created: " + this.testdata);
   },
   beforeMount(){
-    alert("beforeMount");
+    // alert("beforeMount");
   },
   mounted() {
-    alert("mounted");
+    // alert("mounted");
   },
   beforeUpdate(){
-    alert("beforeUpdate");
+    // alert("beforeUpdate");
   },
   updated(){
-    alert("updated");
+    // alert("updated");
   },
   beforeDestroy(){
-    alert("beforeDestroy");
+    // alert("beforeDestroy");
   },
   destroyed(){
-    alert("destroyed");
+    // alert("destroyed");
+  },
+  // does NOT have access to `this` component instance,
+  // because it has not been created yet when this guard is called!
+  beforeRouteEnter(to, from, next){
+    const loggedIn = true;
+    if(loggedIn) next();
+    else next('*')
+  },
+  beforeRouteLeave(to, from, next){
+    const confirm = window.confirm("data won't be saved");
+    if(confirm) next();
+    else next(false)
   },
   methods: {
-    updateText: function(){
+    updateText(){
       this.text = 'updated text'
     }
   }

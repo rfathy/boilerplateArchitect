@@ -15,6 +15,13 @@ import ChildTwo from '@/app/shared/layouts/components/child2'
 import localeEn from '../locales/en'
 import localeAr from '../locales/ar'
 
+//https://www.npmjs.com/package/vue-axios
+//https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html
+import Vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios' 
+Vue.use(VueAxios, axios)
+
 extend('required', {
     ...required,
     message: 'This field is required'
@@ -50,6 +57,16 @@ export default {
         Child,
         ChildTwo
     },
+    mounted(){
+        axios
+            .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(response => (this.info = response.data.bpi))
+            .catch(error => console.log(error));
+        axios
+            .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(response => (this.AllInfo = response))
+            .catch(error => console.log(error))
+    },
     methods: {
         async submit() {
             const isValid = await this.$refs.observer.validate();
@@ -61,6 +78,9 @@ export default {
                 return
             }
 
+        },
+        formSubmitted(){
+            console.log("form submited")
         }
     },
     data: () => ({
@@ -77,7 +97,12 @@ export default {
         name:'',
         website: 'www.google.com',
         test: false,
-        htmlTag: '<a data-v-97b90552="" href="javascript:;" class="pr-2 start-nav pl-1">rendered link</a>'
+        htmlTag: '<a data-v-97b90552="" href="javascript:;" class="pr-2 start-nav pl-1">rendered link</a>',
+        firstName: 'Randa',
+        lastName: 'Fathy',
+        items: ['car', 'bike', 'dog'],
+        info: null,
+        AllInfo: null
     }),
     directives: {
         onlyEn,

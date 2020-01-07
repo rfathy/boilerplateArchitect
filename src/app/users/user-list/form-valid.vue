@@ -1,5 +1,18 @@
 <template>
     <div class="form-valid">
+
+        <h3 class="mt10">Axios</h3>
+        <div class="row">
+            <div class="col col-md-4 mt10">
+                <div v-for="currency in info" class="currency" :key="currency.id">
+                    <h5>{{ currency.description }}:
+                    <span v-html="currency.symbol"></span>{{ currency.rate_float  }}
+                    </h5>
+                </div>
+                <h5>{{AllInfo}}</h5>
+            </div>
+        </div>
+
         <!-- <Loader v-if="isLoading" />
         <h3 class="mt10">{{ $t('Users.Validation') }}</h3>
         <ValidationObserver ref="observer" v-slot="{ invalid }"  @submit.prevent="submit()" class="row">
@@ -53,7 +66,7 @@
             </div>
         </ValidationObserver> -->
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col col-md-4 mt10">
                 <h3>2-way data binding: {{binding}}</h3>
                 <input v-model="binding" type="text" class="form-control">
@@ -76,10 +89,30 @@
                 <h3>html render with binding</h3>
                 <p v-html="htmlTag"></p>
             </div>
-        </div>
+        </div> -->
 
 
         <!-- <h3 class="mt10">{{ $t('Users.Direvtives') }}</h3>
+        <div class="row">
+            <div class="col col-md-4 mt10">
+                <h5>text</h5>
+                <p v-text="'hello ' + firstName + ' ' + lastName"></p>
+            </div>
+            <div class="col col-md-4 mt10">
+                <h5>loops</h5>
+                <ul>
+                    <li v-for="(item, index) in items" :key="item.id">{{index}}: {{ item }}</li>
+                </ul>
+            </div>
+            <div class="col col-md-4 mt10">
+                <h5>directive modifiers</h5>
+                <form v-on:submit.prevent="formSubmitted">
+                    <input type="text" />
+                    <button type="submit">submit</button>
+                </form>
+            </div>
+        </div>
+
         <ValidationObserver class="row">
             <div class="col col-md-4 mt10">
                 <validation-provider class="form-group mb10">
@@ -98,7 +131,7 @@
                 </validation-provider>
                 <validation-provider class="form-group mb10">
                     <label>{{ $t('Users.AllowDecimal') }}</label>
-                    <input  type="text" v-allow-decimal="2" class="form-control" />
+                    <input  type="text" v-allow-decimal="3" class="form-control" />
                 </validation-provider>
             </div>
         </ValidationObserver> -->
