@@ -7,6 +7,9 @@ import Loader from '@/app/shared/layouts/components/loader/loader';
 
 localStorage.getItem('selectedLang') == 'en' ? import('../theme/users.scss') : import('../theme/users-rtl.scss');
 
+import Child from '@/app/shared/layouts/components/child'
+import ChildTwo from '@/app/shared/layouts/components/child2'
+
 
 //Module localization 
 import localeEn from '../locales/en'
@@ -43,7 +46,9 @@ export default {
     components: {
         ValidationProvider,
         ValidationObserver,
-        Loader
+        Loader,
+        Child,
+        ChildTwo
     },
     methods: {
         async submit() {
@@ -66,7 +71,10 @@ export default {
         min: '',
         max: '',
         compared: '',
-        confirm: ''
+        confirm: '',
+        binding:'',
+        parentData:'',
+        name:''
     }),
     directives: {
         onlyEn,

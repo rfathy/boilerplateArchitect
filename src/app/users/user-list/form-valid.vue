@@ -1,6 +1,6 @@
 <template>
     <div class="form-valid">
-        <Loader v-if="isLoading" />
+        <!-- <Loader v-if="isLoading" />
         <h3 class="mt10">{{ $t('Users.Validation') }}</h3>
         <ValidationObserver ref="observer" v-slot="{ invalid }"  @submit.prevent="submit()" class="row">
             <div class="col col-md-4 mt10">
@@ -32,6 +32,7 @@
                     <input v-model="max" type="text" class="form-control">
                     <span class="err">{{ errors[0] }}</span>
                 </ValidationProvider>
+                
             </div>
             <div class="col col-md-4 mt10">
                 <label>{{ $t('Users.Password') }}</label>
@@ -50,8 +51,27 @@
             <div class="col col-md-4 mt10">
                 <button class="btn btn-primary" @click="submit" @shortkey="submit" v-shortkey="['alt', 's']">{{ $t('Users.Save') }}</button>
             </div>
-        </ValidationObserver>
-        <h3 class="mt10">{{ $t('Users.Direvtives') }}</h3>
+        </ValidationObserver> -->
+
+        <div class="row">
+            <div class="col col-md-4 mt10">
+                <h3>2-way data binding: {{binding}}</h3>
+                <input v-model="binding" type="text" class="form-control">
+            </div>
+            <div class="col col-md-4 mt10">
+                <h3>parent to child data binding (props)</h3>
+                <input v-model="name" type="text" class="form-control">
+                <ChildTwo :name=name />
+            </div>
+            <div class="col col-md-4 mt10">
+                <h3>child to parent data binding (emit)</h3>
+                <span>{{parentData}}</span>
+                <Child :inputData.sync="parentData" />
+            </div>
+        </div>
+
+
+        <!-- <h3 class="mt10">{{ $t('Users.Direvtives') }}</h3>
         <ValidationObserver class="row">
             <div class="col col-md-4 mt10">
                 <validation-provider class="form-group mb10">
@@ -73,7 +93,7 @@
                     <input  type="text" v-allow-decimal="2" class="form-control" />
                 </validation-provider>
             </div>
-        </ValidationObserver>
+        </ValidationObserver> -->
     </div> 
 </template>
 <script src="./form-valid.js"></script>
