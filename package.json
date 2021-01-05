@@ -18,7 +18,7 @@
     "@progress/kendo-popups-vue-wrapper": "^2019.3.1023",
     "@progress/kendo-theme-bootstrap": "^4.4.0",
     "@progress/kendo-ui": "^2019.3.1106",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.4",
     "core-js": "^2.6.5",
